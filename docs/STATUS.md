@@ -22,6 +22,15 @@ Last updated 2026-09-11. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/
 - The main navigation has pill hovers (F22).
 - The supplied renders are not photographs and carry no captions: sell-showroom, passion-m4, break-day
   and break-dusk. The sources are in `assets/finale 3/`.
+- Eyebrows (F24): every eyebrow over a heading is the same plate — #232C2F, 216x22, the label at 14px
+  uppercase on its left. Sixteen of them: hero, the four tile kickers, the haus eyebrow and its four
+  kickers, Shipping, Warranty, Reviews, the newsletter's, the two breaks. The ruled running heads, the
+  footer's column heads and the e-mail label are not eyebrows and keep their own form.
+- Removed at Alex's word (2026-09-11): the Featured date line ("Prices and mileage as listed on
+  10 Sep 2026") and the haus foot line (600 Faust Rd / Nationwide transportation available).
+  KNOWN COMPROMISE with CP5: the Featured prices are now undated on screen, and they were read from
+  the live site on 10 Sep 2026. Before launch, feed them live or date them again. The haus line
+  "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026" still carries its date.
 - Waiting for Alex: the step-plate hover (a throwaway `_preview-sell-motion.html`, local only), and
   whether the plates become links to /sell-your-car.
 - Live: https://sigovs.github.io/GENEVA-MOTOR-HAUS/index_finale_v2.html
