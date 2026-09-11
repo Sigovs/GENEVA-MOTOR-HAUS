@@ -2609,10 +2609,10 @@ html .is-gmh .gf-head__nav a:focus-visible { outline: 2px solid var(--ink); outl
    F24. EYEBROWS — one plate, one size (Alex, 2026-09-11)
    ============================================================
    Every eyebrow that stands over a heading is the same object: a
-   square plate in #232C2F, the label in the label face at 14px,
-   uppercase, set on the plate's left. One height, one width — the
-   width of the longest label — so the plates line up as a series
-   down the page. Short labels keep the plate's air on their right.
+   square plate in #1B2926, the label in the label face at 14px,
+   uppercase, with the same air either side of it (Alex, 2026-09-11:
+   no space left over on the right). One height, one padding; the width
+   is the label's own.
    Included: the hero's place line, the four tile kickers, the haus
    eyebrow and its four kickers, Shipping, Warranty, Reviews, the
    newsletter's, the two visual breaks. Not eyebrows, and left alone:
@@ -2620,16 +2620,18 @@ html .is-gmh .gf-head__nav a:focus-visible { outline: 2px solid var(--ink); outl
    footer's column heads, the e-mail field's label.
    The id-weight :not(#x) outranks the section rules that set colour
    and size; opacity and translate stay with the reveals. */
-.is-gmh { --eyebrow-plate: #232C2F; --eyebrow-w: 13.5rem; }   /* 216px: the longest label, "Exceptional inventory" */
+.is-gmh { --eyebrow-plate: #1B2926; }
 .is-gmh :is(.hero__slide-title, .gmh-tile__k, .gmh-haus__eyebrow, .gmh-haus__k, .brk__eyebrow,
             .warranty__eyebrow, .revs__eyebrow, .gmh-newsband__k, .gmh-vbreak__k):not(#x) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  inline-size: var(--eyebrow-w);
+  inline-size: max-content;          /* the plate is the label's own width — equal air both sides */
   max-inline-size: 100%;
   block-size: auto;
+  align-self: flex-start;
+  justify-self: start;
   padding: var(--sp-1) var(--sp-2);
   border: 0;
   border-radius: 0;

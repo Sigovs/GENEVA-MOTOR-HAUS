@@ -22,8 +22,8 @@ Last updated 2026-09-11. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/
 - The main navigation has pill hovers (F22).
 - The supplied renders are not photographs and carry no captions: sell-showroom, passion-m4, break-day
   and break-dusk. The sources are in `assets/finale 3/`.
-- Eyebrows (F24): every eyebrow over a heading is the same plate — #232C2F, 216x22, the label at 14px
-  uppercase on its left. Sixteen of them: hero, the four tile kickers, the haus eyebrow and its four
+- Eyebrows (F24): every eyebrow over a heading is the same plate — #1B2926, 22px tall, the label at
+  14px uppercase with equal air either side; the plate is the label's own width. Sixteen of them: hero, the four tile kickers, the haus eyebrow and its four
   kickers, Shipping, Warranty, Reviews, the newsletter's, the two breaks. The ruled running heads, the
   footer's column heads and the e-mail label are not eyebrows and keep their own form.
 - Removed at Alex's word (2026-09-11): the Featured date line ("Prices and mileage as listed on
