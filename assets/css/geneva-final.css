@@ -1,0 +1,1831 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — geneva-final.css — index_finale.html
+   ============================================================
+   A fork of geneva.css (the v2 page) for the approved final direction.
+   The v2 language stays — the wood-dark ground, the ivory, the barn red
+   as a mark, Zilla Slab display, the pill controls, the gable. What
+   this file changes is execution in six places (2026-09-11 brief):
+
+     F1  the header — a centred badge as the brand anchor before the
+         scroll, one solid bar after it; CMC's glass rail, its
+         gradient scrim and its read-position bar are gone;
+     F2  the hero type — enters from below on load and, on the scroll,
+         rises and thins as one group while the photograph stays;
+     F3  featured inventory — a carousel of cards, 4 · 2 · 1;
+     F4  the four sell steps — cards;
+     F5  the map, edge to edge, then a real footer;
+     F6  no persistent underlines; no stack artefacts.
+
+   Everything else is carried from geneva.css unchanged, so the v2 page
+   and this one cannot drift apart by accident. Every rule hangs off
+   .is-gmh; every value is a token from tokens.css.
+   ============================================================ */
+
+/* the header's two heights — read by the header, the hero, the menu,
+   the sticky haus heading and the sentinel that flips the state */
+.is-gmh {
+  --gf-head-h:     clamp(120px, 11vw, 152px);   /* before the scroll */
+  --gf-head-h-c:   72px;                         /* after it */
+  --gf-badge:      clamp(76px, 8.2vw, 116px);
+  --gf-badge-c:    50px;
+  --gf-ease:       cubic-bezier(0.32, 0.72, 0, 1);
+  --gf-dur:        480ms;
+}
+.is-gmh { --header-h: var(--gf-head-h-c); }    /* what the lower page offsets against */
+@media (max-width: 900px) {
+  .is-gmh { --gf-head-h: 92px; --gf-head-h-c: 64px; --gf-badge: 68px; --gf-badge-c: 46px; }
+}
+
+/* ---- F0. Stack artefacts, off -------------------------------------
+   The read-position bar under the viewport edge, CMC's rail scrim and
+   glass filter, and the "In stock" pill all belonged to a header and a
+   stage this page no longer has. */
+.is-gmh .readbar { display: none; }
+.is-gmh .masthead::before { content: none; }
+.is-gmh .scroll-sentinel { height: 96px; }     /* the bar settles 96px into the scroll */
+.is-gmh main > section,
+.is-gmh main > div > section { scroll-margin-block-start: var(--gf-head-h-c); }
+
+/* ---- F1. THE HEADER -------------------------------------------------
+   Fixed over the hero. One row, three cells: the badge dead centre, the
+   left cell (search, then Inventory · Sold · Financing), the right cell
+   (Sell your car · About · Contact, then the phone). Nothing changes
+   cell on the scroll: the row shortens, the badge shrinks in place, the
+   ground goes solid and a rule appears — the same objects on the same
+   line, closer together. Transform-free: block-size on two elements
+   whose only descendants are the header's own. */
+.is-gmh .gf-head {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 70;                              /* above the menu (60): the toggle stays the way out */
+  block-size: var(--gf-head-h);
+  background: rgb(var(--bg-rgb) / 0);
+  border-block-end: 1px solid rgb(var(--bg-rgb) / 0);
+  transition: block-size var(--gf-dur) var(--gf-ease),
+              background-color var(--gf-dur) var(--gf-ease),
+              border-color var(--gf-dur) var(--gf-ease);
+}
+html.is-condensed .is-gmh .gf-head {
+  block-size: var(--gf-head-h-c);
+  background: rgb(var(--bg-rgb) / 1);   /* opaque: at .98 ivory type still ghosted through a near-black ground */
+  border-block-end-color: var(--rule);
+}
+.is-gmh .gf-head__bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(var(--sp-6), 3vw, var(--sp-8));
+  block-size: 100%;
+  padding-inline: var(--gutter);
+}
+.is-gmh .gf-head__mark { grid-column: 2; display: inline-flex; align-items: center; }
+.is-gmh .gf-head__mark .gmh-mark__badge {
+  block-size: var(--gf-badge);
+  inline-size: auto;
+  transition: block-size var(--gf-dur) var(--gf-ease);
+}
+html.is-condensed .is-gmh .gf-head__mark .gmh-mark__badge { block-size: var(--gf-badge-c); }
+
+.is-gmh .gf-head__side { display: flex; align-items: center; gap: clamp(var(--sp-5), 2.2vw, var(--sp-7)); min-inline-size: 0; }
+.is-gmh .gf-head__side--l { grid-column: 1; justify-content: space-between; }
+.is-gmh .gf-head__side--r { grid-column: 3; justify-content: space-between; }
+.is-gmh .gf-head__nav { display: flex; align-items: center; gap: clamp(var(--sp-5), 2vw, var(--sp-7)); }
+.is-gmh .gf-head__nav a {
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+  padding-block: var(--sp-2);
+  transition: color var(--dur-1) var(--ease-out);
+}
+.is-gmh .gf-head__nav a:hover { color: var(--ink); }
+html:not(.is-condensed) .is-gmh .gf-head__nav a { color: var(--ink-eyebrow); }
+
+/* search — a glyph and a hairline, not a box (F6: no third pill) */
+.is-gmh .gf-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  inline-size: clamp(9rem, 11vw, 13rem);
+  block-size: 40px;
+  border-block-end: 1px solid var(--rule-strong);
+  color: var(--ink-2);
+  transition: border-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), inline-size var(--dur-2) var(--ease-out);
+}
+.is-gmh .gf-search:focus-within { border-color: var(--ink); color: var(--ink); inline-size: clamp(12rem, 14vw, 16rem); }
+.is-gmh .gf-search__icon { flex: none; }
+.is-gmh .gf-search__field {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  block-size: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  outline: none;
+}
+.is-gmh .gf-search__field::placeholder { color: var(--ink-2); opacity: 1; }
+.is-gmh .gf-search__field::-webkit-search-cancel-button { filter: invert(1); }
+
+/* the phone — the number as text; on a narrow bar, the glyph */
+.is-gmh .gf-head__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tr-label);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.is-gmh .gf-head__tel svg { flex: none; }
+
+/* the two glyphs of the narrow bar — hidden until the routes leave */
+.is-gmh .gf-head__find,
+.is-gmh .gf-head__tel--glyph { display: none; }
+
+/* the menu toggle — bare; main.css positions it absolutely inside CMC's
+   rail and hides it, so every property is undone here */
+html.has-js .is-gmh .gf-head .menu-toggle,
+.is-gmh .gf-head .menu-toggle {
+  position: static;
+  translate: none;
+  display: none;
+  align-items: center;
+  gap: var(--sp-3);
+  min-block-size: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  opacity: 1;
+  visibility: visible;
+  color: var(--ink);
+  transition: none;
+}
+.is-gmh .gf-head .menu-toggle:hover { background: none; border: 0; }
+
+@media (max-width: 1200px) {
+  .is-gmh .gf-head__nav,
+  .is-gmh .gf-head .gf-search,
+  .is-gmh .gf-head__tel--text { display: none; }
+  /* left: the menu; right: search glyph, phone glyph — the badge between */
+  .is-gmh .gf-head__side--l { justify-content: flex-start; }
+  .is-gmh .gf-head__side--r { justify-content: flex-end; gap: var(--sp-4); }
+  html.has-js .is-gmh .gf-head .menu-toggle,
+  .is-gmh .gf-head .menu-toggle { display: inline-flex; }
+  .is-gmh .gf-head__find,
+  .is-gmh .gf-head__tel--glyph {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 40px;
+    block-size: 40px;
+    color: var(--ink);
+  }
+}
+@media (max-width: 600px) {
+  .is-gmh .gf-head .menu-toggle__label { display: none; }
+}
+
+/* the menu overlay is CMC's (main.css); its field is set here, and its
+   inner offset follows the header the page actually has */
+.is-gmh .menu__inner { padding-block-start: calc(var(--gf-head-h) + var(--sp-6)); }
+.is-gmh .gf-search--menu {
+  inline-size: 100%;
+  block-size: var(--control-h-primary);
+  margin-block-end: var(--sp-7);
+}
+.is-gmh .gf-search--menu .gf-search__field { font-size: 1.125rem; }
+
+/* ---- F2. THE HERO'S TYPE — in from below, up and away ----------------
+   The v2 hero stays (15a below). CMC's own hero-in / hero-exit — a blurred
+   rise on both ends, and a place line that never left — is replaced on
+   the same elements.
+
+   IN, once, on load: each group rises 32px out of transparency, 760ms,
+   decelerating; place → name → sentence → actions, 90ms apart.
+
+   OUT, on the scroll: scroll-driven (view-timeline on .hero), so the
+   reader keeps the transport and every stopped frame is a designed one.
+   The whole group — place line, name, sentence, actions — drifts up
+   96px and thins to nothing over the first 58% of the hero's exit. The
+   photograph does not move. Without scroll timelines the
+   same numbers are driven by --gf-p from geneva-final.js; under reduced
+   motion nothing moves and nothing fades. */
+@keyframes gf-hero-in {
+  from { opacity: 0; translate: 0 32px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+@keyframes gf-hero-out {
+  to { opacity: 0; translate: var(--gf-x, 0) var(--gf-y, 0); }
+}
+/* one group, one direction: everything rises 96px and thins over the
+   first 58% of the hero's exit, the photograph stays where it is */
+.is-gmh .hero__meter,
+.is-gmh .hero .claim__line,
+.is-gmh .hero__claim .lede,
+.is-gmh .hero__claim .cta-row        { --gf-x: 0; --gf-y: -96px; --gf-out: exit 0% exit 58%; }
+.is-gmh .hero__meter                 { --gf-in: 0ms; }
+.is-gmh .hero .claim__line           { --gf-in: 90ms; }
+.is-gmh .hero__claim .lede           { --gf-in: 180ms; }
+.is-gmh .hero__claim .cta-row        { --gf-in: 270ms; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .is-gmh .hero__meter,
+  .is-gmh .hero .claim__line,
+  .is-gmh .hero__claim .lede,
+  .is-gmh .hero__claim .cta-row {
+    animation-name: gf-hero-in;
+    animation-duration: var(--dur-4);
+    animation-delay: var(--gf-in);
+    animation-timing-function: var(--ease-out);
+    animation-fill-mode: both;
+    animation-timeline: auto;
+    animation-range: normal;
+    filter: none;
+    will-change: translate, opacity;
+  }
+  @supports (animation-timeline: view()) {
+    .is-gmh .hero { view-timeline: --gf-hero block; }
+    .is-gmh .hero__meter,
+    .is-gmh .hero .claim__line,
+    .is-gmh .hero__claim .lede,
+    .is-gmh .hero__claim .cta-row {
+      animation-name: gf-hero-in, gf-hero-out;
+      animation-duration: var(--dur-4), auto;
+      animation-delay: var(--gf-in), 0s;
+      animation-timing-function: var(--ease-out), linear;
+      animation-fill-mode: both, both;
+      animation-timeline: auto, --gf-hero;
+      animation-range: normal, var(--gf-out);
+    }
+  }
+  /* the fallback: the script sets --gf-p (0 → 1 across the hero's exit) */
+  html.gf-scroll-fallback .is-gmh .hero__meter,
+  html.gf-scroll-fallback .is-gmh .hero .claim__line,
+  html.gf-scroll-fallback .is-gmh .hero__claim .lede,
+  html.gf-scroll-fallback .is-gmh .hero__claim .cta-row {
+    opacity: calc(1 - var(--gf-p, 0) * 1.6);
+    translate: calc(var(--gf-x) * var(--gf-p, 0)) calc(var(--gf-y) * var(--gf-p, 0));
+  }
+}
+/* the place line is inside .hero__meter, which CMC lays out as a flex row
+   — it needs to be a mover of its own, so the row itself moves */
+.is-gmh .hero__meter { display: flex; }
+/* the finale frame is 1.74:1 — wider than the old 4:3 — so the crop that
+   kept both 997s whole moves back to the centre; on a phone the navy car */
+.is-gmh .gmh-hero__haus { object-position: 50% 56%; }
+@media (max-width: 760px) {
+  .is-gmh .gmh-hero__haus { object-position: 66% 50%; }
+}
+
+/* ---- F3. FEATURED INVENTORY — a carousel of cards, 3 · 2 · 1 ---------
+   Eight cards on one track inside its own centred shell (1200px, 56px
+   sides); three in view on a desktop, two on a tablet, one on a phone.
+   The track scrolls natively (touch, keyboard focus, the two arrows)
+   and snaps to a card. A card is a 3:2 photograph with an editorial
+   caption under it on a ground one step off the section — a 5px
+   corner, no border, no shadow, no pill, no separator. The arrows sit
+   just outside the track's edges, centred on the card row. */
+.is-gmh .gf-cars {
+  --gfc-w:   1200px;
+  --gfc-pad: clamp(24px, 4vw, 56px);
+  --gfc-gap: clamp(20px, 2vw, 28px);
+  padding-block: clamp(var(--sp-9), 9vw, var(--sp-10)) clamp(var(--sp-9), 8vw, var(--sp-10));
+  background: var(--bg);
+}
+.is-gmh .gf-cars__shell {
+  inline-size: 100%;
+  max-inline-size: var(--gfc-w);
+  margin-inline: auto;
+  padding-inline: var(--gfc-pad);
+}
+.is-gmh .gf-cars__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-block-end: clamp(var(--sp-7), 4vw, var(--sp-8));
+}
+.is-gmh .gf-cars__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gf-cars__dated { margin: 0; text-align: end; }
+
+/* the track — three columns of the shell's inner width */
+.is-gmh .gf-cars__wrap { position: relative; }
+.is-gmh .gf-cars__track {
+  --gf-per: 3;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--gf-per) - 1) * var(--gfc-gap)) / var(--gf-per));
+  column-gap: var(--gfc-gap);
+  margin: 0;
+  padding: 4px 0;                            /* room for the focus ring */
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.is-gmh .gf-cars__track::-webkit-scrollbar { display: none; }
+.is-gmh .gf-cars__track.is-gliding { scroll-snap-type: none; }   /* released while the script moves it */
+.is-gmh .gf-cars__track li { scroll-snap-align: start; }
+
+/* the card */
+.is-gmh .gf-car {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--bg-raised);
+  color: var(--ink);
+  outline-offset: 3px;
+  transition: background-color var(--dur-2) var(--ease-out);
+}
+.is-gmh .gf-car:hover { background: color-mix(in srgb, var(--bg-raised) 90%, var(--ink)); }
+.is-gmh .gf-car__media { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; background: var(--bg-sunk); }
+.is-gmh .gf-car__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: var(--crop, 50% 55%);
+}
+.is-gmh .gf-car__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: var(--sp-5) clamp(22px, 1.9vw, 28px) clamp(24px, 2vw, 28px);
+}
+.is-gmh .gf-car__ym { color: var(--ink-2); }
+.is-gmh .gf-car__model {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.8vw, 1.75rem);
+  font-weight: 600;
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+  text-wrap: balance;
+}
+.is-gmh .gf-car__facts {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  margin: var(--sp-5) 0 0;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+.is-gmh .gf-car__price { font-size: 1.125rem; font-weight: 600; font-variant-numeric: lining-nums tabular-nums; color: var(--ink); }  /* the slab defaults to old-style figures; a price is set lining */
+.is-gmh .gf-car__miles { font-family: var(--font-label); font-size: var(--t-micro); color: var(--ink-2); }
+.is-gmh .gf-car__go {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-block-start: auto;
+  padding-block-start: var(--sp-6);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition: color var(--dur-1) var(--ease-out);
+}
+.is-gmh .gf-car__go .btn__arrow { transition: translate var(--dur-2) var(--ease-out); }
+.is-gmh .gf-car:hover .gf-car__go { color: var(--ink); }
+.is-gmh .gf-car:hover .gf-car__go .btn__arrow { translate: 3px 0; }
+
+/* the arrows — 48px, just outside the track, centred on the card row */
+.is-gmh .gf-cars__arrow {
+  position: absolute;
+  inset-block-start: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 48px;
+  block-size: 48px;
+  translate: 0 -50%;
+  padding: 0;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  background: rgb(var(--bg-rgb) / 0.9);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease-out), background-color var(--dur-1) var(--ease-out), opacity var(--dur-2) var(--ease-out);
+}
+.is-gmh .gf-cars__arrow svg { inline-size: 20px; block-size: 20px; }
+.is-gmh .gf-cars__arrow:hover { border-color: var(--ink); background: var(--bg-raised); }
+.is-gmh .gf-cars__arrow:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.is-gmh .gf-cars__arrow[aria-disabled="true"] { opacity: 0.3; cursor: default; }
+.is-gmh .gf-cars__arrow--prev { inset-inline-start: calc(var(--gfc-pad) - 48px - var(--sp-4)); }   /* 16px outside the track's edge */
+.is-gmh .gf-cars__arrow--next { inset-inline-end:   calc(var(--gfc-pad) - 48px - var(--sp-4)); }
+
+/* the one route out — a restrained button, centred under the cards */
+.is-gmh .gf-cars__all { display: flex; justify-content: center; margin-block-start: clamp(var(--sp-8), 6vw, var(--sp-9)); }
+.is-gmh .gf-cars__all .btn,
+.is-gmh .gf-cars__all .btn:focus-visible {
+  min-block-size: 50px;
+  padding-block: 0;
+  padding-inline: var(--sp-7);
+  border-radius: 6px;
+}
+
+/* Under 1320px the shell's own sides are what is left of the window:
+   the arrows come in to 8px from its edge. */
+@media (max-width: 1320px) {
+  .is-gmh .gf-cars { --gfc-pad: 60px; }
+  .is-gmh .gf-cars__arrow { inline-size: 44px; block-size: 44px; }
+  .is-gmh .gf-cars__arrow--prev { inset-inline-start: 8px; }
+  .is-gmh .gf-cars__arrow--next { inset-inline-end: 8px; }
+}
+@media (max-width: 1100px) {
+  .is-gmh .gf-cars__track { --gf-per: 2; }
+}
+@media (max-width: 900px) {
+  .is-gmh .gf-cars__head { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+  .is-gmh .gf-cars__dated { text-align: start; }
+}
+@media (max-width: 700px) {
+  .is-gmh .gf-cars { --gfc-pad: 24px; }
+  .is-gmh .gf-cars__track { --gf-per: 1; }
+  /* one card fills the shell: the arrows ride over its edges */
+  .is-gmh .gf-cars__arrow--prev { inset-inline-start: var(--sp-3); }
+  .is-gmh .gf-cars__arrow--next { inset-inline-end: var(--sp-3); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-gmh .gf-car,
+  .is-gmh .gf-car__go,
+  .is-gmh .gf-car__go .btn__arrow,
+  .is-gmh .gf-cars__arrow { transition: none; }
+}
+
+/* ---- F4. THE FOUR STEPS — cards -------------------------------------
+   Four on the bone band: a hairline, a 6px corner, a ground one step off
+   the paper, the numeral large in the barn red, the title under it.
+   4 · 2 · 1. Hover: the hairline darkens. */
+.is-gmh.is-v3 .sell__steps {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 0;                             /* CMC's rule over the row — the cards carry their own edges */
+  column-gap: clamp(var(--sp-4), 1.6vw, var(--sp-5));
+  row-gap: clamp(var(--sp-4), 1.6vw, var(--sp-5));
+  max-inline-size: none;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+/* the row sits on the shell's own edge — the same line as the warranty rule under it */
+.is-gmh.is-v3 .sell-band__inner { max-width: var(--container); padding-inline: var(--gutter); }
+.is-gmh.is-v3 .sell__steps li:first-child { padding-inline-start: var(--sp-6); }
+.is-gmh.is-v3 .sell__steps li + li { border-inline-start: 1px solid var(--bone-rule); }
+.is-gmh.is-v3 .sell__steps li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  min-block-size: 12.5rem;
+  padding: var(--sp-6);
+  background: rgb(26 20 14 / 0.035);
+  border: 1px solid var(--bone-rule);
+  border-radius: var(--r-control);
+  box-shadow: none;
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.is-gmh.is-v3 .sell__steps li:hover { border-color: rgba(26, 20, 14, 0.4); }
+.is-gmh.is-v3 .sell__step-n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 2.8vw, 3rem);
+  line-height: 1;
+  letter-spacing: var(--tr-display);
+  color: var(--accent-deep);
+}
+.is-gmh.is-v3 .sell__step-t {
+  margin-block-start: auto;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--bone-ink);
+  max-inline-size: 18ch;
+}
+@media (max-width: 900px) {
+  .is-gmh.is-v3 .sell__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .is-gmh.is-v3 .sell__steps li { min-block-size: 10rem; padding: var(--sp-5); }
+}
+@media (max-width: 520px) {
+  .is-gmh.is-v3 .sell__steps { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh.is-v3 .sell__steps li { min-block-size: 0; flex-direction: row; align-items: baseline; gap: var(--sp-5); padding: var(--sp-5); }
+  .is-gmh.is-v3 .sell__step-n { font-size: 1.75rem; }
+  .is-gmh.is-v3 .sell__step-t { margin-block-start: 0; max-inline-size: none; }
+}
+
+/* ---- F5. THE MAP, EDGE TO EDGE — then the footer ---------------------
+   The live site's own Google embed, the width of the window, loaded
+   lazily (it is the last thing on the page). Filtered into the page's
+   dark so it reads as one ground with the footer under it. Then the
+   footer: the badge, the address and the ways to reach the door, the
+   six routes, the hours — four columns with air between them — and one
+   legal line. */
+.is-gmh .gf-map {
+  position: relative;
+  block-size: clamp(300px, 34vw, 540px);
+  background: var(--bg-raised);
+  border-block: 1px solid var(--rule);
+}
+.is-gmh .gf-map__frame {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  border: 0;
+  filter: grayscale(1) invert(0.9) contrast(0.9);
+}
+@media (max-width: 760px) {
+  .is-gmh .gf-map { block-size: 330px; }
+}
+
+.is-gmh .gf-foot {
+  padding-block: clamp(var(--sp-8), 6vw, var(--sp-10)) clamp(var(--sp-6), 4vw, var(--sp-7));
+  border-block-start: 0;
+}
+.is-gmh .gf-foot__grid {
+  display: grid;
+  /* the address column is sized so its two lines never break inside themselves */
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 1.15fr) minmax(0, 0.7fr) minmax(14rem, 1fr);
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  row-gap: var(--sp-8);
+  align-items: start;
+}
+.is-gmh .gf-foot__mark .gmh-mark__badge { block-size: clamp(120px, 11vw, 160px); inline-size: auto; }
+.is-gmh .gf-foot__h { margin: 0 0 var(--sp-4); color: var(--ink-3); }
+.is-gmh .gf-foot__addr {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.6vw, 1.625rem);
+  white-space: nowrap;
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gf-foot__reach { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-3); margin: var(--sp-5) 0 0; }
+.is-gmh .gf-foot__reach a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-label);
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  transition: color var(--dur-1) var(--ease-out);
+}
+.is-gmh .gf-foot__reach a:hover { color: var(--ink); }
+.is-gmh .gf-foot__reach a .btn__arrow { transition: translate var(--dur-2) var(--ease-out); }
+.is-gmh .gf-foot__reach a:hover .btn__arrow { translate: 2px -2px; }
+.is-gmh .gf-foot__nav { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+.is-gmh .gf-foot__nav a { font-family: var(--font-label); font-size: 0.9375rem; color: var(--ink-2); transition: color var(--dur-1) var(--ease-out); }
+.is-gmh .gf-foot__nav a:hover { color: var(--ink); }
+.is-gmh .gf-foot__hours { margin: 0; }
+.is-gmh .gf-foot__hours > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  border-block-start: 1px solid var(--rule);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-variant-numeric: tabular-nums;
+}
+.is-gmh .gf-foot__hours > div:last-child { border-block-end: 1px solid var(--rule); }
+.is-gmh .gf-foot__hours dt { color: var(--ink-2); }
+.is-gmh .gf-foot__hours dd { margin: 0; color: var(--ink); }
+.is-gmh .gf-foot__base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4) var(--sp-6);
+  margin-block-start: clamp(var(--sp-8), 6vw, var(--sp-9));
+  padding-block-start: var(--sp-5);
+  border-block-start: 1px solid var(--rule);
+}
+.is-gmh .gf-foot__base .foot__socials { margin: 0; padding: 0; border: 0; }
+.is-gmh .gf-foot__legal { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); margin: 0; }
+.is-gmh .gf-foot__legal p { margin: 0; font-size: var(--t-micro); color: var(--ink-3); }
+@media (max-width: 1200px) {
+  .is-gmh .gf-foot__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .is-gmh .gf-foot__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-7); }
+  .is-gmh .gf-foot__mark .gmh-mark__badge { block-size: 112px; }
+}
+
+/* ---- F6. No persistent underlines ----------------------------------
+   Links change colour, move an arrow or brighten. The reviews link,
+   the shipping quotes, the haus quote — none carry a line. */
+.is-gmh a { text-decoration: none; }
+.is-gmh a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ============================================================
+   CARRIED FROM geneva.css (v2) — unchanged below this line
+   ============================================================ */
+
+/* ---- 3. Dated figures (CP5) --------------------------------------- */
+.is-gmh .gmh-dated {
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  line-height: var(--lh-label);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.is-gmh .gmh-dated--stats { grid-column: 1 / -1; margin-block-start: var(--sp-5); }
+.is-gmh .gmh-dated--inv { margin-block-start: var(--sp-3); }
+
+/* Measured on the render (glyph core, p5): the date inside the stage's
+   "In stock" pill was 4.29:1 in --ink-2 over the pill's fill — under the
+   4.5 a 14px line owes. Full ink inside the pill. */
+.is-gmh .justin .gmh-dated { color: var(--ink); }
+
+/* The warranty eyebrow measured 2.16:1 — a pale red on bone. The
+   accent on bone is only allowed as text at its deep step (7.18:1). */
+.is-gmh .gmh-warranty .warranty__eyebrow { color: var(--accent-deep); opacity: 1; }
+/* The pale red was not the colour: CMC sets `.warranty__eyebrow span
+   { opacity: .5 }` for its "Warranty · Protection" pair with dot
+   separators. Geneva's eyebrow is one word in one span, so the span
+   inherited a half-opacity meant for a separator. */
+.is-gmh .gmh-warranty .warranty__eyebrow span { opacity: 1; margin-inline: 0; }
+
+/* (The visible-placeholder style lived here. Removed 2026-09-10 with the
+   placeholders themselves — nothing further is expected from the client.) */
+
+
+/* ---- 4. SHIPPING — the door, the map, three buyers -----------------
+   The band sizes to its content (so it is NOT pinned — CMC's .brk is
+   sticky at exactly 100svh, and a box taller than the window never
+   shows its own foot while stuck). Copy at the left with the action
+   under it, the map at the right; under both, three cards — the buyers'
+   own sentences about buying from far away. */
+.is-gmh .gmh-ship { position: relative; block-size: auto; min-block-size: 0; overflow: clip; }
+.is-gmh .gmh-ship .brk__frame {
+  position: relative;
+  inset: auto;
+  block-size: auto;
+  min-block-size: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-areas: "copy map" "cards cards";
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  row-gap: clamp(var(--sp-8), 6vw, var(--sp-9));
+  align-items: center;
+  max-inline-size: var(--maxw);
+  margin-inline: auto;
+  padding-block: clamp(var(--sp-9), 9vw, var(--sp-11)) clamp(var(--sp-9), 8vw, var(--sp-10));
+  padding-inline: var(--pad);
+}
+.is-gmh .gmh-ship .brk__copy { grid-area: copy; block-size: auto; padding: 0; text-align: start; align-items: flex-start; }
+.is-gmh .gmh-ship .brk__lede { max-inline-size: 34rem; margin-inline: 0; }
+.is-gmh .gmh-ship__cta { display: flex; margin-block-start: var(--sp-7); }
+.is-gmh .gmh-ship .brk__eyebrow,
+.is-gmh .gmh-ship .brk__title .ttl-line,
+.is-gmh .gmh-ship .brk__lede,
+.is-gmh .gmh-ship .brk__cta { animation: none; }
+
+/* THE MAP. The lower 48 (us-atlas 3.0.1, Albers), the door in Burlington,
+   Chicago for scale, and three hairlines leaving the door for three
+   points of the country — drawn, not stated: no destination is named,
+   because none was supplied (CP7). Labels are HTML over the SVG so they
+   hold the 14px floor at every width. */
+.is-gmh .gmh-map { grid-area: map; position: relative; margin: 0; align-self: center; }
+.is-gmh .gmh-map__svg { display: block; inline-size: 100%; block-size: auto; overflow: visible; }
+.is-gmh .gmh-map__land { fill: var(--bg-raised); stroke: var(--rule-strong); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.is-gmh .gmh-map__borders { fill: none; stroke: var(--rule); stroke-width: 0.75; vector-effect: non-scaling-stroke; }
+.is-gmh .gmh-map__pin { fill: var(--ink); }
+.is-gmh .gmh-map__halo { fill: none; stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.is-gmh .gmh-map__city { fill: var(--ink-2); }
+.is-gmh .gmh-map__route {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.85;
+  /* no non-scaling-stroke here: with it Safari measures the dash in
+     screen units and ignores pathLength — the line would never draw */
+}
+.is-gmh .gmh-map__stop { fill: var(--bg); stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.is-gmh .gmh-map__label {
+  position: absolute;
+  inset-inline-start: var(--x);
+  inset-block-start: var(--y);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  line-height: 1.2;
+  color: var(--ink-2);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.is-gmh .gmh-map__label--pin { color: var(--ink); font-weight: 500; transform: translate(calc(-100% - var(--sp-4)), -50%); }
+.is-gmh .gmh-map__label--city { transform: translate(var(--sp-3), 10%); }
+/* the tag: a small plate on the page's ground, a hairline, "Delivered" */
+.is-gmh .gmh-map__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-control);
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 500;
+  transform: translate(var(--dx, 14px), calc(-50% + var(--dy, 0px)));
+}
+.is-gmh .gmh-map__tag i { font-style: normal; font-weight: 400; color: var(--ink-2); }
+.is-gmh .gmh-map__tag i::before { content: "\00b7"; margin-inline: 0.45em; color: var(--ink-3); }
+.is-gmh .gmh-map__tag::before {
+  content: "";
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.is-gmh .gmh-map__cap { margin-block-start: var(--sp-4); font-family: var(--font-label); font-size: var(--t-micro); color: var(--ink-2); }
+
+/* ---- 4c. THE ROUTES — the page's one signature move ----------------
+   Genjutsu cast, css-native. From the moment the map is 60% in view
+   (main-final.js arms it and sets is-go) the six routes take turns: a
+   hairline leaves the door and draws itself to its city, decelerating,
+   1.6s, and as it lands a stop and the tag appear; it holds, then thins
+   away as the routes after it take the map. Each route starts halfway
+   through the one before, and after the sixth the first goes again:
+   one cycle is 4.8s and it runs while the map is on screen. At any
+   moment two or three routes are on the map, never a burst. Without
+   script, or under reduced motion, it is simply the finished map: six
+   lines, six tags, still (MJ5, MJ9). */
+.is-gmh .gmh-map { --gmh-draw: 1600ms; --gmh-cycle: calc(var(--gmh-draw) * 3); }   /* six routes at half-overlap = three draws */
+@keyframes gmh-route {
+  0%     { stroke-dashoffset: 1; opacity: 0.85; }
+  33.3%  { stroke-dashoffset: 0; opacity: 0.85; }   /* drawn: one --gmh-draw */
+  66%    { stroke-dashoffset: 0; opacity: 0.85; }   /* holds while the next two draw */
+  80%    { stroke-dashoffset: 0; opacity: 0; }      /* thins away */
+  80.1%  { stroke-dashoffset: 1; opacity: 0; }      /* reset, unseen */
+  100%   { stroke-dashoffset: 1; opacity: 0; }
+}
+@keyframes gmh-land {
+  0%, 24% { opacity: 0; translate: 0 6px; }
+  30%     { opacity: 1; translate: 0 0; }           /* lands as the line arrives */
+  66%     { opacity: 1; translate: 0 0; }
+  78%     { opacity: 0; translate: 0 0; }
+  100%    { opacity: 0; translate: 0 6px; }
+}
+@keyframes gmh-stop {
+  0%, 24% { opacity: 0; }
+  30%     { opacity: 1; }
+  66%     { opacity: 1; }
+  78%     { opacity: 0; }
+  100%    { opacity: 0; }
+}
+.is-gmh .gmh-map.is-armed .gmh-map__route { stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+.is-gmh .gmh-map.is-armed .gmh-map__stop,
+.is-gmh .gmh-map.is-armed .gmh-map__tag { opacity: 0; }
+.is-gmh .gmh-map.is-go .gmh-map__route,
+.is-gmh .gmh-map.is-go .gmh-map__stop,
+.is-gmh .gmh-map.is-go .gmh-map__tag {
+  animation-duration: var(--gmh-cycle);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: calc(var(--gmh-draw) / 2 * var(--i, 0));
+}
+.is-gmh .gmh-map.is-go .gmh-map__route { animation-name: gmh-route; animation-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1); }
+.is-gmh .gmh-map.is-go .gmh-map__stop  { animation-name: gmh-stop; }
+.is-gmh .gmh-map.is-go .gmh-map__tag   { animation-name: gmh-land; }
+
+/* THE THREE CARDS — the buyers' own words, verbatim from the reviews
+   below. The same card language as the featured inventory: a raised
+   ground, a 5px corner, no border. */
+.is-gmh .gmh-quotes {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(var(--sp-4), 1.6vw, var(--sp-5));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.is-gmh .gmh-stop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  margin: 0;
+  padding: clamp(24px, 2vw, 32px);
+  border-radius: 5px;
+  background: var(--bg-raised);
+}
+.is-gmh .gmh-stop__q {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.35vw, 1.375rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: var(--tr-serif);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.is-gmh .gmh-stop__who {
+  margin: auto 0 0;
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+@media (max-width: 1100px) {
+  .is-gmh .gmh-quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .is-gmh .gmh-stop:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .is-gmh .gmh-ship .brk__frame {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "map" "cards";
+    padding-block: var(--sp-9) var(--sp-10);
+    row-gap: var(--sp-7);
+  }
+  .is-gmh .gmh-map__tag { --dx: 10px; }
+}
+@media (max-width: 640px) {
+  .is-gmh .gmh-quotes { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh .gmh-stop:last-child { grid-column: auto; }
+  .is-gmh .gmh-map__label--city { display: none; }
+  /* six tags on a 340px map are too many words: the stops stay, the tags go */
+  .is-gmh .gmh-map__tag { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-gmh .gmh-map.is-go .gmh-map__route,
+  .is-gmh .gmh-map.is-go .gmh-map__stop,
+  .is-gmh .gmh-map.is-go .gmh-map__tag,
+  .is-gmh .gmh-map.is-armed .gmh-map__route,
+  .is-gmh .gmh-map.is-armed .gmh-map__stop,
+  .is-gmh .gmh-map.is-armed .gmh-map__tag { animation: none; opacity: 1; stroke-dashoffset: 0; translate: none; }
+  .is-gmh .gmh-map.is-armed .gmh-map__route { opacity: 0.85; }
+}
+
+/* ---- 6. Hero crops — decided per slide, per format (C22) --------- */
+/* x 70%: .hero__media is 5:4 against a 4:3 frame, so cover trims 96px of
+   width at 1440. At 58% the navy 997's tail touched the right edge (hero
+   gate: declared subject clipped by 10px). Both 997s are whole only between
+   68% and 76%; 70% leaves the navy car 13px of air and the grey nose 6px. */
+.is-gmh .gmh-hero__haus { object-position: 70% 62%; }
+/* The 993 frame was tried as a second slide and recorded UNSUITABLE for
+   this hero: 4:3, the car 53% of the frame's width, and no crop in a
+   16:10 window keeps the whole car AND clears the claim column. Widening
+   it to 124% brought the nose to the claim's edge and pushed the image
+   past .hero__media, which does not clip. It now leads the stage. */
+@media (max-width: 900px) {
+  .is-gmh .gmh-hero__haus { object-position: 80% 60%; }
+  .is-gmh .gmh-hero__993  { object-position: 36% 76%; }
+}
+
+
+/* ---- 7. The door — one showroom, one open panel ------------------ */
+.is-gmh .gmh-door__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  align-items: start;
+  margin-block-start: var(--sp-8);
+}
+.is-gmh .gmh-door__addr {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gmh-door__hours { margin: var(--sp-6) 0 0; }
+.is-gmh .gmh-door__hours > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-3);
+  border-block-start: 1px solid var(--rule);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-variant-numeric: tabular-nums;
+}
+.is-gmh .gmh-door__hours dt { color: var(--ink-2); }
+.is-gmh .gmh-door__hours dd { margin: 0; color: var(--ink); }
+.is-gmh .gmh-door__acts { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-block-start: var(--sp-6); }
+.is-gmh .gmh-door__mail { margin: var(--sp-5) 0 0; font-family: var(--font-label); font-size: var(--t-micro); }
+.is-gmh .gmh-door__mail a { color: var(--ink); text-decoration: none; }
+.is-gmh .gmh-door__mail a:hover { color: var(--ink-2); }
+
+.is-gmh .gmh-news { margin-block-start: var(--sp-8); padding-block-start: var(--sp-6); border-block-start: 1px solid var(--rule); }
+.is-gmh .gmh-news__label { margin: 0 0 var(--sp-3); color: var(--ink-2); }
+.is-gmh .gmh-news__row { display: flex; gap: var(--sp-3); }
+.is-gmh .gmh-news__field {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  block-size: var(--control-h-primary);
+  padding-inline: var(--sp-4);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-control);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+}
+.is-gmh .gmh-news__field::placeholder { color: var(--ink-2); opacity: 1; }
+.is-gmh .gmh-news__field:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+@media (max-width: 900px) {
+  .is-gmh .gmh-door__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* ---- 8. Reviews are not links here (no per-review source URL) ----
+   Cards keep their own height. Twelve verbatim reviews run from two
+   lines to twenty; stretched to the longest, the short ones become
+   empty boxes. Solved in the layout, not by trimming a customer. */
+.is-gmh .rv__card { display: flex; }
+.is-gmh .revs__list { align-items: start; }
+.is-gmh .rv { align-self: start; }
+
+
+/* ---- 10. Sell — the light band, the handover as its own frame ----
+   CMC's composition put the copy on an empty lit wall inside the
+   photograph. Geneva's frame is a busy garage with two people in it;
+   type on it measured unreadable. So the band is the bone ground, the
+   photograph stands beside the copy, and CMC's clip-shaped copy tab is
+   switched off. */
+.is-gmh .sell__bg { display: none; }
+.is-gmh .sell { background: var(--bone); }
+.is-gmh .sell__grid {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  align-items: center;
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  padding-block-start: clamp(var(--sp-9), 7vw, var(--sp-10));
+}
+.is-gmh .sell__mobile {
+  display: block;
+  grid-column: 1;
+  grid-row: 1;
+  order: 0;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 55%;
+  margin: 0;
+  border-radius: var(--r-panel);
+}
+.is-gmh .sell__copy {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+  clip-path: none;
+  padding: 0;
+  max-width: 32rem;
+  background: none;
+}
+.is-gmh .sell__title { color: var(--bone-ink); }
+.is-gmh .sell__lede,
+.is-gmh .sell__lede:not(#x) { color: var(--bone-ink-2); }
+.is-gmh .sell__step-t { font-size: var(--t-micro); }
+@media (max-width: 900px) {
+  .is-gmh .sell__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-6); padding-inline: var(--gutter); }
+  .is-gmh .sell__mobile { grid-row: 1; width: 100%; margin-inline: 0; }
+  .is-gmh .sell__copy { grid-column: 1; grid-row: 2; }
+}
+
+/* ---- 11. Warranty — compact, because its content is ------------
+   One sentence and a placeholder do not fill a 46rem band, and
+   stretching them to would be space with no job (C4). Two columns:
+   the statement, then what is known and the one action. */
+.is-gmh .gmh-warranty .warranty__band {
+  min-block-size: 0;
+  padding-block: clamp(var(--sp-9), 7vw, var(--sp-10)) clamp(var(--sp-10), 9vw, var(--sp-11));
+}
+.is-gmh .gmh-warranty .warranty__copy {
+  max-inline-size: none;
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  align-items: start;
+}
+.is-gmh .gmh-warranty .warranty__eyebrow { grid-column: 1; grid-row: 1; }
+.is-gmh .gmh-warranty .warranty__title { grid-column: 1; grid-row: 2 / span 3; margin: 0; }
+.is-gmh .gmh-warranty .warranty__lede { grid-column: 2; grid-row: 2; margin: 0; }
+.is-gmh .gmh-warranty .gmh-todo { grid-column: 2; grid-row: 3; justify-self: start; margin-block-start: var(--sp-5); }
+.is-gmh .gmh-warranty .warranty__actions { grid-column: 2; grid-row: 4; margin-block-start: var(--sp-6); }
+.is-gmh .gmh-warranty .warranty__actions .btn { flex: 0 0 auto; }
+@media (max-width: 900px) {
+  .is-gmh .gmh-warranty .warranty__copy { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh .gmh-warranty .warranty__title,
+  .is-gmh .gmh-warranty .warranty__lede,
+  .is-gmh .gmh-warranty .gmh-todo,
+  .is-gmh .gmh-warranty .warranty__actions { grid-column: 1; grid-row: auto; }
+  .is-gmh .gmh-warranty .warranty__lede { margin-block-start: var(--sp-5); }
+}
+
+
+/* ---- 13d. The sell steps on a phone -------------------------------
+   CMC pulls the step plates up across the bone/dark seam
+   (.is-v3 .sell-band, ~178px negative margin) and pulls Selection up
+   under them (--story-overlap). That is sized for ONE row of plates. With
+   four steps they are 2×2 on a phone and the second row landed on the
+   Selection headline. Below 900px the plates sit wholly on the bone band
+   and Selection is released — the straddle is a one-row device. */
+@media (max-width: 900px) {
+  .is-gmh.is-v3 .sell__grid { padding-block-end: var(--sp-6); }
+  .is-gmh.is-v3 .sell-band {
+    margin-block-start: 0;
+    background: var(--bone);
+    padding-block-end: var(--sp-8);
+  }
+}
+
+/* ---- 13e. The hero on a phone — authored, not inherited (C12, C22) --
+   CMC's phone hero keeps the photograph as a full-section ground and sets
+   the type over it from the header down. Here that put the claim across
+   the building's door and left the lower third empty — and a 4:3 frame in
+   a portrait window cannot be moved vertically at all. So on a phone the
+   photograph is its own field at the top and the type stands below it on
+   the ground. Crop: the navy 997 whole at the right; the grey 997's tail
+   leaves at the left edge, stated (it is the price of 4:3 in portrait). */
+@media (max-width: 760px) {
+  .is-gmh .hero { display: flex; flex-direction: column; min-height: 100svh; }
+  /* 56svh, not 52: with the one-line lede the stack ended ~40px above the
+     fold and left bare ground on the first screen (A1 88.9%). The car gets
+     the room instead. */
+  .is-gmh .hero__media { position: relative; inset: auto; flex: none; block-size: 56svh; }
+  .is-gmh .gmh-hero__haus { object-position: 100% 58%; }
+  .is-gmh .hero__foot { padding-block: var(--sp-5) var(--sp-8); gap: var(--sp-6); }
+  .is-gmh .hero__meter { display: flex; }
+}
+
+
+/* ---- 15a. HERO — the name between the two 911s ------------------
+   Centred, as the live site sets it, on the asphalt the two cars leave
+   empty — the pair frames the name the way the badge frames its
+   lettering. One line on a desktop; inline-block so the inherited
+   hero-in transforms still apply per line. */
+.is-gmh .hero__foot { justify-content: center; }
+.is-gmh .hero__claim {
+  flex: 0 1 auto;
+  max-width: min(72rem, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.is-gmh .hero .claim {
+  font-size: clamp(3rem, 6.4vw, 6.5rem);
+  line-height: var(--lh-display);
+  font-weight: 700;
+  letter-spacing: var(--tr-claim);
+  white-space: nowrap;
+}
+.is-gmh .hero .claim__line { display: inline-block; }
+.is-gmh .hero .lede { max-inline-size: 38rem; margin-inline: auto; }
+/* The whole block stands BELOW the line of the two cars (hero gate: at 7vw
+   and a two-line lede its box ran 8.7% into the navy 997). One-line lede,
+   a 6.4vw name and a --sp-7 foot put its top ~23px under the bumpers. */
+@media (min-width: 761px) {
+  .is-gmh .hero__foot { inset-block-end: var(--sp-7); }
+}
+.is-gmh .hero .cta-row { justify-content: center; }
+/* The claim's ground, centred like the claim: one ramp up from the
+   bottom edge, built from --bg-rgb so the seam cannot drift, and a short
+   one down from the bar. CMC's four layers were shaped round a
+   lower-left claim that is no longer there. */
+.is-gmh .hero__scrim {
+  background:
+    linear-gradient(to top,
+      rgb(var(--bg-rgb) / 1) 0%,
+      rgb(var(--bg-rgb) / 0.9) 14%,
+      rgb(var(--bg-rgb) / 0.64) 30%,
+      rgb(var(--bg-rgb) / 0.22) 46%,
+      rgb(var(--bg-rgb) / 0) 58%),
+    linear-gradient(to bottom,
+      rgb(var(--bg-rgb) / 0.5) 0%,
+      rgb(var(--bg-rgb) / 0) 16%);
+}
+@media (max-width: 760px) {
+  .is-gmh .hero .claim { white-space: normal; font-size: clamp(2.75rem, 12.5vw, 3.75rem); }
+  .is-gmh .hero .claim__line { display: block; }
+  /* the stack is the column, full width — centring its lines must not
+     shrink the block to its longest line (A1 counted 88.9% when it did) */
+  .is-gmh .hero__claim { max-width: 100%; flex: 1 1 auto; inline-size: 100%; }
+}
+
+
+/* ---- 15c. THE FOUR TILES — four doors under one lintel ----------- */
+/* bottom kept short: Selection's own top padding is the break between them */
+.is-gmh .gmh-tiles { padding-block: var(--sp-8) var(--sp-6); }
+.is-gmh .gmh-tiles__inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid var(--rule-strong);
+}
+.is-gmh .gmh-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  min-block-size: 15rem;
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  border-inline-start: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+}
+.is-gmh .gmh-tile:first-child { border-inline-start: 0; padding-inline-start: 0; }
+.is-gmh .gmh-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-gmh .gmh-tile__k { color: var(--ink-2); }
+.is-gmh .gmh-tile__t {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-display);
+}
+.is-gmh .gmh-tile__p { max-inline-size: 26ch; font-size: var(--t-body); line-height: var(--lh-body); color: var(--ink-2); }
+.is-gmh .gmh-tile__go {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-block-start: auto;
+  padding-block-start: var(--sp-5);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+}
+.is-gmh .gmh-tile__go .btn__arrow { transition: translate var(--dur-2) var(--ease-out); }
+.is-gmh .gmh-tile:hover .gmh-tile__go .btn__arrow { translate: var(--sp-1) 0; }
+.is-gmh .gmh-tile:hover .gmh-tile__t { color: var(--ink); }
+.is-gmh .gmh-tile:hover .gmh-tile__go { color: var(--ink); }
+@media (max-width: 900px) {
+  .is-gmh .gmh-tiles__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .is-gmh .gmh-tile { min-block-size: 0; padding-inline: var(--sp-5); }
+  .is-gmh .gmh-tile:nth-child(odd) { border-inline-start: 0; padding-inline-start: 0; }
+  .is-gmh .gmh-tile:nth-child(n+3) { border-block-start: 1px solid var(--rule); }
+}
+@media (max-width: 560px) {
+  .is-gmh .gmh-tiles__inner { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh .gmh-tile,
+  .is-gmh .gmh-tile:nth-child(odd) { border-inline-start: 0; padding-inline: 0; }
+  .is-gmh .gmh-tile + .gmh-tile { border-block-start: 1px solid var(--rule); }
+}
+
+/* ---- 15d. SELECTION · REPUTATION · PROCESS · SERVICE, opened ------ */
+/* bottom --sp-9, not --sp-11: the shipping band below opens on its own
+   --sp-10, and the two stacked to ~320px of bare ground (measured) */
+.is-gmh .gmh-haus { padding-block: var(--sp-9) var(--sp-9); }
+.is-gmh .gmh-haus__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  align-items: start;
+}
+.is-gmh .gmh-haus__head { position: sticky; inset-block-start: calc(var(--header-h) + var(--sp-7)); }
+.is-gmh .gmh-haus__eyebrow { margin: 0; color: var(--ink-2); }
+.is-gmh .gmh-haus__title {
+  margin: var(--sp-3) 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.75rem);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gmh-haus__title .ttl-line { display: block; }
+.is-gmh .gmh-haus__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--sp-8);
+  row-gap: var(--sp-9);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.is-gmh .gmh-haus__item { padding-block-start: var(--sp-5); border-block-start: 1px solid var(--rule-strong); }
+.is-gmh .gmh-haus__k { margin: 0; color: var(--ink-2); }
+.is-gmh .gmh-haus__t {
+  margin: var(--sp-2) 0 var(--sp-4);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+  line-height: var(--lh-head);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gmh-haus__p { margin: 0; max-inline-size: 34ch; font-size: var(--t-body); line-height: var(--lh-body); color: var(--ink-2); }
+.is-gmh .gmh-haus .gmh-dated { margin: var(--sp-4) 0 0; }
+.is-gmh .gmh-haus__q { margin: var(--sp-5) 0 0; }
+.is-gmh .gmh-haus__q p {
+  margin: 0;
+  max-inline-size: 28ch;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: var(--lh-head);
+  color: var(--ink);
+}
+.is-gmh .gmh-haus__q cite {
+  display: block;
+  margin-block-start: var(--sp-2);
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  font-style: normal;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+@media (max-width: 900px) {
+  .is-gmh .gmh-haus__inner { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-8); }
+  .is-gmh .gmh-haus__head { position: static; }
+}
+@media (max-width: 640px) {
+  .is-gmh .gmh-haus__list { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-7); }
+}
+
+/* ---- 15e. THE GABLE — Geneva's section edge -----------------------
+   CMC turns its light band in with a soft S-curve shelf. Geneva's badge
+   is a barn, and the building's doors stand under timber gables, so the
+   bone chapter opens under that roofline instead: one shallow gable,
+   used once, where the page turns light. */
+.is-gmh .sell {
+  --gable: clamp(28px, 3.4vw, 60px);
+  border-radius: 0;
+  clip-path: polygon(0 var(--gable), 50% 0, 100% var(--gable), 100% 100%, 0 100%);
+}
+.is-gmh .sell__grid { padding-block-end: 0; }
+/* Sell, its steps and Warranty are ONE bone chapter. CMC pulled the step
+   plates across a bone/dark seam into a Selection chapter that is no
+   longer here; they sit on the bone now, and Warranty follows under a
+   hairline rather than under a second shaped edge. */
+.is-gmh.is-v3 .sell-band { margin-block-start: 0; background: var(--bone); padding-block: var(--sp-8) var(--sp-9); }
+.is-gmh .warranty { clip-path: none; border-radius: 0; margin-block-start: 0; }
+.is-gmh .gmh-warranty .warranty__band { padding-block-start: 0; }
+.is-gmh .gmh-warranty .warranty__copy { padding-block-start: var(--sp-8); border-block-start: 1px solid var(--bone-rule); }
+
+
+/* ---- 15g. Reviews — open, not carded ------------------------------ */
+.is-gmh.is-v3 .rv__card {
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5) 0 0;
+  background: none;
+  border: 0;
+  border-block-start: 1px solid var(--rule-strong);
+  border-radius: 0;
+  box-shadow: none;
+}
+.is-gmh .rv__avatar { display: none; }
+.is-gmh .rv__stars { order: 1; }
+.is-gmh .rv__text { order: 2; }
+.is-gmh .rv__head { order: 3; }
+
+/* ---- 15h. Newsletter — its own band, as on the live site ---------- */
+.is-gmh .gmh-newsband { padding-block: var(--sp-8) var(--sp-9); background: var(--bg-sunk); border-block: 1px solid var(--rule); }
+.is-gmh .gmh-newsband__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  align-items: end;
+}
+.is-gmh .gmh-newsband__k { margin: 0; color: var(--ink-2); }
+.is-gmh .gmh-newsband__t {
+  margin: var(--sp-2) 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tr-display);
+  color: var(--ink);
+}
+.is-gmh .gmh-newsband .gmh-news { margin: 0; padding: 0; border: 0; }
+@media (max-width: 900px) {
+  .is-gmh .gmh-newsband__inner { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-6); }
+}
+
+
+/* ---- 15j. The floating "Sell your car" — the live site's, counted
+   as a persistent mass (U10) and stood down where it would repeat. -- */
+.is-gmh .gmh-float {
+  position: fixed;
+  z-index: 30;
+  inset-inline-end: var(--pad);
+  inset-block-end: var(--sp-5);
+  transition: opacity var(--dur-2) var(--ease-out), translate var(--dur-2) var(--ease-out), visibility 0s linear 0s;
+}
+.is-gmh .gmh-float[data-hidden] {
+  opacity: 0;
+  translate: 0 var(--sp-3);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-in), translate var(--dur-2) var(--ease-in), visibility 0s linear var(--dur-2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-gmh .gmh-float,
+  .is-gmh .gmh-float[data-hidden] { transition: none; }
+}
+
+
+/* ============================================================
+   F7. THE HERO FITS ANY SCREEN — one screen, on every screen
+   ============================================================
+   The hero is exactly one viewport tall everywhere. On a desktop the
+   type stands higher off the bottom edge than v2 set it. On a phone v2
+   stacked the photograph over the type and let the block run past the
+   first screen; here the photograph is the whole ground, the type sits
+   on its lower third (the asphalt, darkened by the scrim), and nothing
+   is below the fold. (Written after the carried 13e / 15a rules, which
+   it overrides.) */
+.is-gmh .hero { height: 100svh; min-height: 0; }
+@media (min-width: 901px) {
+  .is-gmh .hero__foot { inset-block-end: clamp(var(--sp-8), 11vh, var(--sp-10)); }
+}
+/* CMC puts the foot in flow under a header's worth of padding below
+   900px (its search rail needed the room); the finale has no rail, so
+   the foot is anchored to the bottom edge at every width */
+@media (max-width: 900px) {
+  .is-gmh .hero { display: block; min-height: 0; height: 100svh; }
+  .is-gmh .hero__media { position: absolute; inset: 0; block-size: auto; flex: none; }
+  .is-gmh .gmh-hero__haus { object-position: 66% 50%; transform: none; }
+  /* the type stands over the navy car here, so the floor reaches higher */
+  .is-gmh .hero__scrim {
+    display: block;
+    background:
+      linear-gradient(to top,
+        rgb(var(--bg-rgb) / 1) 0%,
+        rgb(var(--bg-rgb) / 0.9) 22%,
+        rgb(var(--bg-rgb) / 0.62) 42%,
+        rgb(var(--bg-rgb) / 0.22) 60%,
+        rgb(var(--bg-rgb) / 0) 74%),
+      linear-gradient(to bottom,
+        rgb(var(--bg-rgb) / 0.7) 0%,
+        rgb(var(--bg-rgb) / 0.3) 14%,
+        rgb(var(--bg-rgb) / 0) 30%);
+  }
+  .is-gmh .hero__foot {
+    position: absolute;
+    inset-inline: var(--gutter);
+    inset-block-end: clamp(var(--sp-6), 6vh, var(--sp-8));
+    padding: 0;
+    gap: 0;
+  }
+  .is-gmh .hero .claim { font-size: clamp(2.5rem, 11vw, 3.5rem); }
+  .is-gmh .hero .lede { font-size: 1rem; }
+  .is-gmh .hero .cta-row { gap: var(--sp-3); }
+}
+
+/* ---- F9. Warranty — the action under its sentence ------------------
+   v2 left the placeholder's grid row between the lede and the button;
+   the button now follows the sentence at a paragraph's distance. */
+.is-gmh .gmh-warranty .warranty__lede:not(#x) { margin: 0; }              /* CMC gave the lede a 49px foot, at id specificity */
+.is-gmh .gmh-warranty .warranty__actions { grid-row: 3; margin-block-start: var(--sp-5); }
+.is-gmh .gmh-warranty .warranty__copy { align-items: start; }
+
+/* ---- F10. Reviews — Geneva's own ground, not CMC's bloom ------------
+   CMC lights its chapters with five blue radial lobes under a 44px blur
+   ([data-bloom]). That is CMC's light. Here the reviews sit on one warm
+   ground: the page's black settling to its wood-dark, and a single soft
+   wash of the badge's wood tone behind the heading — one radial, no
+   blur, no blue. */
+.is-gmh .revs[data-bloom]::before { content: none; }
+.is-gmh .revs {
+  background:
+    radial-gradient(70% 46% at 22% 0%, rgb(120 82 44 / 0.22), transparent 70%),
+    linear-gradient(to bottom, var(--bg-black) 0%, var(--bg) 100%);
+  border-block-start: 1px solid var(--rule);
+}
+
+/* ---- F11. The hero's top ramp — strong, over the image --------------
+   (After the carried 15a scrim, which it overrides; the F2 version sat
+   before it and lost.) The finale frame has a bright sky and the badge
+   on the wall behind the header's own badge: the top third darkens
+   firmly so the header reads and the wall's badge recedes. The bottom
+   ramp is v2's, for the type. */
+.is-gmh .hero__scrim {
+  background:
+    linear-gradient(to top,
+      rgb(var(--bg-rgb) / 1) 0%,
+      rgb(var(--bg-rgb) / 0.9) 14%,
+      rgb(var(--bg-rgb) / 0.64) 30%,
+      rgb(var(--bg-rgb) / 0.22) 46%,
+      rgb(var(--bg-rgb) / 0) 58%),
+    linear-gradient(to bottom,
+      rgb(var(--bg-rgb) / 0.96) 0%,
+      rgb(var(--bg-rgb) / 0.82) 12%,
+      rgb(var(--bg-rgb) / 0.54) 26%,
+      rgb(var(--bg-rgb) / 0.24) 40%,
+      rgb(var(--bg-rgb) / 0) 56%);
+}
+
+/* ---- F13. THE FOUR TILES — four plates under one lintel ---------------
+   (After the carried 15c, which it overrides.) The reference Alex sent
+   2026-09-11: a lintel line with the section's name at the left and the
+   client's own tagline at the right; four dark plates, each with a
+   circled glyph in the barn red, an eyebrow, the title in the slab, one
+   sentence, and a link underlined in the same red. */
+.is-gmh .gmh-tiles { padding-block: clamp(var(--sp-8), 6vw, var(--sp-9)) clamp(var(--sp-7), 5vw, var(--sp-8)); }
+.is-gmh .gmh-tiles__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-block-end: var(--sp-6);
+}
+.is-gmh .gmh-tiles__k { color: var(--ink-3); letter-spacing: 0.14em; font-size: 0.75rem; white-space: nowrap; }
+.is-gmh .gmh-tiles__k b { font-weight: 500; color: var(--ink-2); }
+.is-gmh .gmh-tiles__rule { flex: 1 1 auto; block-size: 1px; background: var(--rule); }
+.is-gmh .gmh-tiles__inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(var(--sp-4), 1.4vw, var(--sp-5));
+  border: 0;
+}
+.is-gmh .gmh-tile,
+.is-gmh .gmh-tile:first-child,
+.is-gmh .gmh-tile:nth-child(odd),
+.is-gmh .gmh-tile:nth-child(n+3),
+.is-gmh .gmh-tile + .gmh-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  min-block-size: 0;
+  padding: clamp(24px, 2vw, 32px) clamp(24px, 2vw, 32px) clamp(24px, 2vw, 28px);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--bg) 70%, var(--bg-raised));
+  color: var(--ink);
+  transition: border-color var(--dur-2) var(--ease-out), background-color var(--dur-2) var(--ease-out);
+}
+.is-gmh .gmh-tile:hover { border-color: var(--rule-strong); background: var(--bg-raised); }
+.is-gmh .gmh-tile__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  margin-block-end: var(--sp-5);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--ink);
+}
+.is-gmh .gmh-tile__icon svg { inline-size: 20px; block-size: 20px; }
+.is-gmh .gmh-tile__k { color: var(--ink-3); font-size: 0.75rem; letter-spacing: 0.14em; }
+.is-gmh .gmh-tile__t { font-size: clamp(1.75rem, 2.3vw, 2.25rem); }
+.is-gmh .gmh-tile__p { max-inline-size: 26ch; font-size: 0.9375rem; color: var(--ink-2); }
+.is-gmh .gmh-tile__go {
+  margin-block-start: auto;
+  padding-block-start: var(--sp-5);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+/* the link's own rule, in the red, under the words only */
+.is-gmh .gmh-tile__go > span { position: relative; padding-block-end: 6px; }
+.is-gmh .gmh-tile__go > span::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 2px;
+  background: var(--accent);
+}
+.is-gmh .gmh-tile:hover .gmh-tile__t { color: var(--ink); }
+@media (max-width: 1100px) {
+  .is-gmh .gmh-tiles__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .is-gmh .gmh-tiles__inner { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh .gmh-tiles__head .gmh-tiles__k:last-child { display: none; }
+}
+
+/* the tiles' circles carry a numeral now, in the slab */
+.is-gmh .gmh-tile__icon {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
+}
+
+/* ---- F14. THE HAUS — the statement on the image, the four answers ruled
+   (After the carried 15d, which it overrides.) The reference Alex sent
+   2026-09-11: a dark showroom frame fills the left half, faded into the
+   ground at its right and its foot; the statement stands on it, lower
+   left, with a red dash, the eyebrow and the client's own sentence under
+   it; the four answers sit at the right in a 2 x 2 ruled by hairlines,
+   each with its red dash. A line of annotations above and below. */
+.is-gmh .gmh-dash {
+  display: inline-block;
+  inline-size: 22px;
+  block-size: 2px;
+  margin-inline-end: var(--sp-3);
+  vertical-align: middle;
+  background: var(--accent);
+}
+.is-gmh .gmh-dash--long { inline-size: 44px; margin-inline: var(--sp-3); background: var(--ink-3); block-size: 1px; }
+
+.is-gmh .gmh-haus {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: 0;
+  background: var(--bg);
+}
+.is-gmh .gmh-haus__media {
+  position: absolute;
+  inset: 0 42% 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.is-gmh .gmh-haus__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 40% 50%;
+}
+/* the ground comes back over the image on three sides: the right edge
+   into the grid, the foot under the statement, a breath at the top */
+.is-gmh .gmh-haus__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgb(var(--bg-rgb) / 0) 52%, rgb(var(--bg-rgb) / 0.86) 84%, rgb(var(--bg-rgb) / 1) 100%),
+    linear-gradient(to top, rgb(var(--bg-rgb) / 1) 0%, rgb(var(--bg-rgb) / 0.78) 16%, rgb(var(--bg-rgb) / 0.2) 42%, rgb(var(--bg-rgb) / 0) 62%),
+    linear-gradient(to bottom, rgb(var(--bg-rgb) / 1) 0%, rgb(var(--bg-rgb) / 0.55) 10%, rgb(var(--bg-rgb) / 0) 26%);
+}
+.is-gmh .gmh-haus__frame {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: clamp(640px, 82vh, 860px);
+  padding-block: var(--sp-5) var(--sp-5);
+}
+.is-gmh .gmh-haus__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-6);
+  padding-block: var(--sp-3);
+}
+.is-gmh .gmh-haus__line--top { border-block-end: 1px solid var(--rule); }
+.is-gmh .gmh-haus__line--bottom { border-block-start: 1px solid var(--rule); }
+.is-gmh .gmh-haus__note {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.is-gmh .gmh-haus__note b { font-weight: 500; color: var(--ink-2); }
+
+.is-gmh .gmh-haus__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(var(--sp-7), 5vw, var(--sp-10));
+  align-items: end;
+  padding-block: clamp(var(--sp-8), 6vw, var(--sp-9)) clamp(var(--sp-7), 5vw, var(--sp-8));
+}
+.is-gmh .gmh-haus__head { position: static; align-self: end; padding-block-end: var(--sp-2); }
+.is-gmh .gmh-haus__eyebrow { margin: 0; display: flex; align-items: center; font-size: 0.75rem; letter-spacing: 0.16em; color: var(--ink-2); }
+.is-gmh .gmh-haus__title {
+  margin: var(--sp-4) 0 0;
+  font-size: clamp(2.75rem, 5.2vw, 5rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: var(--tr-display);
+}
+.is-gmh .gmh-haus__title .ttl-line { display: block; white-space: nowrap; }
+.is-gmh .gmh-haus__sub { margin: var(--sp-5) 0 0; font-size: 0.75rem; letter-spacing: 0.16em; color: var(--ink-3); }
+
+/* the four answers: 2 x 2, ruled — one vertical hairline between the
+   columns, one horizontal between the rows, nothing around the outside */
+.is-gmh .gmh-haus__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0;
+  row-gap: 0;
+  align-self: center;
+}
+.is-gmh .gmh-haus__item {
+  padding: var(--sp-6) var(--sp-6) var(--sp-7);
+  border: 0;
+}
+.is-gmh .gmh-haus__item:nth-child(odd) { padding-inline-start: 0; }
+.is-gmh .gmh-haus__item:nth-child(even) { border-inline-start: 1px solid var(--rule-strong); }
+.is-gmh .gmh-haus__item:nth-child(n+3) { border-block-start: 1px solid var(--rule-strong); }
+.is-gmh .gmh-haus__k { margin: 0; display: flex; align-items: center; font-size: 0.75rem; letter-spacing: 0.16em; color: var(--ink-2); }
+.is-gmh .gmh-haus__t { margin: var(--sp-3) 0 var(--sp-4); font-size: clamp(1.75rem, 2.4vw, 2.5rem); }
+.is-gmh .gmh-haus__p { max-inline-size: 30ch; font-size: 0.9375rem; }
+.is-gmh .gmh-haus .gmh-dated { font-size: 0.8125rem; }
+.is-gmh .gmh-haus__q p { font-size: clamp(1.125rem, 1.4vw, 1.375rem); }
+
+@media (max-width: 1100px) {
+  .is-gmh .gmh-haus__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--sp-7); }
+  .is-gmh .gmh-haus__media { inset-inline-end: 50%; }
+  .is-gmh .gmh-haus__title { font-size: clamp(2.25rem, 4.4vw, 3.5rem); }
+  .is-gmh .gmh-haus__title .ttl-line { white-space: normal; }
+}
+@media (max-width: 900px) {
+  /* a phone: the image is the head of the chapter with the statement on
+     it; the four answers follow on the ground, one column */
+  .is-gmh .gmh-haus__media { position: relative; inset: auto; block-size: 68svh; min-block-size: 420px; }
+  .is-gmh .gmh-haus__media::after {
+    background:
+      linear-gradient(to top, rgb(var(--bg-rgb) / 1) 0%, rgb(var(--bg-rgb) / 0.8) 20%, rgb(var(--bg-rgb) / 0.2) 48%, rgb(var(--bg-rgb) / 0) 66%),
+      linear-gradient(to bottom, rgb(var(--bg-rgb) / 1) 0%, rgb(var(--bg-rgb) / 0.5) 12%, rgb(var(--bg-rgb) / 0) 28%);
+  }
+  .is-gmh .gmh-haus__frame { min-block-size: 0; padding-block: 0 var(--sp-5); }
+  .is-gmh .gmh-haus__media { block-size: 52svh; min-block-size: 360px; }
+  .is-gmh .gmh-haus__line--top { display: none; }
+  /* the whole block is pulled up over the image's fade; a negative margin
+     on the head alone shortened its grid row and the list rode over it */
+  .is-gmh .gmh-haus__inner { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-7); padding-block: 0 var(--sp-7); margin-block-start: calc(-1 * var(--sp-9)); position: relative; z-index: 2; }
+  .is-gmh .gmh-haus__head { margin: 0; }
+  .is-gmh .gmh-haus__list { grid-template-columns: minmax(0, 1fr); }
+  .is-gmh .gmh-haus__item,
+  .is-gmh .gmh-haus__item:nth-child(odd),
+  .is-gmh .gmh-haus__item:nth-child(even) { padding-inline: 0; border-inline-start: 0; }
+  .is-gmh .gmh-haus__item + .gmh-haus__item { border-block-start: 1px solid var(--rule-strong); }
+  .is-gmh .gmh-haus__item:nth-child(n+3) { border-block-start: 1px solid var(--rule-strong); }
+  .is-gmh .gmh-haus__line--bottom .gmh-haus__note:last-child,
+  .is-gmh .gmh-haus__line--top .gmh-haus__note:last-child { display: none; }
+}
+
+/* ---- F15. The four answers — two columns, air instead of lines ---------
+   (After F14, which it overrides.) The cross of rules read as a table;
+   it is gone, and so are the four red dashes — the chapter keeps one
+   accent, the dash on the statement's eyebrow. The four blocks sit in
+   two columns with a wide gutter and a deep row gap; the eyebrow is
+   quiet, the title strong, the body set for reading, and Patrick's
+   sentence is a pull quote in the slab with room around it. */
+.is-gmh .gmh-haus__list {
+  column-gap: clamp(var(--sp-7), 5.5vw, var(--sp-10));
+  row-gap: clamp(var(--sp-8), 6vw, var(--sp-10));
+}
+.is-gmh .gmh-haus__item,
+.is-gmh .gmh-haus__item:nth-child(odd),
+.is-gmh .gmh-haus__item:nth-child(even),
+.is-gmh .gmh-haus__item:nth-child(n+3) { padding: 0; border: 0; }
+.is-gmh .gmh-haus__k { font-size: 0.75rem; letter-spacing: 0.14em; color: var(--ink-3); }
+.is-gmh .gmh-haus__t { margin: var(--sp-3) 0 var(--sp-4); font-size: clamp(1.75rem, 2.3vw, 2.375rem); }
+.is-gmh .gmh-haus__p { max-inline-size: 30ch; font-size: 0.9375rem; line-height: 1.7; color: var(--ink-2); }
+.is-gmh .gmh-haus .gmh-dated { margin-block-start: var(--sp-4); font-size: 0.8125rem; line-height: 1.5; color: var(--ink-3); }
+.is-gmh .gmh-haus__q { margin: var(--sp-6) 0 0; }
+.is-gmh .gmh-haus__q p {
+  max-inline-size: 22ch;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.is-gmh .gmh-haus__q cite { margin-block-start: var(--sp-3); font-size: 0.75rem; letter-spacing: 0.14em; color: var(--ink-3); }
+@media (max-width: 900px) {
+  .is-gmh .gmh-haus__list { row-gap: var(--sp-8); }
+  .is-gmh .gmh-haus__item + .gmh-haus__item,
+  .is-gmh .gmh-haus__item:nth-child(n+3) { border: 0; }
+}
+
+/* ============================================================
+   F16. THE GRID — one shell for the whole page
+   ============================================================
+   One content width and one gutter, and every section that is not a
+   deliberate bleed derives its edges from them: the header's bar, the
+   featured cars and their arrows, the four plates, the haus chapter,
+   the shipping frame, the sell chapter and its plates, warranty,
+   reviews, the newsletter, the footer. Bleeds (the hero, the haus
+   image, the map) keep the window; their content sits on the grid. */
+.is-gmh {
+  --page-max:    1240px;
+  --page-gutter: clamp(20px, 4vw, 64px);
+  --gutter:      var(--page-gutter);
+  --container:   calc(var(--page-max) + 2 * var(--page-gutter));
+  /* the vertical scale: a chapter's breath, and the larger one */
+  --sec:    clamp(72px, 7vw, 112px);
+  --sec-lg: clamp(96px, 9vw, 144px);
+}
+.is-gmh .shell { max-width: var(--container); padding-inline: var(--page-gutter); }
+.is-gmh .gf-head__bar { max-inline-size: var(--container); margin-inline: auto; padding-inline: var(--page-gutter); }
+/* the featured cars sit on the grid: the shell is the page's, the arrows
+   are measured from the track's edge */
+.is-gmh .gf-cars { --gfc-w: var(--container); --gfc-pad: var(--page-gutter); }
+.is-gmh .gf-cars__shell { max-inline-size: var(--container); padding-inline: var(--page-gutter); }
+.is-gmh .gf-cars__arrow--prev { inset-inline-start: calc(var(--page-gutter) - 48px - var(--sp-4)); }
+.is-gmh .gf-cars__arrow--next { inset-inline-end:   calc(var(--page-gutter) - 48px - var(--sp-4)); }
+@media (max-width: 1400px) {
+  .is-gmh .gf-cars__arrow { inline-size: 44px; block-size: 44px; }
+  .is-gmh .gf-cars__arrow--prev { inset-inline-start: 8px; }
+  .is-gmh .gf-cars__arrow--next { inset-inline-end: 8px; }
+}
+@media (max-width: 700px) {
+  .is-gmh .gf-cars__arrow--prev { inset-inline-start: var(--sp-3); }
+  .is-gmh .gf-cars__arrow--next { inset-inline-end: var(--sp-3); }
+}
+/* the shipping frame and the sell chapter come off CMC's own measures */
+.is-gmh .gmh-ship .brk__frame { max-inline-size: var(--container); padding-inline: var(--page-gutter); }
+.is-gmh .sell__grid,
+.is-gmh .sell__grid:not(#x) { max-width: var(--container); margin-inline: auto; padding-inline: var(--page-gutter); }
+.is-gmh.is-v3 .sell-band__inner { max-width: var(--container); padding-inline: var(--page-gutter); }
+.is-gmh .gf-map { margin-inline: 0; }
+
+/* ---- the vertical rhythm ------------------------------------------- */
+.is-gmh .gf-cars { padding-block: var(--sec-lg) var(--sp-8); }
+.is-gmh .gmh-tiles { padding-block: var(--sec) var(--sp-9); }
+.is-gmh .gmh-haus__frame { min-block-size: clamp(620px, 78vh, 820px); }
+.is-gmh .gmh-ship .brk__frame { padding-block: var(--sec-lg) var(--sec-lg); }
+.is-gmh .sell__copy { padding-block: var(--sec) 0; }
+.is-gmh.is-v3 .sell-band { padding-block: var(--sec) var(--sec); }
+.is-gmh .gmh-warranty .warranty__copy { padding-block-start: var(--sec); }
+.is-gmh .gmh-warranty .warranty__band { padding-block: 0 var(--sp-9); }
+.is-gmh .revs { padding-block: var(--sp-9) var(--sec); }
+.is-gmh .gmh-newsband { padding-block: var(--sp-8) var(--sp-8); }
+
+/* ============================================================
+   F17. SHIPPING → SELL — the chapter that stays, the chapter that rides
+   ============================================================
+   OVERLAP. The shipping chapter is sticky inside CMC's .stick wrapper:
+   when it is shorter than the window it pins at the top; when it is
+   taller, it pins with its foot on the window's foot (main-final.js
+   sets --ship-h), so every part of it has been read before it stops.
+   The Sell chapter, later in flow and on its own opaque ivory, then
+   rises over it and carries on in normal flow; the wrapper's end
+   releases the pin. No pin below 900px (phones read straight through)
+   and none under reduced motion. */
+@media (min-width: 901px) {
+  .is-gmh .gmh-ship {
+    position: sticky;
+    inset-block-start: min(0px, calc(100svh - var(--ship-h, 100svh)));
+    z-index: 0;
+  }
+  .is-gmh .sell,
+  .is-gmh .sell-band { position: relative; z-index: 2; }
+  .is-gmh .sell { box-shadow: 0 -1px 0 rgb(var(--bg-rgb) / 0.12); }
+}
+
+/* SLIDE — the shipping title enters from the side, once, and settles */
+.reveal-armed .gmh-ship[data-reveal] .brk__eyebrow,
+.reveal-armed .gmh-ship[data-reveal] .brk__title .ttl-line,
+.reveal-armed .gmh-ship[data-reveal] .brk__lede,
+.reveal-armed .gmh-ship[data-reveal] .gmh-ship__cta {
+  opacity: 0;
+  translate: -64px 0;
+  animation: none;
+  transition: opacity 760ms var(--gf-ease), translate 760ms var(--gf-ease);
+}
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__eyebrow,
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__title .ttl-line,
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__lede,
+.reveal-armed .gmh-ship[data-reveal].is-revealed .gmh-ship__cta { opacity: 1; translate: 0 0; }
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__title .ttl-line:nth-child(1) { transition-delay: 90ms; }
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__title .ttl-line:nth-child(2) { transition-delay: 160ms; }
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__title .ttl-line:nth-child(3) { transition-delay: 230ms; }
+.reveal-armed .gmh-ship[data-reveal].is-revealed .brk__lede { transition-delay: 320ms; }
+.reveal-armed .gmh-ship[data-reveal].is-revealed .gmh-ship__cta { transition-delay: 400ms; }
+
+/* SLIDE — the sell title: the two lines from opposite sides, once */
+.reveal-armed .sell[data-reveal] .sell__title .ttl-line {
+  opacity: 0;
+  transition: opacity 800ms var(--gf-ease), translate 800ms var(--gf-ease);
+}
+.reveal-armed .sell[data-reveal] .sell__title .ttl-line:first-child { translate: -64px 0; }
+.reveal-armed .sell[data-reveal] .sell__title .ttl-line:last-child  { translate:  64px 0; }
+.reveal-armed .sell[data-reveal].is-revealed .sell__title .ttl-line { opacity: 1; translate: 0 0; }
+.reveal-armed .sell[data-reveal].is-revealed .sell__title .ttl-line:last-child { transition-delay: 120ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .is-gmh .gmh-ship { position: relative; inset-block-start: auto; }
+  .reveal-armed .gmh-ship[data-reveal] .brk__eyebrow,
+  .reveal-armed .gmh-ship[data-reveal] .brk__title .ttl-line,
+  .reveal-armed .gmh-ship[data-reveal] .brk__lede,
+  .reveal-armed .gmh-ship[data-reveal] .gmh-ship__cta,
+  .reveal-armed .sell[data-reveal] .sell__title .ttl-line { opacity: 1; translate: none; transition: none; }
+}
