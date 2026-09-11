@@ -1,8 +1,32 @@
 # Geneva Motor Haus — status (handoff)
 
-Last updated 2026-09-10 (end of day). Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/
+Last updated 2026-09-11. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/
 
-## FINAL — `index_finale.html` (2026-09-11, uncommitted) — the active direction
+## FINALE v2 — `index_finale_v2.html` (2026-09-11) — Alex's working copy ("finale 3")
+- A clone of `index_finale.html` with its own `assets/css/geneva-final-v2.css`, `assets/js/main-final-v2.js`
+  and `assets/js/geneva-final-v2.js`. `index_finale.html` stays as the reference; the shared base
+  (tokens / main / v2 / v3) and the images are unchanged.
+- Palette (Alex): the ground is **#151414**, not the brown #15100C. The dark family is re-derived in `:root`
+  of geneva-final-v2.css (F21). tokens.css is untouched, so index / index_finale keep the brown.
+- Featured = Figma 46:829 (F20): the index2 catalogue. On the left, the photo and a bar (counter, arrows,
+  View all). On the right, the plate and the index of eight. The panels are bone (`--fi-panel`; Figma
+  drew #C9C9C9). Two fixes to the frame: the dimmed rows were raised to AA, and all eight rows are shown
+  where Figma clipped the eighth.
+- Sell = Figma 46:828 (F19): a stepped bone card on the dark with air on the sides, the showroom
+  render and the four step plates inside it.
+  - The step follows Alex's reference: a 49° fall with 32u fillets; every corner is 32u.
+  - The step drifts ±3% with scroll, on desktop only and not under reduced motion.
+  - The top of the card is feathered where it rides over the pinned Shipping.
+- The haus image is now a BMW M4 render (`passion-m4.jpg`).
+- Two visual breaks (F23): day after the tiles, dusk after Warranty. Their stand-in copy makes no new claims.
+- The main navigation has pill hovers (F22).
+- The supplied renders are not photographs and carry no captions: sell-showroom, passion-m4, break-day
+  and break-dusk. The sources are in `assets/finale 3/`.
+- Waiting for Alex: the step-plate hover (a throwaway `_preview-sell-motion.html`, local only), and
+  whether the plates become links to /sell-your-car.
+- Live: https://sigovs.github.io/GENEVA-MOTOR-HAUS/index_finale_v2.html
+
+## FINAL — `index_finale.html` (2026-09-11, committed 338e509) — the reference for finale v2
 - A copy of v2 (`index.html`) refined, not redesigned. Isolated assets: `assets/css/geneva-final.css`
   (fork of geneva.css), `assets/js/main-final.js` (fork of main.js, one selector), `assets/js/geneva-final.js`.
   `index.html` / `index2.html` and their assets are untouched.
