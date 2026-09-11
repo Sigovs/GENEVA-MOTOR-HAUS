@@ -1,0 +1,520 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "index.html",
+  "compiled": "2026-09-10",
+  "note": "Written after the first build, not before it — a CP1 ordering defect, recorded rather than hidden. Every claim-shaped string on the page maps here. Sources are outside the design work: the client's AAN ticket, genevamotorhaus.com as captured on 2026-09-10 (docs/source/), and public listings. No prior concept, design read or agent output is a source.",
+  "entries": [
+    {
+      "id": "contact-phone",
+      "claim": "(262) 249-6777",
+      "status": "verified",
+      "source": "genevamotorhaus.com header + contact section, captured 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".navbar__cta",
+        ".sell__how",
+        ".fin__row",
+        ".about__tel",
+        ".gmh-door__acts"
+      ]
+    },
+    {
+      "id": "contact-address",
+      "claim": "600 Faust Rd, Unit 8, Burlington, WI 53105",
+      "status": "verified",
+      "source": "genevamotorhaus.com contact section + map embed, 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__addr",
+        ".gmh-door__addr",
+        ".menu__places"
+      ]
+    },
+    {
+      "id": "contact-email",
+      "claim": "Info@GenevaMotorHaus.com",
+      "status": "verified",
+      "source": "genevamotorhaus.com header, 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-door__mail"
+      ]
+    },
+    {
+      "id": "hours",
+      "claim": "Mon–Fri 10AM–4PM · Saturday by appointment · Sunday closed",
+      "status": "verified",
+      "source": "genevamotorhaus.com contact section: 'Monday - Friday: 10AM-4PM · Saturday: Appt Only · Sunday: Closed'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-door__hours",
+        ".menu__places"
+      ]
+    },
+    {
+      "id": "legal-name",
+      "claim": "Geneva Motor Haus LLC",
+      "status": "verified",
+      "source": "Autotrader / KBB dealer listing 'GENEVA MOTOR HAUS LLC'",
+      "sourceType": "public-record",
+      "appearsAt": [
+        ".foot__legal"
+      ]
+    },
+    {
+      "id": "aan",
+      "claim": "Powered by All Auto Network",
+      "status": "verified",
+      "source": "AAN Control Panel export 2026-09-09: Geneva Motor Haus, WI, All Auto Network, Pending",
+      "sourceType": "client-data",
+      "appearsAt": [
+        ".foot__by"
+      ]
+    },
+    {
+      "id": "line-collectibles",
+      "claim": "From low-mile collectibles to everyday transportation",
+      "status": "verified",
+      "source": "genevamotorhaus.com hero: 'From Low Mile Collectibles to Everyday Transportation!'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede",
+        ".story__title"
+      ]
+    },
+    {
+      "id": "hand-selected",
+      "claim": "Hand-selected in Burlington, Wisconsin",
+      "status": "verified",
+      "source": "/about: 'Each vehicle in our inventory is hand-selected'; location from contact section",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede"
+      ]
+    },
+    {
+      "id": "nationwide-transport",
+      "claim": "Nationwide transportation available",
+      "status": "verified",
+      "source": "Text the dealer burned into its own listing photo: genevamotorhaus.com/car/bmw-m3-2015, frame 01 — '… NATIONWIDE TRANSPORTATION AVAILABLE'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede",
+        ".gmh-ship .brk__lede",
+        "meta description"
+      ]
+    },
+    {
+      "id": "half-out-of-state",
+      "claim": "Half our cars leave Wisconsin.",
+      "status": "verified",
+      "source": "Client's AAN ticket (from client/AAN Control Panel.pdf): 'needs a shipping section since half their cars go out of state'",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        "#ship-title"
+      ]
+    },
+    {
+      "id": "sight-unseen",
+      "claim": "Buyers from out of state have bought from us sight unseen",
+      "status": "verified",
+      "source": "Two reviews on genevamotorhaus.com: CHARLES ('sight unseen from out of state'), Defries ('without actually having seen it with my own eyes')",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".gmh-ship .brk__lede"
+      ]
+    },
+    {
+      "id": "ship-quotes",
+      "claim": "Three quoted sentences on the route (Diego Castro, Charles, Defries)",
+      "status": "verified",
+      "source": "Verbatim excerpts of the reviews shown in full in #reviews, from genevamotorhaus.com",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".gmh-stop__q"
+      ]
+    },
+    {
+      "id": "stock-date",
+      "claim": "In stock · Prices and mileage as listed on 10 Sep 2026",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory captured 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".justin",
+        ".gmh-dated--inv"
+      ]
+    },
+    {
+      "id": "price-targa",
+      "claim": "2007 Porsche 911 Targa 4S — $99,997 — 42,200 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-targa-4s-2007",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='1']"
+      ]
+    },
+    {
+      "id": "price-saleen",
+      "claim": "1989 Ford Mustang Saleen SSC — $170,000 — 2,470 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/ford-mustang-saleen-ssc-1989",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='2']"
+      ]
+    },
+    {
+      "id": "price-c4s-2010",
+      "claim": "2010 Porsche 911 Carrera 4S — $75,000 — 47,587 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-carrera-4s-2010",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='3']"
+      ]
+    },
+    {
+      "id": "price-993",
+      "claim": "1997 Porsche 911 Carrera 4S (6-speed) — $169,993 — 101,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-carerra-4s-6-speed-1997 (their spelling 'CARERRA' in the URL and title)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='0']"
+      ]
+    },
+    {
+      "id": "stock-count",
+      "claim": "23 vehicles in stock",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory, 23 listings on 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__stats .stat--lead"
+      ]
+    },
+    {
+      "id": "price-range",
+      "claim": "From $9,000 to $170,000",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory: lowest 2004 Lexus ES330 $9,000, highest 1989 Saleen SSC $170,000",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__stats .stat--proof"
+      ]
+    },
+    {
+      "id": "selection-copy",
+      "claim": "A variety of vehicles — classics, American modern muscle and much more — carefully selected for condition, performance and features",
+      "status": "verified",
+      "source": "genevamotorhaus.com 'Selection' copy, shortened. 'exotics' and 'Japanese supercars' removed: none in stock on 2026-09-10.",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__lede",
+        ".inv__intro .lede"
+      ]
+    },
+    {
+      "id": "sell-appraisal",
+      "claim": "A fair, no-obligation appraisal — luxury vehicle, exotic or daily driver",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage Sell section",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sell__lede"
+      ]
+    },
+    {
+      "id": "sell-steps",
+      "claim": "Four steps: submit info · appraisal · inspection · complete the sale",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car 'Simple 4-Step Process'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#sell-steps"
+      ]
+    },
+    {
+      "id": "sell-heading",
+      "claim": "Get top dollar for your car.",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage: 'Get Top Dollar for Your Car'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sell__title"
+      ]
+    },
+    {
+      "id": "warranty-offered",
+      "claim": "Warranty options are available on the vehicles we sell.",
+      "status": "verified",
+      "source": "Client's AAN ticket: 'Wants to keep warranties'",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".warranty__lede"
+      ]
+    },
+    {
+      "id": "fin-heading",
+      "claim": "Get approved today.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/financing: 'Get Approved Today'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#fin-title"
+      ]
+    },
+    {
+      "id": "fin-lenders",
+      "claim": "Competitive rates and flexible terms through trusted lenders",
+      "status": "verified",
+      "source": "/financing: 'works with trusted lenders to provide competitive rates and flexible terms'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin__lede"
+      ]
+    },
+    {
+      "id": "fin-phone",
+      "claim": "Get pre-approved by phone",
+      "status": "verified",
+      "source": "/financing: 'get pre-approved over the phone'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin__row"
+      ]
+    },
+    {
+      "id": "about-vision",
+      "claim": "Founded with a vision … exceptional vehicles matched with unparalleled service",
+      "status": "verified",
+      "source": "/about 'Our Story', verbatim. Kept as a statement of the founder's vision, not a claim of fact; the page's own superlative ('one of the region's most trusted') was removed (CP6).",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__p"
+      ]
+    },
+    {
+      "id": "about-location",
+      "claim": "Located in Burlington, Wisconsin … a comfortable showroom experience",
+      "status": "verified",
+      "source": "/about 'Convenient Location', verbatim",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__p"
+      ]
+    },
+    {
+      "id": "tagline",
+      "claim": "Where passion meets perfection.",
+      "status": "verified",
+      "source": "genevamotorhaus.com hero + /about",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#about-title"
+      ]
+    },
+    {
+      "id": "reviews",
+      "claim": "Twelve five-star reviews, names and wording as published",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage reviews carousel, captured 2026-09-10 (docs/source/site-copy-2026-09-10.json). No dates or platforms are shown because the site shows none.",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        "#revs-track"
+      ]
+    },
+    {
+      "id": "review-meta",
+      "claim": "Per-card labels: Bought / Sold / Bought from out of state / Bought online, shipped",
+      "status": "verified",
+      "source": "Each label restates what that review itself says; none adds a fact the review does not contain",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".rv__meta"
+      ]
+    },
+    {
+      "id": "ask-for-shane",
+      "claim": "Ask for Shane.",
+      "status": "verified",
+      "source": "Review by KIETH: '…ask for Shane!'",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        "#revs-title"
+      ]
+    },
+    {
+      "id": "ship-map-rings",
+      "claim": "Distance rings at 500 mi, 1,000 mi and 1,500 mi from Burlington, Wisconsin",
+      "status": "verified",
+      "source": "Geometry, not a business promise: geodesic circles of 500, 1,000 and 1,500 statute miles around Burlington, WI (the address published on genevamotorhaus.com), projected on us-atlas 3.0.1 — US Census Bureau cartographic boundaries, public domain — docs/source/us-map-lower48-albers.json. Computed 2026-09-10. The map names no destinations and no delivery times.",
+      "sourceType": "public-record",
+      "appearsAt": [
+        ".gmh-map__label",
+        "#gmh-map-cap"
+      ]
+    },
+    {
+      "id": "price-isf",
+      "claim": "$49,990 · 38,100 miles (2008 Lexus IS-F)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-m3",
+      "claim": "$59,990 · 33,080 miles (2015 BMW M3)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-c4s-cab-2004",
+      "claim": "$54,996 · 35,132 miles (2004 Porsche 911 C4S Cabriolet)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-x5",
+      "claim": "$12,990 · 48,944 miles (2003 BMW X5 4.4i)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "tabs-labels",
+      "claim": "Exceptional inventory · Selection · Highly reliable · Reputation · Smooth deal · Process · Strong customer · Service",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, the four tabs, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__k",
+        ".gmh-haus__t"
+      ]
+    },
+    {
+      "id": "reputation-stand-behind",
+      "claim": "We stand behind every vehicle we sell.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Reputation tab, rendered 2026-09-10; corroborated by Patrick's review on the same site (\"he stands behind them\"). The tab's \"over 12 years\" and \"thousands of satisfied customers\" are NOT used (template claims, see notUsed).",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "process-copy",
+      "claim": "From initial inquiry to final delivery, we guide you through every step — and handle the paperwork, financing options and logistics.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Process tab, rendered 2026-09-10 (trimmed, not extended); corroborated by reviews (paperwork handled — Cory, Jeff Haneline; financing — Kieth; shipping — Defries)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "service-copy",
+      "claim": "Customer satisfaction is at the heart of everything we do — support before, during and after your purchase.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Service tab, rendered 2026-09-10 (trimmed). Its \"maintenance programs\" is NOT used: nothing supports it.",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "tiles",
+      "claim": "See our Reviews · Explore Financing · Learn About us · Get in Touch — Twelve buyers and sellers, in their own words. One showroom in Burlington, Wisconsin — and Shane, the owner.",
+      "status": "verified",
+      "source": "Tile labels: genevamotorhaus.com home page, rendered 2026-09-10. \"Twelve\": the twelve reviews published on genevamotorhaus.com and set in full on this page. \"Shane, the owner\": a customer review on the live site (\"Shane the owner\").",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-tile__k",
+        ".gmh-tile__t",
+        ".gmh-tile__p"
+      ]
+    },
+    {
+      "id": "contact-title",
+      "claim": "Get in touch · Contact / Location",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, contact section heading, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".locs__eyebrow",
+        ".locs__title"
+      ]
+    },
+    {
+      "id": "newsletter",
+      "claim": "Sign up for · Our newsletter · Get the latest updates",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, newsletter band, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-newsband"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "12+ years experience · 5000+ vehicles sold · 98% customer satisfaction",
+      "why": "On /about, but unverified and implausible against a 23-car floor and a page opened in Nov 2025; reads as template copy. Ask the client before any of it appears."
+    },
+    {
+      "claim": "one of the region's most trusted luxury automotive dealerships",
+      "why": "Superlative without a source (CP6)."
+    },
+    {
+      "claim": "exotics · Japanese supercars · premier destination · unmatched",
+      "why": "Contradicted by the stock on the day of capture."
+    },
+    {
+      "claim": "5.0 out of 5 stars (as a page figure)",
+      "why": "Review count not known; the rating appears only inside a customer's own words."
+    },
+    {
+      "claim": "With over 12 years in the automotive industry … the trust of thousands of satisfied customers (Reputation tab); maintenance programs (Service tab)",
+      "why": "The same template-shaped claims as /about (12+ years, 5000+ sold) against a page opened Nov 2025 and a 23-car floor; nothing supports them. Ask the client before any appear."
+    }
+  ],
+  "decisions": [
+    {
+      "date": "2026-09-10",
+      "by": "Alex",
+      "decision": "Nothing further is expected from the client. The shipping and warranty placeholders were removed; the page states only what is sourced (nationwide transportation available; warranty options available) and routes the rest to the contact page."
+    },
+    {
+      "date": "2026-09-10",
+      "by": "Alex",
+      "what": "Skeleton follows the live site's sections; Financing and About are tiles only; display face Zilla Slab. The tabs are opened, trimmed, never extended."
+    }
+  ]
+}

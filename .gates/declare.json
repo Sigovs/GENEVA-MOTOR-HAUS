@@ -1,0 +1,279 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "index.html",
+  "viewports": [
+    {
+      "label": "desktop",
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "label": "mobile",
+      "w": 390,
+      "h": 844
+    }
+  ],
+  "primaryViewport": "desktop",
+  "governingIdea": "One haus in Wisconsin, shipping far: the cars shown where they actually live, and carried from that door to a buyer who may never see it.",
+  "a1": {
+    "eventStatement": "The haus is open: two 911s on the lot, the name set between and below them.",
+    "components": [
+      {
+        "name": "subject — the lot photograph (the two 911s)",
+        "selector": ".hero__media",
+        "role": "subject"
+      },
+      {
+        "name": "field — the bottom scrim, built as a sibling (DESIGN-READ → governing event components)",
+        "selector": ".hero__scrim",
+        "role": "field"
+      },
+      {
+        "name": "the claim stack — where, name, line and doors as one block (on a phone it stands below the photograph)",
+        "selector": ".hero__claim",
+        "role": "identity"
+      },
+      {
+        "name": "where — Burlington, Wisconsin",
+        "selector": ".hero__meter",
+        "role": "support"
+      },
+      {
+        "name": "identity — the name",
+        "selector": ".claim",
+        "role": "identity"
+      },
+      {
+        "name": "record — their line and what the business does",
+        "selector": ".hero .lede",
+        "role": "support"
+      },
+      {
+        "name": "CTA cluster — browse and contact, the live site's pair",
+        "selector": ".hero .cta-row",
+        "role": "cta"
+      }
+    ],
+    "excluded": [
+      {
+        "name": "masthead — persistent chrome",
+        "selector": ".masthead"
+      },
+      {
+        "name": "read-position bar",
+        "selector": ".readbar"
+      }
+    ]
+  },
+  "commitments": [
+    {
+      "metric": "horizontalOverflow",
+      "equals": false,
+      "viewport": "desktop"
+    },
+    {
+      "metric": "horizontalOverflow",
+      "equals": false,
+      "viewport": "mobile"
+    },
+    {
+      "metric": "smallestTypePx",
+      "min": 14,
+      "viewport": "desktop"
+    },
+    {
+      "metric": "smallestTypePx",
+      "min": 14,
+      "viewport": "mobile"
+    },
+    {
+      "metric": "fullBleedMedia",
+      "max": 2,
+      "viewport": "desktop"
+    },
+    {
+      "metric": "typeScaleRatio",
+      "min": 5,
+      "viewport": "desktop"
+    }
+  ],
+  "operations": [
+    {
+      "id": "daylight-haus-hero",
+      "reference": "DESIGN-READ → Hero declaration",
+      "governs": "the first screen: their own lot and building in daylight, one slide"
+    },
+    {
+      "id": "uncut-stage",
+      "reference": "CMC index_3 stage, Geneva's own uncut frames (semlerpremium-dk-showroom)",
+      "governs": "Featured: the live site's eight cars, one large uncut photograph beside a dated ledger index"
+    },
+    {
+      "id": "distance-map",
+      "reference": "DESIGN-READ → MOTION READ (rings from Burlington)",
+      "governs": "Shipping: the lower 48, the door, rings at 500/1,000/1,500 miles, three buyers' quotes"
+    },
+    {
+      "id": "name-between-the-911s",
+      "reference": "DESIGN-READ → Hero declaration (v2: centred, as the live site sets it)",
+      "governs": "The first screen: the name in the slab, centred on the asphalt below and between the two 911s"
+    },
+    {
+      "id": "live-site-skeleton",
+      "reference": "DESIGN-READ → Section map (v2) · DISCOVERY → live-site sections",
+      "governs": "The order of the page: featured (8), four tiles, the four tabs opened, sell, reviews, newsletter, contact + map"
+    },
+    {
+      "id": "four-tabs-opened",
+      "reference": "DESIGN-READ → Section map (v2)",
+      "governs": "Selection / Reputation / Process / Service set open beside one headline, their words trimmed, never extended"
+    },
+    {
+      "id": "gable-bone-chapter",
+      "reference": "DESIGN-READ → Geneva's departures (the gable from the badge's barn)",
+      "governs": "Sell, its ruled steps and Warranty as one bone chapter, opened under a single gable edge"
+    },
+    {
+      "id": "ask-for-shane",
+      "reference": "content-ledger → ask-for-shane",
+      "governs": "Reviews: a customer's own words as the heading, twelve reviews verbatim"
+    }
+  ],
+  "hero": {
+    "selector": ".hero",
+    "mediaSelector": ".hero__photo",
+    "navSelector": ".masthead",
+    "copySelector": ".hero__claim",
+    "natural": {
+      "w": 2400,
+      "h": 1800
+    },
+    "samples": [
+      {
+        "t": 0,
+        "box": {
+          "x": 0.048,
+          "y": 0.372,
+          "w": 0.927,
+          "h": 0.3
+        }
+      }
+    ],
+    "focal": {
+      "x": 0.45,
+      "y": 0.45
+    },
+    "textSafe": {
+      "x": 0.17,
+      "y": 0.67,
+      "w": 0.66,
+      "h": 0.3
+    },
+    "coverProof": "v2, measured on the render at 1440×900 and 390×844: the subject is the PAIR of 911s (the event statement) — both whole at object-position 70% 62% (grey nose ~7px in, navy tail ~10px in); the name, lede and CTAs stand below the pair's box. On a phone the crop is its own composition: the navy 997 whole, the grey 997's tail leaves at the left edge (stated), so the phone declares the navy car.",
+    "perViewport": {
+      "mobile": {
+        "textSafe": {
+          "x": 0.05,
+          "y": 0.5,
+          "w": 0.9,
+          "h": 0.48
+        },
+        "samples": [
+          {
+            "t": 0,
+            "box": {
+              "x": 0.65,
+              "y": 0.385,
+              "w": 0.33,
+              "h": 0.29
+            }
+          }
+        ]
+      }
+    }
+  },
+  "means": [
+    {
+      "name": "header search (desktop bar; first item of the phone menu)",
+      "selector": ".gmh-search"
+    },
+    {
+      "name": "call the showroom",
+      "selector": "a[href^='tel:']"
+    },
+    {
+      "name": "view inventory",
+      "selector": "a[href$='/inventory']"
+    },
+    {
+      "name": "a car's detail page",
+      "selector": ".rec__cta"
+    },
+    {
+      "name": "sell your car",
+      "selector": "a[href$='/sell-your-car']"
+    },
+    {
+      "name": "financing",
+      "selector": "a[href$='/financing']"
+    },
+    {
+      "name": "directions to the door",
+      "selector": "a[href*='maps/dir']"
+    },
+    {
+      "name": "email",
+      "selector": "a[href^='mailto:']"
+    }
+  ],
+  "build": {
+    "private": true
+  },
+  "vaultRead": {
+    "queriedTags": [
+      "automotive",
+      "dealer",
+      "inventory",
+      "showroom",
+      "photography",
+      "motion"
+    ],
+    "considered": 40,
+    "taken": [
+      {
+        "id": "semlerpremium-dk-showroom",
+        "what": "An inventory page read as a curated collection without disguising the inventory: the stage keeps a real index — make, model, price, mileage, a link per car — beside one large uncut photograph."
+      },
+      {
+        "id": "semlerpremium-dk-brands-porsche-911-gt3-11cec851-9b66-4905-a",
+        "what": "One vehicle treated as a significant object rather than a database row: the open stage record carries price and mileage as plates, and the photograph is the dealer's own frame, uncut."
+      },
+      {
+        "id": "ciridae-com",
+        "what": "Restrained labels on fine rules as the calm counterpoint to a loud voice: the hours plate, the dated lines and the quotes' rail are hairline and label, never boxed."
+      },
+      {
+        "id": "morningstar-ventures",
+        "what": "Motion has to advance the page's argument, not make the visitor advance an animation: the only scroll-driven device is the distance rings, which state the one temporal fact on the page — the car travels."
+      }
+    ],
+    "rejected": [
+      {
+        "id": "oilstainlab-com",
+        "why": "One car mythologised as a manifesto. Geneva has twenty-three cars that must stay findable, and its story is the owner and the distance, not a single object."
+      },
+      {
+        "id": "rolls-roycemotorcars-com-en-us-home-html",
+        "why": "Video as a continuous environment is its strength; Geneva has no film, and a daylight phone frame cannot be made into one without inventing footage."
+      },
+      {
+        "id": "porsche-com-usa",
+        "why": "Moving each car between cinematic object and classified record is close to the stage, but its register is a manufacturer's configurator; a used-car floor of 23 does not need the configurator half."
+      },
+      {
+        "id": "rmsothebys-com",
+        "why": "Anti-reference: a strong opening that never develops. Checked against by holding the last masses — reviews, the door, the footer — to the standard of the hero (C19)."
+      }
+    ]
+  }
+}

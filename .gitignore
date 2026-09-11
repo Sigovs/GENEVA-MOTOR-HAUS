@@ -1,0 +1,15 @@
+# Harvested originals from genevamotorhaus.com (337 files, ~370MB).
+# The page uses the derivatives in assets/img/web; provenance for both
+# is in assets/img/web/PROVENANCE.md and assets/img/source/PROVENANCE.csv (local).
+assets/img/source/
+
+# Client material (AAN ticket PDF, logo sources) — internal, not for GitHub
+from client/
+
+# Tool output: working renders and gate evidence images
+.playwright-mcp/
+.gates/evidence/
+
+.DS_Store
+node_modules/
+*.log

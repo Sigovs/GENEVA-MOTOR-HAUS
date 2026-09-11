@@ -1,0 +1,181 @@
+{
+  "gate": "Gate 1 · delegated — composed masses",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "viewports": {
+    "desktop": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "masses": [
+        {
+          "tag": "hero__slide-title",
+          "isSubject": false,
+          "extent": [
+            0.429,
+            0.571
+          ],
+          "centre": 0.5,
+          "sample": "Burlington, Wisconsin"
+        },
+        {
+          "tag": "claim__line",
+          "isSubject": false,
+          "extent": [
+            0.228,
+            0.432
+          ],
+          "centre": 0.33,
+          "sample": "Geneva"
+        },
+        {
+          "tag": "claim__line",
+          "isSubject": false,
+          "extent": [
+            0.444,
+            0.772
+          ],
+          "centre": 0.608,
+          "sample": "Motor Haus"
+        },
+        {
+          "tag": "lede",
+          "isSubject": false,
+          "extent": [
+            0.363,
+            0.637
+          ],
+          "centre": 0.5,
+          "sample": "From low-mile collectibles to ev"
+        },
+        {
+          "tag": "btn",
+          "isSubject": false,
+          "extent": [
+            0.348,
+            0.514
+          ],
+          "centre": 0.431,
+          "sample": "Browse inventory"
+        },
+        {
+          "tag": "btn",
+          "isSubject": false,
+          "extent": [
+            0.525,
+            0.652
+          ],
+          "centre": 0.588,
+          "sample": "Contact us"
+        },
+        {
+          "tag": "the two 911s (hero photograph)",
+          "isSubject": true,
+          "extent": [
+            0.005,
+            0.993
+          ],
+          "centre": 0.499,
+          "sample": ""
+        }
+      ],
+      "principal": [
+        "the two 911s (hero photograph)",
+        "claim__line"
+      ],
+      "gutter": -0.549,
+      "deadAir": {
+        "left": 0.005,
+        "right": 0.007
+      },
+      "findings": [],
+      "declared": [],
+      "unmeasured": false
+    },
+    "mobile": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "masses": [
+        {
+          "tag": "hero__slide-title",
+          "isSubject": false,
+          "extent": [
+            0.239,
+            0.761
+          ],
+          "centre": 0.5,
+          "sample": "Burlington, Wisconsin"
+        },
+        {
+          "tag": "claim__line",
+          "isSubject": false,
+          "extent": [
+            0.18,
+            0.82
+          ],
+          "centre": 0.5,
+          "sample": "Geneva"
+        },
+        {
+          "tag": "claim__line",
+          "isSubject": false,
+          "extent": [
+            0.18,
+            0.82
+          ],
+          "centre": 0.5,
+          "sample": "Motor Haus"
+        },
+        {
+          "tag": "lede",
+          "isSubject": false,
+          "extent": [
+            0.062,
+            0.938
+          ],
+          "centre": 0.5,
+          "sample": "From low-mile collectibles to ev"
+        },
+        {
+          "tag": "btn",
+          "isSubject": false,
+          "extent": [
+            0.201,
+            0.799
+          ],
+          "centre": 0.5,
+          "sample": "Browse inventory"
+        },
+        {
+          "tag": "the two 911s (hero photograph)",
+          "isSubject": true,
+          "extent": [
+            -0.541,
+            0.96
+          ],
+          "centre": 0.209,
+          "sample": ""
+        }
+      ],
+      "principal": [
+        "the two 911s (hero photograph)",
+        "lede"
+      ],
+      "gutter": -0.898,
+      "deadAir": {
+        "left": 0,
+        "right": 0.04
+      },
+      "findings": [],
+      "declared": [],
+      "unmeasured": false
+    }
+  },
+  "humanConfirmed": false,
+  "verdict": "pass",
+  "finishedAt": "2026-09-11T01:38:58.549Z",
+  "findings": [],
+  "blockers": []
+}

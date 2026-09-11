@@ -1,0 +1,447 @@
+/* ============================================================
+   v3.css — FEATURED INVENTORY WITH UNCUT PHOTOGRAPHY
+   ============================================================
+   Loaded by index_3.html only, after v2.css. index_2.html does not
+   load it and index.html loads neither, so neither of the other two
+   pages can move because of anything written here.
+
+   WHY THIS PAGE EXISTS. The question from Kirsten was whether it would
+   be easier to show the actual vehicle image instead of a cut-out. It
+   would, and arguing about it in prose is slower than building it, so
+   this is the same page with the same four slots holding real listing
+   photography — turntable, curtains, burned-in watermark and all — to
+   be looked at beside index_2 rather than described.
+
+   Everything else on the page is identical. Same header, same
+   chapters, same footer, same tokens. The only difference is what
+   stands in the Featured stage, which is the whole point: a comparison
+   is only worth anything if one thing changed.
+
+   WHAT THE PHOTOGRAPH FORCES, and it is more than swapping a src:
+
+   1. The stage stops being a lit room. Its four modelled radials exist
+      to put a floating object in a space; a photograph brings its own
+      floor and its own light, so the field goes flat and the picture
+      does the work. Leaving the light on would be lighting a print.
+
+   2. The controls come out of the frame. With a cut-out the field is
+      empty and a pill can stand in it. On a photograph there is no
+      empty field: every position covers a car, a curtain or a floor,
+      and it covers something different each time the frame changes.
+      So "Just in" and the arrows move to a bar above the picture.
+
+   3. The four frames stop agreeing with each other. Nothing here can
+      fix that — it is the honest cost of the approach and the reason
+      the comparison is worth making with real photographs rather than
+      four shots taken in the same booth on the same day.
+   ============================================================ */
+
+
+/* ---- 1. THE STAGE BECOMES A FRAME --------------------------------
+   No modelled light, no floor, no atmosphere: the photograph carries
+   all three. What remains is the panel — the border, the radius and
+   the clip — which is now doing the job a mount does around a print.
+
+   The ground under it stays for the moment before the image decodes,
+   so the panel is never a white hole on a dark page. */
+/* A SMALLER RADIUS ON THE PICTURE. 16px was solved for a panel with a
+   car floating inside it, where the corner is empty and the curve is
+   the only thing describing the box. A photograph fills its frame to
+   the edge, so the same curve now cuts visible content out of four
+   corners and reads as a rounded snapshot rather than a mounted print.
+   8px still says "framed" and takes almost nothing off the image. */
+.is-v3 .showcase__stage {
+  background: var(--bg-sunk);
+  border: 1px solid rgba(243, 238, 230, 0.13);
+  border-radius: 8px;
+}
+.is-v3 .stage__field { display: none; }
+
+/* The frames fill the panel and crossfade in place. object-fit: cover
+   rather than contain, because these are 3:2 photographs in a panel
+   that is nearly square — contained, each one would sit in its own
+   letterbox and the letterbox would change height per car. */
+.is-v3 .stage__cars { position: absolute; inset: 0; }
+.is-v3 .stage__car,
+.is-v3 .stage__car.is-active {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: none;
+  max-block-size: none;
+  object-fit: cover;
+  object-position: center;
+  translate: none;
+  scale: 1;
+  /* The page's own grade for dealer photography, the same one the
+     results cards use. Four showroom frames at full strength would be
+     the loudest thing on a page that has spent two chapters being
+     quiet. */
+  filter: saturate(0.86) brightness(0.9) contrast(1.03);
+}
+
+/* The contact shadow under the cut-out is gone with the cut-out — a
+   photograph has its own. */
+.is-v3 .stage__cars::after { display: none; }
+
+
+/* ---- 2. THE CONTROLS MOVE ABOVE THE PICTURE ----------------------
+   One row over the frame: the status pill left, the arrows right, both
+   on the page's ground rather than on the image. This is the change
+   the photograph forces, and it is not a downgrade — a control that
+   never overlaps the subject is a control that never has to be
+   defended against a particular frame.
+
+   The cost is a row of height and one more horizontal line in the
+   composition, which is exactly the kind of thing worth seeing rather
+   than arguing about. */
+/* The bar and the picture are one cell of the showcase grid, so the
+   column stretches and the frame takes whatever height the rail makes,
+   exactly as it did with the cut-out. */
+/* THE PICTURE SETS THE SHAPE, and this is the first real cost of the
+   approach rather than a styling choice.
+
+   With a cut-out the stage took its height from the rail, so the two
+   columns ended on the same line — that is what made the section read
+   as one block. A photograph cannot do that. These are 3:2 frames and
+   the rail makes a panel nearly square; cover crops a third of the car
+   away and blows the burned-in watermark up to fill the top corner,
+   contain leaves a letterbox that changes height with every swap.
+
+   So the frame takes the photographs' own ratio and the columns stop
+   ending together. That is the honest version of this option and it is
+   exactly the kind of thing worth looking at rather than describing. */
+.is-v3 .stage__col { display: flex; flex-direction: column; min-inline-size: 0; }
+.is-v3 .stage__col .showcase__stage { flex: 1; aspect-ratio: auto; block-size: auto; }
+
+/* THE PICTURE KEEPS ITS OWN SHAPE, AND THE RAIL COMES DOWN TO MEET IT.
+
+   This is the real cost of the approach, and getting it wrong would
+   have rigged the comparison. With a cut-out the stage could be any
+   shape at all, so the rail set the height and the car floated in
+   whatever box that made. A photograph has a shape of its own — these
+   are 3:2 — and forcing it into the tall panel cropped a third of the
+   car away and blew the burned-in watermark up to fill the top corner.
+   Judging photography by that would be judging the crop, not the idea.
+
+   So the frame takes 3:2 and the four records compress to sit beside
+   it: smaller thumbnail, no reserved name band, tighter rows. The
+   columns still end together and nothing is cropped.
+
+   What is paid for it is the index's air — the records were roomy and
+   now they are compact — and that is the trade worth SEEING rather
+   than describing, which is why this page exists. */
+.is-v3 .stage__col .showcase__stage { flex: none; aspect-ratio: 3 / 2; }
+
+/* THE PICTURE SETS THE ROW, and the rail fits itself into it.
+
+   Straight compression did not get there: four records bottom out
+   around 181px each because the selected one carries its pills and its
+   action, so the rail sat 334px below a 3:2 frame no matter how tight
+   the padding went.
+
+   So the direction of control is inverted. block-size: 0 keeps the rail
+   from contributing anything to the grid row — the row is therefore
+   exactly as tall as the photograph — and min-block-size: 100% then
+   fills it. The four records divide whatever that leaves, equally,
+   and clip rather than push.
+
+   This is the arrangement Alex's concept shows: a 3:2 frame with four
+   compact cards beside it, ending on the same line. */
+/* ---- THE COMPOSITION, MEASURED OFF ALEX'S CONCEPT ------------------
+   Read from the image rather than approximated, and the one thing I had
+   wrong was where the rail starts.
+
+   In the concept the photograph is 907 x 608 — 3:2 — and it begins
+   BELOW the bar. The four cards begin level with the bar, at the top of
+   the whole block, and they end on the photograph's bottom edge. So the
+   rail is taller than the picture by exactly the bar's height plus its
+   gap, and that is what makes the two columns finish together while the
+   picture keeps its own shape.
+
+   Card height in the concept is 165 against a 907-wide frame. Scaled to
+   our 654: 119. Four of those plus gaps is the rail, and the rail is
+   the bar plus the photograph. The arithmetic closes.
+
+   WHAT GETS THROWN OUT, on Alex's instruction, because 119px will not
+   hold the record as it stands: the chevron and the "See details"
+   action. His cards carry a make, a model, two pills and a thumbnail —
+   nothing else — and the whole card already selects on click, so the
+   action inside it was a second target for one intention anyway. */
+/* The bar is a real row again. The splice above removed these with the
+   block it replaced, which is why "Just in" and the arrows stayed
+   absolutely positioned inside a zero-height box — and why the rail lost
+   the 60px that made the four records fit. */
+.is-v3 .stage__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-block-end: var(--sp-4);
+  min-block-size: 44px;
+}
+.is-v3 .justin,
+.is-v3 .stage__nav {
+  position: static;
+  inset: auto;
+  margin: 0;
+  opacity: 1;
+  translate: none;
+}
+.is-v3 .stage__nav { display: flex; gap: var(--sp-2); }
+.is-v3 .stage__arrow {
+  inline-size: 40px;
+  block-size: 40px;
+  background: rgba(243, 238, 230, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.14);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  opacity: 1;
+}
+.is-v3 .stage__arrow:hover {
+  background: rgba(243, 238, 230, 0.09);
+  box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.3);
+}
+
+.is-v3 .showcase { align-items: stretch; }
+.is-v3 .stage__col .showcase__stage { flex: none; aspect-ratio: 3 / 2; }
+.is-v3 .showcase__index { block-size: 0; min-block-size: 100%; display: flex; flex-direction: column; }
+.is-v3 .recs {
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-3);
+  border-top: 0;
+}
+
+/* The record, compact. Everything that does not fit in 119px and is not
+   a fact about the car comes out. */
+/* 115px of card against about 120 of content — the last few pixels come
+   out of the padding rather than out of a fact. */
+.is-v3 .rec { padding: var(--sp-3) var(--sp-5); align-items: center; }
+.is-v3 .rec__facts, .is-v3 .rec.is-active .rec__facts { margin-block-start: var(--sp-2); }
+.is-v3 .rec__make { line-height: 1.2; }
+.is-v3 .rec__chev { display: none; }
+/* SEE DETAILS COMES BACK, and it costs no height: it already sits
+   inside the facts row beside the two pills, so it rides the line that
+   was there anyway. It shows on the selected record only — four of them
+   in a 115px card each would be four calls to action competing with the
+   picture they are supposed to be pointing at. */
+.is-v3 .rec__cta { display: none; }
+.is-v3 .rec.is-active .rec__cta {
+  display: inline-flex;
+  align-items: center;
+  opacity: 1;
+  translate: none;
+  /* Matched to the pills beside it. Left at its own padding the button
+     was a few pixels taller than the row it joined, which pushed the
+     selected card past the 115px the four of them are allotted and
+     clipped it. A control sharing a line has to share its height. */
+  padding-block: 7px 8px;
+  line-height: 1;
+}
+.is-v3 .rec__name { min-height: 0; margin-block-start: 2px; }
+.is-v3 .rec__model,
+.is-v3 .rec.is-active .rec__model { font-size: 1rem; line-height: 1.2; }
+.is-v3 .rec__detail,
+.is-v3 .rec.is-active .rec__detail { grid-template-rows: 1fr; }
+.is-v3 .rec__detail-in { opacity: 1; }
+.is-v3 .rec__facts,
+.is-v3 .rec.is-active .rec__facts {
+  opacity: 1;
+  translate: none;
+  margin-block-start: var(--sp-3);
+  display: flex;
+  gap: var(--sp-2);
+}
+.is-v3 .rec__thumb,
+.is-v3 .rec.is-active .rec__thumb { width: 92px; scale: 1; }
+
+/* The closing link is the section's last line rather than the rail's,
+   which is where the concept puts it and what buys the four records
+   their height. */
+/* Centred under the section. inline-flex ignores auto margins unless
+   the box has a width, so it gets max-content and then the margins can
+   do their job. */
+.is-v3 .showcase__all {
+  display: flex;
+  inline-size: max-content;
+  margin: var(--sp-7) auto 0;
+}
+.is-v3 .inv .shell > .showcase__all { align-self: center; }
+
+/* ---- 3. THE RECORD THUMBNAILS ------------------------------------
+   Photographs too, so the rail agrees with the stage. They take a
+   radius the cut-outs never needed — a cut-out has no edges, a
+   photograph has four — and the same grade, so the strip does not
+   flash brighter than the frame it controls. */
+.is-v3 .rec__thumb {
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  filter: saturate(0.86) brightness(0.78) contrast(1.03);
+  transition: filter var(--sel-dur, 300ms) var(--sel-ease, ease),
+              scale var(--sel-dur, 300ms) var(--sel-ease, ease),
+              opacity var(--sel-dur, 300ms) var(--sel-ease, ease);
+}
+.is-v3 .rec.is-active .rec__thumb { filter: saturate(0.9) brightness(0.98) contrast(1.02); }
+
+
+/* ---- 4. NARROW ---------------------------------------------------- */
+@media (max-width: 60rem) {
+  .is-v3 .stage__bar { margin-block-end: var(--sp-3); }
+}
+
+/* ============================================================
+   SELL — THE THREE STEPS BECOME THREE PLATES
+   ============================================================
+   Built to Alex's sketch, and it reverses a note in main.css that says a
+   border on every item "would box each step and turn three stages into
+   three cards". That was right while the steps sat on a flat bone band
+   with rules between them: boxes there would have been decoration.
+
+   It is not right here. The band ends on a photograph now, and the row
+   has to hold its own ground against a lit showroom floor — the plates
+   ARE that ground. What was a division of one surface becomes three
+   objects standing on another, which is the reason the earlier reasoning
+   does not carry over.
+
+   Scoped to .is-v3, so index and index_2 keep the divided row they were
+   approved with.
+   ============================================================ */
+.is-v3 .sell__steps {
+  border-top: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  /* Three across, sized to the type rather than to the band: the row
+     occupies the left of the frame in the sketch and leaves the floor
+     open to the right, which is where the reflection is. */
+  grid-template-columns: repeat(3, minmax(0, 13.5rem));
+  justify-content: start;
+  gap: var(--sp-4);
+}
+
+.is-v3 .sell__steps li {
+  display: block;
+  padding: var(--sp-5) var(--sp-5) var(--sp-6);
+  border-radius: 10px;
+  background: #fff;
+  /* No ring and no shadow. The plate is white on a grey floor and that is
+     already the whole separation; an edge as well would be two devices
+     doing one job. */
+}
+.is-v3 .sell__steps li + li { border-inline-start: 0; }
+.is-v3 .sell__steps li:first-child { padding-inline-start: var(--sp-5); }
+
+/* The row starts on the shell line, where Built on more starts below it.
+   main.css gives .sell__steps a margin-inline of clamp(--sp-7, 5vw,
+   --sp-10) — an indent that belonged to the divided row inside the band.
+   Out here it pushed the plates off the page grid and ran the third one
+   past the right edge. */
+.is-v3 .sell-band .sell__steps { margin-inline: 0; }
+
+/* The numeral leads, at display scale, with the sketch's full stop — it
+   is what turns a count into a step. */
+.is-v3 .sell__step-n {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 2.6vw, 2.375rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #1A140E;
+  margin-block-end: var(--sp-4);
+}
+.is-v3 .sell__step-n::after { content: "."; }
+
+.is-v3 .sell__step-t {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1A140E;
+  /* Two lines by measure rather than by a break in the markup, so the
+     same three strings still read on one line where there is room. */
+  max-inline-size: 11ch;
+}
+
+@media (max-width: 760px) {
+  .is-v3 .sell__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-3);
+  }
+  .is-v3 .sell__steps li { padding: var(--sp-4) var(--sp-4) var(--sp-5); }
+}
+
+/* The plates were being cut by the band's own lower edge. The foot was
+   94px and the cut is 100 deep at this width, so the last 6px of every
+   plate sat inside the curve — and a rounded white corner clipped by a
+   shaped edge reads as a rendering fault rather than as a composition.
+
+   The foot is derived from the cut instead of guessed: whatever
+   --cut-drop-b resolves to, the plates clear it and keep a step of air
+   underneath. */
+
+
+
+
+
+
+
+/* ---- The band the plates stand on ------------------------------------
+   Its own strip between the two sections, pulled up so the plates cross
+   the join: the top of each sits on the bone, the bottom hangs over the
+   dark chapter. That crossing is the whole device in the sketch, and it
+   is impossible inside .sell — a clip-path cuts every child at the
+   shape's edge, whatever overflow says.
+
+   The lift is half a plate, so the seam runs through them rather than
+   past them. z-index puts them over both surfaces; the strip itself has
+   no ground of its own, so nothing new is introduced between the two
+   chapters. */
+.is-v3 .sell-band {
+  position: relative;
+  z-index: 3;
+  /* Raised twice: 114px of lift became 137, then 178. The whole
+     expression is scaled rather than a number bolted on, so the
+     crossing keeps its relationship to the plate height if that ever
+     changes. */
+  margin-block-start: calc((var(--plate-h, 10.25rem) / -2 - var(--sp-6)) * 1.56);
+  pointer-events: none;
+}
+.is-v3 .sell-band .sell__steps { pointer-events: auto; }
+
+/* The band keeps the height it was approved at. I shortened it by giving
+   .sell__grid a foot of my own, which was never asked for — the request
+   was to move three cards, not to reproportion the section. main.css
+   governs it again. */
+
+/* ---- The band matches index_2 -------------------------------------
+   Measured, not derived. At 1640 index_2 stands at 895 and this one
+   stood at 715 — the 180 the three steps took with them when they left
+   the section. That 180 is added to the foot the band already had.
+
+   A measured constant rather than another formula: the last two attempts
+   at deriving this were arithmetic about arithmetic, and both were
+   wrong. If the two bands ever diverge again, measure them again. */
+.is-v3 .sell__grid {
+  padding-block-end: calc(130.72px + 180px);
+}
+
+/* The plates use the shared one-shot entry: in from below, one by one,
+   and they stay. That system is already built — data-reveal on the strip
+   and .sell__steps li in main.css, which carries the rise and the
+   staircase. Nothing here needs to restate it. */
+
+/* The strip takes Story's measure, so the plates start where "Built on
+   more" starts. .shell caps at --container (1440) and pads by --gutter
+   (57.6); .story__inner caps at --measure-wide and pads by
+   clamp(--sp-6, 5vw, --sp-9), which is 86.4 at this width — a 28px
+   difference the eye reads immediately on two stacked blocks. */
+.is-v3 .sell-band__inner {
+  max-width: var(--measure-wide, 100rem);
+  padding-inline: clamp(var(--sp-6), 6vw, var(--sp-9));
+}

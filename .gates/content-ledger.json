@@ -1,0 +1,1211 @@
+{
+  "gate": "Gate 4 · Content Provenance",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "build": {
+    "private": true
+  },
+  "claims": [
+    {
+      "id": "contact-phone",
+      "claim": "(262) 249-6777",
+      "status": "verified",
+      "source": "genevamotorhaus.com header + contact section, captured 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".navbar__cta",
+        ".sell__how",
+        ".fin__row",
+        ".about__tel",
+        ".gmh-door__acts"
+      ]
+    },
+    {
+      "id": "contact-address",
+      "claim": "600 Faust Rd, Unit 8, Burlington, WI 53105",
+      "status": "verified",
+      "source": "genevamotorhaus.com contact section + map embed, 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__addr",
+        ".gmh-door__addr",
+        ".menu__places"
+      ]
+    },
+    {
+      "id": "contact-email",
+      "claim": "Info@GenevaMotorHaus.com",
+      "status": "verified",
+      "source": "genevamotorhaus.com header, 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-door__mail"
+      ]
+    },
+    {
+      "id": "hours",
+      "claim": "Mon–Fri 10AM–4PM · Saturday by appointment · Sunday closed",
+      "status": "verified",
+      "source": "genevamotorhaus.com contact section: 'Monday - Friday: 10AM-4PM · Saturday: Appt Only · Sunday: Closed'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-door__hours",
+        ".menu__places"
+      ]
+    },
+    {
+      "id": "legal-name",
+      "claim": "Geneva Motor Haus LLC",
+      "status": "verified",
+      "source": "Autotrader / KBB dealer listing 'GENEVA MOTOR HAUS LLC'",
+      "sourceType": "public-record",
+      "appearsAt": [
+        ".foot__legal"
+      ]
+    },
+    {
+      "id": "aan",
+      "claim": "Powered by All Auto Network",
+      "status": "verified",
+      "source": "AAN Control Panel export 2026-09-09: Geneva Motor Haus, WI, All Auto Network, Pending",
+      "sourceType": "client-data",
+      "appearsAt": [
+        ".foot__by"
+      ]
+    },
+    {
+      "id": "line-collectibles",
+      "claim": "From low-mile collectibles to everyday transportation",
+      "status": "verified",
+      "source": "genevamotorhaus.com hero: 'From Low Mile Collectibles to Everyday Transportation!'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede",
+        ".story__title"
+      ]
+    },
+    {
+      "id": "hand-selected",
+      "claim": "Hand-selected in Burlington, Wisconsin",
+      "status": "verified",
+      "source": "/about: 'Each vehicle in our inventory is hand-selected'; location from contact section",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede"
+      ]
+    },
+    {
+      "id": "nationwide-transport",
+      "claim": "Nationwide transportation available",
+      "status": "verified",
+      "source": "Text the dealer burned into its own listing photo: genevamotorhaus.com/car/bmw-m3-2015, frame 01 — '… NATIONWIDE TRANSPORTATION AVAILABLE'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".hero .lede",
+        ".gmh-ship .brk__lede",
+        "meta description"
+      ]
+    },
+    {
+      "id": "half-out-of-state",
+      "claim": "Half our cars leave Wisconsin.",
+      "status": "verified",
+      "source": "Client's AAN ticket (from client/AAN Control Panel.pdf): 'needs a shipping section since half their cars go out of state'",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        "#ship-title"
+      ]
+    },
+    {
+      "id": "sight-unseen",
+      "claim": "Buyers from out of state have bought from us sight unseen",
+      "status": "verified",
+      "source": "Two reviews on genevamotorhaus.com: CHARLES ('sight unseen from out of state'), Defries ('without actually having seen it with my own eyes')",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".gmh-ship .brk__lede"
+      ]
+    },
+    {
+      "id": "ship-quotes",
+      "claim": "Three quoted sentences on the route (Diego Castro, Charles, Defries)",
+      "status": "verified",
+      "source": "Verbatim excerpts of the reviews shown in full in #reviews, from genevamotorhaus.com",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".gmh-stop__q"
+      ]
+    },
+    {
+      "id": "stock-date",
+      "claim": "In stock · Prices and mileage as listed on 10 Sep 2026",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory captured 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".justin",
+        ".gmh-dated--inv"
+      ]
+    },
+    {
+      "id": "price-targa",
+      "claim": "2007 Porsche 911 Targa 4S — $99,997 — 42,200 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-targa-4s-2007",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='1']"
+      ]
+    },
+    {
+      "id": "price-saleen",
+      "claim": "1989 Ford Mustang Saleen SSC — $170,000 — 2,470 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/ford-mustang-saleen-ssc-1989",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='2']"
+      ]
+    },
+    {
+      "id": "price-c4s-2010",
+      "claim": "2010 Porsche 911 Carrera 4S — $75,000 — 47,587 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-carrera-4s-2010",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='3']"
+      ]
+    },
+    {
+      "id": "price-993",
+      "claim": "1997 Porsche 911 Carrera 4S (6-speed) — $169,993 — 101,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/car/porsche-911-carerra-4s-6-speed-1997 (their spelling 'CARERRA' in the URL and title)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec[data-frame='0']"
+      ]
+    },
+    {
+      "id": "stock-count",
+      "claim": "23 vehicles in stock",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory, 23 listings on 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__stats .stat--lead"
+      ]
+    },
+    {
+      "id": "price-range",
+      "claim": "From $9,000 to $170,000",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com/inventory: lowest 2004 Lexus ES330 $9,000, highest 1989 Saleen SSC $170,000",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__stats .stat--proof"
+      ]
+    },
+    {
+      "id": "selection-copy",
+      "claim": "A variety of vehicles — classics, American modern muscle and much more — carefully selected for condition, performance and features",
+      "status": "verified",
+      "source": "genevamotorhaus.com 'Selection' copy, shortened. 'exotics' and 'Japanese supercars' removed: none in stock on 2026-09-10.",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".story__lede",
+        ".inv__intro .lede"
+      ]
+    },
+    {
+      "id": "sell-appraisal",
+      "claim": "A fair, no-obligation appraisal — luxury vehicle, exotic or daily driver",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage Sell section",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sell__lede"
+      ]
+    },
+    {
+      "id": "sell-steps",
+      "claim": "Four steps: submit info · appraisal · inspection · complete the sale",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car 'Simple 4-Step Process'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#sell-steps"
+      ]
+    },
+    {
+      "id": "sell-heading",
+      "claim": "Get top dollar for your car.",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage: 'Get Top Dollar for Your Car'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sell__title"
+      ]
+    },
+    {
+      "id": "warranty-offered",
+      "claim": "Warranty options are available on the vehicles we sell.",
+      "status": "verified",
+      "source": "Client's AAN ticket: 'Wants to keep warranties'",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".warranty__lede"
+      ]
+    },
+    {
+      "id": "fin-heading",
+      "claim": "Get approved today.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/financing: 'Get Approved Today'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#fin-title"
+      ]
+    },
+    {
+      "id": "fin-lenders",
+      "claim": "Competitive rates and flexible terms through trusted lenders",
+      "status": "verified",
+      "source": "/financing: 'works with trusted lenders to provide competitive rates and flexible terms'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin__lede"
+      ]
+    },
+    {
+      "id": "fin-phone",
+      "claim": "Get pre-approved by phone",
+      "status": "verified",
+      "source": "/financing: 'get pre-approved over the phone'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin__row"
+      ]
+    },
+    {
+      "id": "about-vision",
+      "claim": "Founded with a vision … exceptional vehicles matched with unparalleled service",
+      "status": "verified",
+      "source": "/about 'Our Story', verbatim. Kept as a statement of the founder's vision, not a claim of fact; the page's own superlative ('one of the region's most trusted') was removed (CP6).",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__p"
+      ]
+    },
+    {
+      "id": "about-location",
+      "claim": "Located in Burlington, Wisconsin … a comfortable showroom experience",
+      "status": "verified",
+      "source": "/about 'Convenient Location', verbatim",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".about__p"
+      ]
+    },
+    {
+      "id": "tagline",
+      "claim": "Where passion meets perfection.",
+      "status": "verified",
+      "source": "genevamotorhaus.com hero + /about",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#about-title"
+      ]
+    },
+    {
+      "id": "reviews",
+      "claim": "Twelve five-star reviews, names and wording as published",
+      "status": "verified",
+      "source": "genevamotorhaus.com homepage reviews carousel, captured 2026-09-10 (docs/source/site-copy-2026-09-10.json). No dates or platforms are shown because the site shows none.",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        "#revs-track"
+      ]
+    },
+    {
+      "id": "review-meta",
+      "claim": "Per-card labels: Bought / Sold / Bought from out of state / Bought online, shipped",
+      "status": "verified",
+      "source": "Each label restates what that review itself says; none adds a fact the review does not contain",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        ".rv__meta"
+      ]
+    },
+    {
+      "id": "ask-for-shane",
+      "claim": "Ask for Shane.",
+      "status": "verified",
+      "source": "Review by KIETH: '…ask for Shane!'",
+      "sourceType": "customer-statement",
+      "appearsAt": [
+        "#revs-title"
+      ]
+    },
+    {
+      "id": "ship-map-rings",
+      "claim": "Distance rings at 500 mi, 1,000 mi and 1,500 mi from Burlington, Wisconsin",
+      "status": "verified",
+      "source": "Geometry, not a business promise: geodesic circles of 500, 1,000 and 1,500 statute miles around Burlington, WI (the address published on genevamotorhaus.com), projected on us-atlas 3.0.1 — US Census Bureau cartographic boundaries, public domain — docs/source/us-map-lower48-albers.json. Computed 2026-09-10. The map names no destinations and no delivery times.",
+      "sourceType": "public-record",
+      "appearsAt": [
+        ".gmh-map__label",
+        "#gmh-map-cap"
+      ]
+    },
+    {
+      "id": "price-isf",
+      "claim": "$49,990 · 38,100 miles (2008 Lexus IS-F)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-m3",
+      "claim": "$59,990 · 33,080 miles (2015 BMW M3)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-c4s-cab-2004",
+      "claim": "$54,996 · 35,132 miles (2004 Porsche 911 C4S Cabriolet)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "price-x5",
+      "claim": "$12,990 · 48,944 miles (2003 BMW X5 4.4i)",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-10",
+      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".rec__pill"
+      ]
+    },
+    {
+      "id": "tabs-labels",
+      "claim": "Exceptional inventory · Selection · Highly reliable · Reputation · Smooth deal · Process · Strong customer · Service",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, the four tabs, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__k",
+        ".gmh-haus__t"
+      ]
+    },
+    {
+      "id": "reputation-stand-behind",
+      "claim": "We stand behind every vehicle we sell.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Reputation tab, rendered 2026-09-10; corroborated by Patrick's review on the same site (\"he stands behind them\"). The tab's \"over 12 years\" and \"thousands of satisfied customers\" are NOT used (template claims, see notUsed).",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "process-copy",
+      "claim": "From initial inquiry to final delivery, we guide you through every step — and handle the paperwork, financing options and logistics.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Process tab, rendered 2026-09-10 (trimmed, not extended); corroborated by reviews (paperwork handled — Cory, Jeff Haneline; financing — Kieth; shipping — Defries)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "service-copy",
+      "claim": "Customer satisfaction is at the heart of everything we do — support before, during and after your purchase.",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, Service tab, rendered 2026-09-10 (trimmed). Its \"maintenance programs\" is NOT used: nothing supports it.",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-haus__p"
+      ]
+    },
+    {
+      "id": "tiles",
+      "claim": "See our Reviews · Explore Financing · Learn About us · Get in Touch — Twelve buyers and sellers, in their own words. One showroom in Burlington, Wisconsin — and Shane, the owner.",
+      "status": "verified",
+      "source": "Tile labels: genevamotorhaus.com home page, rendered 2026-09-10. \"Twelve\": the twelve reviews published on genevamotorhaus.com and set in full on this page. \"Shane, the owner\": a customer review on the live site (\"Shane the owner\").",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-tile__k",
+        ".gmh-tile__t",
+        ".gmh-tile__p"
+      ]
+    },
+    {
+      "id": "contact-title",
+      "claim": "Get in touch · Contact / Location",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, contact section heading, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".locs__eyebrow",
+        ".locs__title"
+      ]
+    },
+    {
+      "id": "newsletter",
+      "claim": "Sign up for · Our newsletter · Get the latest updates",
+      "status": "verified",
+      "source": "genevamotorhaus.com home page, newsletter band, rendered 2026-09-10",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".gmh-newsband"
+      ]
+    }
+  ],
+  "harvested": [
+    {
+      "class": "bare-count",
+      "text": "262",
+      "context": "(262) 249-6777",
+      "where": "html.has-js > body.v2 > header.masthead > div.masthead__inner > a.navbar__cta > span.navbar__cta-text"
+    },
+    {
+      "class": "bare-count",
+      "text": "249",
+      "context": "(262) 249-6777",
+      "where": "html.has-js > body.v2 > header.masthead > div.masthead__inner > a.navbar__cta > span.navbar__cta-text"
+    },
+    {
+      "class": "bare-count",
+      "text": "6777",
+      "context": "(262) 249-6777",
+      "where": "html.has-js > body.v2 > header.masthead > div.masthead__inner > a.navbar__cta > span.navbar__cta-text"
+    },
+    {
+      "class": "bare-count",
+      "text": "2026",
+      "context": "Prices and mileage as listed on 10 Sep 2026",
+      "where": "section#inventory > div.shell > header.inv__intro > p.gmh-dated"
+    },
+    {
+      "class": "year",
+      "text": "2026",
+      "context": "Prices and mileage as listed on 10 Sep 2026",
+      "where": "section#inventory > div.shell > header.inv__intro > p.gmh-dated"
+    },
+    {
+      "class": "bare-count",
+      "text": "1997",
+      "context": "1997 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "1997",
+      "context": "1997 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "bare-count",
+      "text": "911",
+      "context": "911 Carrera 4S",
+      "where": "div.showcase__index > div.recs > div.rec > span.rec__body > span.rec__name > span.rec__model"
+    },
+    {
+      "class": "currency",
+      "text": "$169,993",
+      "context": "$169,993",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "169,993",
+      "context": "$169,993",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "169",
+      "context": "$169,993",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "993",
+      "context": "$169,993",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "101,000",
+      "context": "101,000 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "101",
+      "context": "101,000 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "101,000 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2007",
+      "context": "2007 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2007",
+      "context": "2007 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "bare-count",
+      "text": "911",
+      "context": "911 Targa 4S",
+      "where": "div.showcase__index > div.recs > div.rec > span.rec__body > span.rec__name > span.rec__model"
+    },
+    {
+      "class": "currency",
+      "text": "$99,997",
+      "context": "$99,997",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "99,997",
+      "context": "$99,997",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "997",
+      "context": "$99,997",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "42,200",
+      "context": "42,200 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "200",
+      "context": "42,200 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2008",
+      "context": "2008 Lexus",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2008",
+      "context": "2008 Lexus",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "currency",
+      "text": "$49,990",
+      "context": "$49,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "49,990",
+      "context": "$49,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "990",
+      "context": "$49,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "38,100",
+      "context": "38,100 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "100",
+      "context": "38,100 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2015",
+      "context": "2015 BMW",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2015",
+      "context": "2015 BMW",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "currency",
+      "text": "$59,990",
+      "context": "$59,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "59,990",
+      "context": "$59,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "990",
+      "context": "$59,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "33,080",
+      "context": "33,080 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "080",
+      "context": "33,080 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "1989",
+      "context": "1989 Ford",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "1989",
+      "context": "1989 Ford",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "currency",
+      "text": "$170,000",
+      "context": "$170,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "170,000",
+      "context": "$170,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "170",
+      "context": "$170,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "$170,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "2,470",
+      "context": "2,470 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "470",
+      "context": "2,470 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2010",
+      "context": "2010 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2010",
+      "context": "2010 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "bare-count",
+      "text": "911",
+      "context": "911 Carrera 4S",
+      "where": "div.showcase__index > div.recs > div.rec > span.rec__body > span.rec__name > span.rec__model"
+    },
+    {
+      "class": "currency",
+      "text": "$75,000",
+      "context": "$75,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "75,000",
+      "context": "$75,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "$75,000",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "47,587",
+      "context": "47,587 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "587",
+      "context": "47,587 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2004",
+      "context": "2004 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2004",
+      "context": "2004 Porsche",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "bare-count",
+      "text": "911",
+      "context": "911 C4S Cabriolet",
+      "where": "div.showcase__index > div.recs > div.rec > span.rec__body > span.rec__name > span.rec__model"
+    },
+    {
+      "class": "currency",
+      "text": "$54,996",
+      "context": "$54,996",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "54,996",
+      "context": "$54,996",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "996",
+      "context": "$54,996",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "35,132",
+      "context": "35,132 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "132",
+      "context": "35,132 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "2003",
+      "context": "2003 BMW",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "year",
+      "text": "2003",
+      "context": "2003 BMW",
+      "where": "div.showcase > div.showcase__index > div.recs > div.rec > span.rec__body > span.micro"
+    },
+    {
+      "class": "currency",
+      "text": "$12,990",
+      "context": "$12,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "12,990",
+      "context": "$12,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "990",
+      "context": "$12,990",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "grouped-number",
+      "text": "48,944",
+      "context": "48,944 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "944",
+      "context": "48,944 miles",
+      "where": "div.rec > span.rec__body > span.rec__detail > span.rec__detail-in > span.rec__facts > span.rec__pill"
+    },
+    {
+      "class": "bare-count",
+      "text": "262",
+      "context": "(262) 249-6777 · Mon–Fri 10AM–4PM",
+      "where": "body.v2 > main > section.gmh-tiles > div.shell > a.gmh-tile > span.gmh-tile__p"
+    },
+    {
+      "class": "bare-count",
+      "text": "249",
+      "context": "(262) 249-6777 · Mon–Fri 10AM–4PM",
+      "where": "body.v2 > main > section.gmh-tiles > div.shell > a.gmh-tile > span.gmh-tile__p"
+    },
+    {
+      "class": "bare-count",
+      "text": "6777",
+      "context": "(262) 249-6777 · Mon–Fri 10AM–4PM",
+      "where": "body.v2 > main > section.gmh-tiles > div.shell > a.gmh-tile > span.gmh-tile__p"
+    },
+    {
+      "class": "currency",
+      "text": "$9,000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "currency",
+      "text": "$170,000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "grouped-number",
+      "text": "9,000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "grouped-number",
+      "text": "170,000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "bare-count",
+      "text": "170",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "bare-count",
+      "text": "2026",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "year",
+      "text": "2026",
+      "context": "23 vehicles in stock, $9,000 to $170,000 — as listed on 10 Sep 2026",
+      "where": "section#haus > div.shell > ol.gmh-haus__list > li.gmh-haus__item > p.gmh-dated"
+    },
+    {
+      "class": "delivery",
+      "text": "Nationwide",
+      "context": "Nationwide transportation available. Buyers from out of state have bought from us sight unseen — in their words:",
+      "where": "section#shipping > div.brk__frame > div.brk__copy > p.lede"
+    },
+    {
+      "class": "bare-count",
+      "text": "500",
+      "context": "500 mi",
+      "where": "section#shipping > div.brk__frame > figure.gmh-map > span.gmh-map__label"
+    },
+    {
+      "class": "grouped-number",
+      "text": "1,000",
+      "context": "1,000 mi",
+      "where": "section#shipping > div.brk__frame > figure.gmh-map > span.gmh-map__label"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "1,000 mi",
+      "where": "section#shipping > div.brk__frame > figure.gmh-map > span.gmh-map__label"
+    },
+    {
+      "class": "grouped-number",
+      "text": "1,500",
+      "context": "1,500 mi",
+      "where": "section#shipping > div.brk__frame > figure.gmh-map > span.gmh-map__label"
+    },
+    {
+      "class": "bare-count",
+      "text": "500",
+      "context": "1,500 mi",
+      "where": "section#shipping > div.brk__frame > figure.gmh-map > span.gmh-map__label"
+    },
+    {
+      "class": "grouped-number",
+      "text": "1,000",
+      "context": "Distance from our door in Burlington, Wisconsin — rings at 500, 1,000 and 1,500 miles.",
+      "where": "figcaption#gmh-map-cap"
+    },
+    {
+      "class": "grouped-number",
+      "text": "1,500",
+      "context": "Distance from our door in Burlington, Wisconsin — rings at 500, 1,000 and 1,500 miles.",
+      "where": "figcaption#gmh-map-cap"
+    },
+    {
+      "class": "bare-count",
+      "text": "500",
+      "context": "Distance from our door in Burlington, Wisconsin — rings at 500, 1,000 and 1,500 miles.",
+      "where": "figcaption#gmh-map-cap"
+    },
+    {
+      "class": "bare-count",
+      "text": "000",
+      "context": "Distance from our door in Burlington, Wisconsin — rings at 500, 1,000 and 1,500 miles.",
+      "where": "figcaption#gmh-map-cap"
+    },
+    {
+      "class": "bare-count",
+      "text": "500",
+      "context": "Distance from our door in Burlington, Wisconsin — rings at 500, 1,000 and 1,500 miles.",
+      "where": "figcaption#gmh-map-cap"
+    },
+    {
+      "class": "bare-count",
+      "text": "2005",
+      "context": "“Bought a 2005 Porsche 997.1 from Shane sight unseen from out of state and it was absolutely mint.”",
+      "where": "section#shipping > div.brk__frame > ol.gmh-quotes > li.gmh-stop > p.gmh-stop__q"
+    },
+    {
+      "class": "bare-count",
+      "text": "997",
+      "context": "“Bought a 2005 Porsche 997.1 from Shane sight unseen from out of state and it was absolutely mint.”",
+      "where": "section#shipping > div.brk__frame > ol.gmh-quotes > li.gmh-stop > p.gmh-stop__q"
+    },
+    {
+      "class": "year",
+      "text": "2005",
+      "context": "“Bought a 2005 Porsche 997.1 from Shane sight unseen from out of state and it was absolutely mint.”",
+      "where": "section#shipping > div.brk__frame > ol.gmh-quotes > li.gmh-stop > p.gmh-stop__q"
+    },
+    {
+      "class": "same-day",
+      "text": "same day",
+      "context": "“They even shipped my car with a same day carrier. It arrived in beautiful shape.”",
+      "where": "section#shipping > div.brk__frame > ol.gmh-quotes > li.gmh-stop > p.gmh-stop__q"
+    },
+    {
+      "class": "bare-count",
+      "text": "262",
+      "context": "Call (262) 249-6777",
+      "where": "section#sell > div.sell__grid > div.sell__copy > div.sell__actions > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "249",
+      "context": "Call (262) 249-6777",
+      "where": "section#sell > div.sell__grid > div.sell__copy > div.sell__actions > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "6777",
+      "context": "Call (262) 249-6777",
+      "where": "section#sell > div.sell__grid > div.sell__copy > div.sell__actions > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "2005",
+      "context": "Shane is an all around car expert but he really shines as a Porsche expert. Bought a 2005 Porsche 997.1 from Shane sight",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "bare-count",
+      "text": "997",
+      "context": "Shane is an all around car expert but he really shines as a Porsche expert. Bought a 2005 Porsche 997.1 from Shane sight",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "year",
+      "text": "2005",
+      "context": "Shane is an all around car expert but he really shines as a Porsche expert. Bought a 2005 Porsche 997.1 from Shane sight",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "same-day",
+      "text": "same day",
+      "context": "Hello friends, I bought a car entirely online from Geneva Motor Haus and I could not be happier with the way it went. I ",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "bare-count",
+      "text": "2006",
+      "context": "We found a beautiful 2006 Grand Prix GXP with super low miles on marketplace. Sent a quick message and received a respon",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "year",
+      "text": "2006",
+      "context": "We found a beautiful 2006 Grand Prix GXP with super low miles on marketplace. Sent a quick message and received a respon",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "superlative",
+      "text": "the best",
+      "context": "Calling Shane was the best phone call I made throughout my car search! I had been looking for this particular car for aw",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "same-day",
+      "text": "same day",
+      "context": "Typically, shopping for a car is stressful. There are so many unknowns to take into consideration. To the average buyer,",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "bare-count",
+      "text": "2014",
+      "context": "I recently sold my 2014 bmw i8 to GENEVA MOTOR HAUS and was very happy with the offer Shane give me for it. He was very ",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "year",
+      "text": "2014",
+      "context": "I recently sold my 2014 bmw i8 to GENEVA MOTOR HAUS and was very happy with the offer Shane give me for it. He was very ",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "same-day",
+      "text": "same day",
+      "context": "I recently sold my 2014 bmw i8 to GENEVA MOTOR HAUS and was very happy with the offer Shane give me for it. He was very ",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "bare-count",
+      "text": "2001",
+      "context": "Shane was great to work with when selling our 2001 Porsche Carrera 4. Extremely easy process, and he made sure all quest",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "year",
+      "text": "2001",
+      "context": "Shane was great to work with when selling our 2001 Porsche Carrera 4. Extremely easy process, and he made sure all quest",
+      "where": "ul#revs-track > li.rv > div.rv__card > p.rv__text"
+    },
+    {
+      "class": "bare-count",
+      "text": "600",
+      "context": "600 Faust Rd, Unit 8",
+      "where": "section#contact > div.shell > div.gmh-door__grid > div.gmh-door__info > p.gmh-door__addr"
+    },
+    {
+      "class": "bare-count",
+      "text": "53105",
+      "context": "Burlington, WI 53105",
+      "where": "section#contact > div.shell > div.gmh-door__grid > div.gmh-door__info > p.gmh-door__addr"
+    },
+    {
+      "class": "bare-count",
+      "text": "262",
+      "context": "(262) 249-6777",
+      "where": "section#contact > div.shell > div.gmh-door__grid > div.gmh-door__info > div.gmh-door__acts > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "249",
+      "context": "(262) 249-6777",
+      "where": "section#contact > div.shell > div.gmh-door__grid > div.gmh-door__info > div.gmh-door__acts > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "6777",
+      "context": "(262) 249-6777",
+      "where": "section#contact > div.shell > div.gmh-door__grid > div.gmh-door__info > div.gmh-door__acts > a.btn"
+    },
+    {
+      "class": "bare-count",
+      "text": "2026",
+      "context": "© 2026 Geneva Motor Haus LLC. All rights reserved.",
+      "where": "html.has-js > body.v2 > footer.foot > div.shell > div.foot__base > p.foot__legal"
+    },
+    {
+      "class": "year",
+      "text": "2026",
+      "context": "© 2026 Geneva Motor Haus LLC. All rights reserved.",
+      "where": "html.has-js > body.v2 > footer.foot > div.shell > div.foot__base > p.foot__legal"
+    }
+  ],
+  "validation": {
+    "verdict": "pass",
+    "problems": [],
+    "uncovered": [],
+    "counts": {
+      "hits": 118,
+      "entries": 45,
+      "uncovered": 0
+    }
+  },
+  "humanConfirmed": true,
+  "blockers": [],
+  "verdict": "pass",
+  "finishedAt": "2026-09-11T01:39:30.400Z"
+}

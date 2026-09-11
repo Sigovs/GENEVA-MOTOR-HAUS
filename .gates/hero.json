@@ -1,0 +1,157 @@
+{
+  "gate": "Gate 1/2 · delegated — rendered hero conformance",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "viewports": [
+    {
+      "label": "desktop",
+      "verdict": "pass",
+      "problems": [],
+      "geometry": {
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        },
+        "media": {
+          "x": 0,
+          "y": -180,
+          "w": 1440,
+          "h": 1152
+        },
+        "fit": "cover",
+        "position": {
+          "x": 0.7,
+          "y": 0.62
+        },
+        "natural": {
+          "w": 2400,
+          "h": 1800
+        }
+      },
+      "samples": [
+        {
+          "t": 0,
+          "rect": {
+            "x": 6.52800000000002,
+            "y": 248.54399999999998,
+            "w": 1423.872,
+            "h": 345.59999999999997
+          },
+          "clipped": [],
+          "clearance": {
+            "left": 6.52800000000002,
+            "top": 248.54399999999998,
+            "right": 9.599999999999909,
+            "bottom": 305.856
+          },
+          "subjectShare": 0.38,
+          "navOverlap": 0,
+          "textSafeOverlap": 0,
+          "copyOverlap": 0.011
+        }
+      ],
+      "worst": {
+        "t": 0,
+        "rect": {
+          "x": 6.52800000000002,
+          "y": 248.54399999999998,
+          "w": 1423.872,
+          "h": 345.59999999999997
+        },
+        "clipped": [],
+        "clearance": {
+          "left": 6.52800000000002,
+          "top": 248.54399999999998,
+          "right": 9.599999999999909,
+          "bottom": 305.856
+        },
+        "subjectShare": 0.38,
+        "navOverlap": 0,
+        "textSafeOverlap": 0,
+        "copyOverlap": 0.011
+      },
+      "sharpness": null,
+      "evidence": "/Users/alex/Desktop/WORK/GENEVA MOTOR HAUS/.gates/evidence/hero-desktop.png"
+    },
+    {
+      "label": "mobile",
+      "verdict": "pass",
+      "problems": [],
+      "geometry": {
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 924.21875
+        },
+        "media": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 472.625
+        },
+        "fit": "cover",
+        "position": {
+          "x": 1,
+          "y": 0.58
+        },
+        "natural": {
+          "w": 2400,
+          "h": 1800
+        }
+      },
+      "samples": [
+        {
+          "t": 0,
+          "rect": {
+            "x": 169.44166666666666,
+            "y": 181.960625,
+            "w": 207.95500000000004,
+            "h": 137.06125
+          },
+          "clipped": [],
+          "clearance": {
+            "left": 169.44166666666666,
+            "top": 181.960625,
+            "right": 12.603333333333296,
+            "bottom": 605.196875
+          },
+          "subjectShare": 0.079,
+          "navOverlap": 0,
+          "textSafeOverlap": 0,
+          "copyOverlap": 0
+        }
+      ],
+      "worst": {
+        "t": 0,
+        "rect": {
+          "x": 169.44166666666666,
+          "y": 181.960625,
+          "w": 207.95500000000004,
+          "h": 137.06125
+        },
+        "clipped": [],
+        "clearance": {
+          "left": 169.44166666666666,
+          "top": 181.960625,
+          "right": 12.603333333333296,
+          "bottom": 605.196875
+        },
+        "subjectShare": 0.079,
+        "navOverlap": 0,
+        "textSafeOverlap": 0,
+        "copyOverlap": 0
+      },
+      "sharpness": null,
+      "evidence": "/Users/alex/Desktop/WORK/GENEVA MOTOR HAUS/.gates/evidence/hero-mobile.png"
+    }
+  ],
+  "humanConfirmed": false,
+  "verdict": "fail",
+  "finishedAt": "2026-09-11T01:39:04.731Z",
+  "sourceEvidence": "/Users/alex/Desktop/WORK/GENEVA MOTOR HAUS/.gates/evidence/hero-source-declared.png",
+  "blockers": [
+    "humanConfirmed is false — the annotated source frame must be checked by a person: a wrongly declared subjectBox cannot produce a pass"
+  ]
+}

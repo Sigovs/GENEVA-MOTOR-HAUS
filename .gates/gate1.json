@@ -1,0 +1,417 @@
+{
+  "gate": "Gate 1 · Measurable Conformance",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "fileCount": 473,
+  "page": "index.html",
+  "measured": {
+    "desktop": {
+      "pageHeightPx": 8066,
+      "screens": 8.96,
+      "mediaTotal": 22,
+      "fullBleedMedia": 1,
+      "largestTypePx": 92,
+      "smallestTypePx": 14,
+      "typeScaleRatio": 6.58,
+      "horizontalOverflow": false,
+      "errors": []
+    },
+    "mobile": {
+      "pageHeightPx": 11316,
+      "screens": 13.41,
+      "mediaTotal": 22,
+      "fullBleedMedia": 1,
+      "largestTypePx": 49,
+      "smallestTypePx": 14,
+      "typeScaleRatio": 3.48,
+      "horizontalOverflow": false,
+      "errors": []
+    }
+  },
+  "a1": {
+    "desktop": {
+      "rule": "A1 — one governing event owns the first screen, and everything else defers to it",
+      "eventStatement": "The haus is open: two 911s on the lot, the name set between and below them.",
+      "floor": 0.9,
+      "metrics": {
+        "eventCoverage": 1,
+        "mediaCoverage": 1,
+        "competitionRatio": 0,
+        "structuralShare": 1,
+        "negativeSpaceShare": 0,
+        "rankMassShare": 0.16,
+        "subjectShareOfEvent": 1,
+        "chromeShare": 0.098,
+        "declaredMasses": 5,
+        "readsWithoutMedia": true
+      },
+      "envelope": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "components": [
+        {
+          "role": "subject",
+          "selector": ".hero__media",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": true,
+          "share": 1,
+          "isWrapper": true,
+          "rects": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          ]
+        },
+        {
+          "role": "field",
+          "selector": ".hero__scrim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 1,
+          "isWrapper": true,
+          "rects": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900
+            }
+          ]
+        },
+        {
+          "role": "identity",
+          "selector": ".hero__claim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.16,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 329,
+              "y": 587,
+              "w": 782,
+              "h": 265
+            }
+          ]
+        },
+        {
+          "role": "support",
+          "selector": ".hero__meter",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.003,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 618,
+              "y": 587,
+              "w": 203,
+              "h": 16
+            }
+          ]
+        },
+        {
+          "role": "identity",
+          "selector": ".claim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.053,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 329,
+              "y": 643,
+              "w": 782,
+              "h": 89
+            }
+          ]
+        },
+        {
+          "role": "support",
+          "selector": ".hero .lede",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.008,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 523,
+              "y": 748,
+              "w": 394,
+              "h": 26
+            }
+          ]
+        },
+        {
+          "role": "cta",
+          "selector": ".hero .cta-row",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.018,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 501,
+              "y": 798,
+              "w": 438,
+              "h": 54
+            }
+          ]
+        }
+      ],
+      "negativeSpace": [],
+      "competitors": [],
+      "excluded": [
+        {
+          "selector": ".masthead",
+          "why": null,
+          "matched": 1
+        },
+        {
+          "selector": ".readbar",
+          "why": null,
+          "matched": 1
+        }
+      ],
+      "problems": [],
+      "verdict": "pass",
+      "label": "desktop",
+      "evidence": "/Users/alex/Desktop/WORK/GENEVA MOTOR HAUS/.gates/evidence/a1-desktop.png"
+    },
+    "mobile": {
+      "rule": "A1 — one governing event owns the first screen, and everything else defers to it",
+      "eventStatement": "The haus is open: two 911s on the lot, the name set between and below them.",
+      "floor": 0.9,
+      "metrics": {
+        "eventCoverage": 0.914,
+        "mediaCoverage": 0.56,
+        "competitionRatio": 0,
+        "structuralShare": 0.914,
+        "negativeSpaceShare": 0,
+        "rankMassShare": 0.921,
+        "subjectShareOfEvent": 0.571,
+        "chromeShare": 0.081,
+        "declaredMasses": 6,
+        "readsWithoutMedia": true
+      },
+      "envelope": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 844
+      },
+      "components": [
+        {
+          "role": "subject",
+          "selector": ".hero__media",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": true,
+          "share": 0.56,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 390,
+              "h": 473
+            }
+          ]
+        },
+        {
+          "role": "field",
+          "selector": ".hero__scrim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.56,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 390,
+              "h": 473
+            }
+          ]
+        },
+        {
+          "role": "identity",
+          "selector": ".hero__claim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.361,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 24,
+              "y": 497,
+              "w": 342,
+              "h": 347
+            }
+          ]
+        },
+        {
+          "role": "support",
+          "selector": ".hero__meter",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.01,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 93,
+              "y": 497,
+              "w": 203,
+              "h": 16
+            }
+          ]
+        },
+        {
+          "role": "identity",
+          "selector": ".claim",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.069,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 70,
+              "y": 553,
+              "w": 250,
+              "h": 92
+            }
+          ]
+        },
+        {
+          "role": "support",
+          "selector": ".hero .lede",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.053,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 24,
+              "y": 660,
+              "w": 342,
+              "h": 51
+            }
+          ]
+        },
+        {
+          "role": "cta",
+          "selector": ".hero .cta-row",
+          "function": null,
+          "matched": 1,
+          "inDocument": 1,
+          "hasMedia": false,
+          "share": 0.113,
+          "isWrapper": false,
+          "rects": [
+            {
+              "x": 24,
+              "y": 736,
+              "w": 342,
+              "h": 108
+            }
+          ]
+        }
+      ],
+      "negativeSpace": [],
+      "competitors": [],
+      "excluded": [
+        {
+          "selector": ".masthead",
+          "why": null,
+          "matched": 1
+        },
+        {
+          "selector": ".readbar",
+          "why": null,
+          "matched": 1
+        }
+      ],
+      "problems": [],
+      "verdict": "pass",
+      "label": "mobile",
+      "evidence": "/Users/alex/Desktop/WORK/GENEVA MOTOR HAUS/.gates/evidence/a1-mobile.png"
+    }
+  },
+  "commitments": [
+    {
+      "metric": "horizontalOverflow",
+      "equals": false,
+      "viewport": "desktop",
+      "actual": false,
+      "pass": true
+    },
+    {
+      "metric": "horizontalOverflow",
+      "equals": false,
+      "viewport": "mobile",
+      "actual": false,
+      "pass": true
+    },
+    {
+      "metric": "smallestTypePx",
+      "min": 14,
+      "viewport": "desktop",
+      "actual": 14,
+      "pass": true
+    },
+    {
+      "metric": "smallestTypePx",
+      "min": 14,
+      "viewport": "mobile",
+      "actual": 14,
+      "pass": true
+    },
+    {
+      "metric": "fullBleedMedia",
+      "max": 2,
+      "viewport": "desktop",
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "metric": "typeScaleRatio",
+      "min": 5,
+      "viewport": "desktop",
+      "actual": 6.58,
+      "pass": true
+    }
+  ],
+  "verdict": "pass",
+  "finishedAt": "2026-09-11T01:38:41.842Z",
+  "blockers": []
+}

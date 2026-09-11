@@ -1,0 +1,1199 @@
+{
+  "gate": "Gate 2 · Structural and Authorship Conformance",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "detector": {
+    "desktop": {
+      "sections": [
+        {
+          "section": "section#floor.hero",
+          "groups": []
+        },
+        {
+          "section": "section#inventory.inv",
+          "groups": [
+            {
+              "units": 8,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.41,
+                0.41,
+                0.41,
+                0.41,
+                0.41,
+                0.41,
+                0.41,
+                0.41
+              ],
+              "slots": {
+                "meta": "mid"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.stage__bar",
+              "formula": "8×equal|m:mid|align:start|cont:none|int:link",
+              "shape": "8×equal|m:mid"
+            },
+            {
+              "units": 7,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.401,
+                0.401,
+                0.401,
+                0.401,
+                0.401,
+                0.401,
+                0.401
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "img.stage__car",
+              "formula": "7×equal||align:start|cont:none|int:static",
+              "shape": "7×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.41,
+                0.41
+              ],
+              "slots": {
+                "meta": "top",
+                "image": "mid"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.stage__col",
+              "formula": "2×equal|i:mid|m:top|align:start|cont:none|int:link",
+              "shape": "2×equal|i:mid|m:top"
+            }
+          ]
+        },
+        {
+          "section": "section.gmh-tiles",
+          "groups": [
+            {
+              "units": 6,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.185,
+                0.185,
+                0.185,
+                0.185,
+                0.185,
+                0.185
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.gmh-tile__p",
+              "formula": "6×equal||align:start|cont:none|int:static",
+              "shape": "6×equal|"
+            },
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.23,
+                0.23,
+                0.23,
+                0.23
+              ],
+              "slots": {
+                "meta": "top"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "a.gmh-tile",
+              "formula": "4×equal|m:top|align:start|cont:none|int:static",
+              "shape": "4×equal|m:top"
+            }
+          ]
+        },
+        {
+          "section": "section#haus.gmh-haus",
+          "groups": [
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.232,
+                0.232,
+                0.232
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "blockquote.gmh-haus__q",
+              "formula": "3×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "3×equal|m:bottom"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.232,
+                0.232
+              ],
+              "slots": {
+                "meta": "top",
+                "heading": "upper"
+              },
+              "align": "start",
+              "container": "rule-top",
+              "interaction": "static",
+              "sample": "li.gmh-haus__item",
+              "formula": "2×equal|h:upper|m:top|align:start|cont:rule-top|int:static",
+              "shape": "2×equal|h:upper|m:top"
+            }
+          ]
+        },
+        {
+          "section": "div.stick",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.203,
+                0.203,
+                0.203,
+                0.203
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "rule-top",
+              "interaction": "static",
+              "sample": "li",
+              "formula": "4×equal|m:upper|align:start|cont:rule-top|int:static",
+              "shape": "4×equal|m:upper"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.296,
+                0.296
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.ttl-line",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.334,
+                0.334
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "li.gmh-stop",
+              "formula": "2×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "2×equal|m:bottom"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.168,
+                0.168
+              ],
+              "slots": {
+                "meta": "mid"
+              },
+              "align": "start",
+              "container": "fill",
+              "interaction": "static",
+              "sample": "a.btn",
+              "formula": "2×equal|m:mid|align:start|cont:fill|int:static",
+              "shape": "2×equal|m:mid"
+            }
+          ]
+        },
+        {
+          "section": "section#shipping.brk",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.296,
+                0.296
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.ttl-line",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.334,
+                0.334
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "li.gmh-stop",
+              "formula": "2×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "2×equal|m:bottom"
+            }
+          ]
+        },
+        {
+          "section": "section#sell.sell",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.211,
+                0.211
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.ttl-line",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#warranty.warranty",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.475,
+                0.475
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.ttl-line",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#reviews.revs",
+          "groups": [
+            {
+              "units": 12,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295,
+                0.295
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "div.rv__head",
+              "formula": "12×equal|m:upper|align:start|cont:none|int:static",
+              "shape": "12×equal|m:upper"
+            },
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.295,
+                0.295,
+                0.295,
+                0.295
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "li.rv",
+              "formula": "4×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "4×equal|m:bottom"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.295,
+                0.295,
+                0.295
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.rv__text",
+              "formula": "3×equal||align:start|cont:none|int:static",
+              "shape": "3×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.295,
+                0.295
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.rv__text",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.063,
+                0.062
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "div.rv__who",
+              "formula": "2×equal|m:upper|align:start|cont:none|int:static",
+              "shape": "2×equal|m:upper"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.295,
+                0.295
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "li.rv",
+              "formula": "2×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "2×equal|m:bottom"
+            }
+          ]
+        },
+        {
+          "section": "section.gmh-newsband",
+          "groups": []
+        },
+        {
+          "section": "section#contact.locs",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.362,
+                0.362,
+                0.362,
+                0.362
+              ],
+              "slots": {
+                "meta": "mid"
+              },
+              "align": "start",
+              "container": "rule-top",
+              "interaction": "static",
+              "sample": "div",
+              "formula": "4×equal|m:mid|align:start|cont:rule-top|int:static",
+              "shape": "4×equal|m:mid"
+            }
+          ]
+        },
+        {
+          "section": "footer.foot",
+          "groups": [
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.287,
+                0.287,
+                0.287
+              ],
+              "slots": {
+                "meta": "top",
+                "cta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.foot__col",
+              "formula": "3×equal|m:top|c:upper|align:start|cont:none|int:link",
+              "shape": "3×equal|m:top|c:upper"
+            }
+          ]
+        },
+        {
+          "section": "div.shell",
+          "groups": [
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.287,
+                0.287,
+                0.287
+              ],
+              "slots": {
+                "meta": "top",
+                "cta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.foot__col",
+              "formula": "3×equal|m:top|c:upper|align:start|cont:none|int:link",
+              "shape": "3×equal|m:top|c:upper"
+            }
+          ]
+        }
+      ],
+      "bandRun": 1,
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "mobile": {
+      "sections": [
+        {
+          "section": "section#floor.hero",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.64,
+                0.64
+              ],
+              "slots": {},
+              "align": "center",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.claim__line",
+              "formula": "2×equal||align:center|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#inventory.inv",
+          "groups": [
+            {
+              "units": 8,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667
+              ],
+              "slots": {
+                "meta": "upper",
+                "cta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "span.rec__detail",
+              "formula": "8×equal|m:upper|c:bottom|align:start|cont:none|int:link",
+              "shape": "8×equal|m:upper|c:bottom"
+            },
+            {
+              "units": 7,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.795,
+                0.795,
+                0.795,
+                0.795,
+                0.795,
+                0.795,
+                0.795
+              ],
+              "slots": {
+                "meta": "top"
+              },
+              "align": "start",
+              "container": "box",
+              "interaction": "link",
+              "sample": "div.rec",
+              "formula": "7×equal|m:top|align:start|cont:box|int:link",
+              "shape": "7×equal|m:top"
+            },
+            {
+              "units": 7,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.79,
+                0.79,
+                0.79,
+                0.79,
+                0.79,
+                0.79,
+                0.79
+              ],
+              "slots": {},
+              "align": "center",
+              "container": "none",
+              "interaction": "static",
+              "sample": "button.rec__select",
+              "formula": "7×equal||align:center|cont:none|int:static",
+              "shape": "7×equal|"
+            },
+            {
+              "units": 7,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667,
+                0.667
+              ],
+              "slots": {
+                "meta": "lower"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "span.rec__detail",
+              "formula": "7×equal|m:lower|align:start|cont:none|int:link",
+              "shape": "7×equal|m:lower"
+            }
+          ]
+        },
+        {
+          "section": "section.gmh-tiles",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "lower"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.gmh-tile__go",
+              "formula": "4×equal|m:lower|align:start|cont:none|int:static",
+              "shape": "4×equal|m:lower"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "a.gmh-tile",
+              "formula": "3×equal|m:top|align:start|cont:none|int:static",
+              "shape": "3×equal|m:top"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.71,
+                0.71,
+                0.71
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "span.gmh-tile__p",
+              "formula": "3×equal||align:start|cont:none|int:static",
+              "shape": "3×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#haus.gmh-haus",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "h2#haus-title.gmh-haus__title",
+              "formula": "4×equal||align:start|cont:none|int:static",
+              "shape": "4×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top",
+                "heading": "lower"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "header.gmh-haus__head",
+              "formula": "2×equal|h:lower|m:top|align:start|cont:none|int:static",
+              "shape": "2×equal|h:lower|m:top"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top",
+                "heading": "upper"
+              },
+              "align": "start",
+              "container": "rule-top",
+              "interaction": "static",
+              "sample": "li.gmh-haus__item",
+              "formula": "2×equal|h:upper|m:top|align:start|cont:rule-top|int:static",
+              "shape": "2×equal|h:upper|m:top"
+            }
+          ]
+        },
+        {
+          "section": "div.stick",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.377,
+                0.377,
+                0.377,
+                0.377
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "rule-top",
+              "interaction": "static",
+              "sample": "li",
+              "formula": "4×equal|m:upper|align:start|cont:rule-top|int:static",
+              "shape": "4×equal|m:upper"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.593,
+                0.6,
+                0.593
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "g",
+              "formula": "3×equal||align:start|cont:none|int:static",
+              "shape": "3×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.lede",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.606,
+                0.606
+              ],
+              "slots": {
+                "meta": "mid"
+              },
+              "align": "start",
+              "container": "box",
+              "interaction": "static",
+              "sample": "a.btn",
+              "formula": "2×equal|m:mid|align:start|cont:box|int:static",
+              "shape": "2×equal|m:mid"
+            }
+          ]
+        },
+        {
+          "section": "section#shipping.brk",
+          "groups": [
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.593,
+                0.6,
+                0.593
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "g",
+              "formula": "3×equal||align:start|cont:none|int:static",
+              "shape": "3×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "figcaption#gmh-map-cap.gmh-map__cap",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#sell.sell",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.606,
+                0.606
+              ],
+              "slots": {
+                "meta": "mid"
+              },
+              "align": "start",
+              "container": "box",
+              "interaction": "static",
+              "sample": "a.btn",
+              "formula": "2×equal|m:mid|align:start|cont:box|int:static",
+              "shape": "2×equal|m:mid"
+            }
+          ]
+        },
+        {
+          "section": "section#warranty.warranty",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.lede",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section#reviews.revs",
+          "groups": [
+            {
+              "units": 12,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "div.rv__head",
+              "formula": "12×equal|m:upper|align:start|cont:none|int:static",
+              "shape": "12×equal|m:upper"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "bottom"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "li.rv",
+              "formula": "3×equal|m:bottom|align:start|cont:none|int:static",
+              "shape": "3×equal|m:bottom"
+            },
+            {
+              "units": 3,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.rv__text",
+              "formula": "3×equal||align:start|cont:none|int:static",
+              "shape": "3×equal|"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.232,
+                0.23
+              ],
+              "slots": {
+                "meta": "upper"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "div.rv__who",
+              "formula": "2×equal|m:upper|align:start|cont:none|int:static",
+              "shape": "2×equal|m:upper"
+            },
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.rv__text",
+              "formula": "2×equal||align:start|cont:none|int:static",
+              "shape": "2×equal|"
+            }
+          ]
+        },
+        {
+          "section": "section.gmh-newsband",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top",
+                "heading": "lower"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "div.gmh-newsband__head",
+              "formula": "2×equal|h:lower|m:top|align:start|cont:none|int:static",
+              "shape": "2×equal|h:lower|m:top"
+            }
+          ]
+        },
+        {
+          "section": "section#contact.locs",
+          "groups": [
+            {
+              "units": 4,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877,
+                0.877,
+                0.877
+              ],
+              "slots": {},
+              "align": "start",
+              "container": "none",
+              "interaction": "static",
+              "sample": "p.gmh-door__addr",
+              "formula": "4×equal||align:start|cont:none|int:static",
+              "shape": "4×equal|"
+            }
+          ]
+        },
+        {
+          "section": "footer.foot",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top",
+                "cta": "mid"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.foot__col",
+              "formula": "2×equal|m:top|c:mid|align:start|cont:none|int:link",
+              "shape": "2×equal|m:top|c:mid"
+            }
+          ]
+        },
+        {
+          "section": "div.shell",
+          "groups": [
+            {
+              "units": 2,
+              "widthClass": "equal",
+              "widthRatios": [
+                0.877,
+                0.877
+              ],
+              "slots": {
+                "meta": "top",
+                "cta": "mid"
+              },
+              "align": "start",
+              "container": "none",
+              "interaction": "link",
+              "sample": "div.foot__col",
+              "formula": "2×equal|m:top|c:mid|align:start|cont:none|int:link",
+              "shape": "2×equal|m:top|c:mid"
+            }
+          ]
+        }
+      ],
+      "bandRun": 1,
+      "viewport": {
+        "w": 390,
+        "h": 844
+      }
+    }
+  },
+  "findings": [
+    {
+      "kind": "parallel-units",
+      "section": "section#inventory.inv",
+      "units": 8,
+      "shape": "8×equal|m:mid",
+      "formula": "8×equal|m:mid|align:start|cont:none|int:link",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "section.gmh-tiles",
+      "units": 4,
+      "shape": "4×equal|m:top",
+      "formula": "4×equal|m:top|align:start|cont:none|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "section#haus.gmh-haus",
+      "units": 3,
+      "shape": "3×equal|m:bottom",
+      "formula": "3×equal|m:bottom|align:start|cont:none|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "div.stick",
+      "units": 4,
+      "shape": "4×equal|m:upper",
+      "formula": "4×equal|m:upper|align:start|cont:rule-top|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "section#reviews.revs",
+      "units": 12,
+      "shape": "12×equal|m:upper",
+      "formula": "12×equal|m:upper|align:start|cont:none|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "section#reviews.revs",
+      "units": 4,
+      "shape": "4×equal|m:bottom",
+      "formula": "4×equal|m:bottom|align:start|cont:none|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "section#contact.locs",
+      "units": 4,
+      "shape": "4×equal|m:mid",
+      "formula": "4×equal|m:mid|align:start|cont:rule-top|int:static",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "footer.foot",
+      "units": 3,
+      "shape": "3×equal|m:top|c:upper",
+      "formula": "3×equal|m:top|c:upper|align:start|cont:none|int:link",
+      "disposition": null
+    },
+    {
+      "kind": "parallel-units",
+      "section": "div.shell",
+      "units": 3,
+      "shape": "3×equal|m:top|c:upper",
+      "formula": "3×equal|m:top|c:upper|align:start|cont:none|int:link",
+      "disposition": null
+    },
+    {
+      "kind": "repeated-shape",
+      "shape": "2×equal|m:bottom",
+      "sections": [
+        "div.stick",
+        "section#shipping.brk",
+        "section#reviews.revs"
+      ],
+      "disposition": null
+    },
+    {
+      "kind": "repeated-shape",
+      "shape": "3×equal|m:top|c:upper",
+      "sections": [
+        "footer.foot",
+        "div.shell"
+      ],
+      "disposition": null
+    }
+  ],
+  "humanInventory": null,
+  "humanConfirmed": false,
+  "verdict": "fail",
+  "finishedAt": "2026-09-11T01:38:49.551Z",
+  "blockers": [
+    "humanInventory is null — the detector is not an oracle; a section-by-section formula inventory is required beside it",
+    "undisposed parallel-units: 8×equal|m:mid",
+    "undisposed parallel-units: 4×equal|m:top",
+    "undisposed parallel-units: 3×equal|m:bottom",
+    "undisposed parallel-units: 4×equal|m:upper",
+    "undisposed parallel-units: 12×equal|m:upper",
+    "undisposed parallel-units: 4×equal|m:bottom",
+    "undisposed parallel-units: 4×equal|m:mid",
+    "undisposed parallel-units: 3×equal|m:top|c:upper",
+    "undisposed parallel-units: 3×equal|m:top|c:upper",
+    "undisposed repeated-shape: 2×equal|m:bottom",
+    "undisposed repeated-shape: 3×equal|m:top|c:upper"
+  ]
+}

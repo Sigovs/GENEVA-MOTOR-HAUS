@@ -1,0 +1,100 @@
+{
+  "gate": "Gate 2 · delegated — authorship preservation",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "governingIdea": "One haus in Wisconsin, shipping far: the cars shown where they actually live, and carried from that door to a buyer who may never see it.",
+  "operations": [
+    {
+      "id": "daylight-haus-hero",
+      "reference": "DESIGN-READ → Hero declaration",
+      "governs": "the first screen: their own lot and building in daylight, one slide",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "uncut-stage",
+      "reference": "CMC index_3 stage, Geneva's own uncut frames (semlerpremium-dk-showroom)",
+      "governs": "Featured: the live site's eight cars, one large uncut photograph beside a dated ledger index",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "distance-map",
+      "reference": "DESIGN-READ → MOTION READ (rings from Burlington)",
+      "governs": "Shipping: the lower 48, the door, rings at 500/1,000/1,500 miles, three buyers' quotes",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "name-between-the-911s",
+      "reference": "DESIGN-READ → Hero declaration (v2: centred, as the live site sets it)",
+      "governs": "The first screen: the name in the slab, centred on the asphalt below and between the two 911s",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "live-site-skeleton",
+      "reference": "DESIGN-READ → Section map (v2) · DISCOVERY → live-site sections",
+      "governs": "The order of the page: featured (8), four tiles, the four tabs opened, sell, reviews, newsletter, contact + map",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "four-tabs-opened",
+      "reference": "DESIGN-READ → Section map (v2)",
+      "governs": "Selection / Reputation / Process / Service set open beside one headline, their words trimmed, never extended",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "gable-bone-chapter",
+      "reference": "DESIGN-READ → Geneva's departures (the gable from the badge's barn)",
+      "governs": "Sell, its ruled steps and Warranty as one bone chapter, opened under a single gable edge",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    },
+    {
+      "id": "ask-for-shane",
+      "reference": "content-ledger → ask-for-shane",
+      "governs": "Reviews: a customer's own words as the heading, twelve reviews verbatim",
+      "implementedBy": null,
+      "visibleAt": null,
+      "workItDoes": null,
+      "survivesRemoval": null,
+      "locatedInRender": null
+    }
+  ],
+  "humanConfirmed": false,
+  "blockers": [
+    "daylight-haus-hero: not located in the render — the operation disappeared",
+    "uncut-stage: not located in the render — the operation disappeared",
+    "distance-map: not located in the render — the operation disappeared",
+    "name-between-the-911s: not located in the render — the operation disappeared",
+    "live-site-skeleton: not located in the render — the operation disappeared",
+    "four-tabs-opened: not located in the render — the operation disappeared",
+    "gable-bone-chapter: not located in the render — the operation disappeared",
+    "ask-for-shane: not located in the render — the operation disappeared"
+  ],
+  "verdict": "fail",
+  "finishedAt": "2026-09-11T01:38:49.552Z"
+}

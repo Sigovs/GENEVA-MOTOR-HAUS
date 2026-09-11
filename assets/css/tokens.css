@@ -1,0 +1,198 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — DESIGN TOKENS (single source of truth)
+   Linked BEFORE main.css. Token NAMES are the CMC system's, on
+   purpose: the layout, components and motion are the approved CMC
+   index_3 build, and they read these names. Only the VALUES are
+   Geneva's. Rename nothing here without renaming every consumer.
+   ============================================================ */
+
+:root {
+  /* ---- Ground ------------------------------------------------
+     Derived from the badge. The client's own words for his logo are
+     "black, brown, dark red/brown", and the badge sits on a wood
+     ground measured at #24180C–#302418. The page ground is that wood
+     one step darker, so the daylight photographs hold against it
+     instead of the ground competing with them. Warm brown-black, not
+     CMC's navy and not #000.
+
+     Measured (docs/DESIGN-READ.md): --ink on --bg 16.4:1, on
+     --bg-raised 14.9:1, on --bg-sunk 17.0:1. */
+  --bg:          #15100C;
+  --bg-rgb:      21 16 12;
+  --bg-raised:   #211A13;
+  --bg-sunk:     #0E0B08;
+
+  /* The tail's ground. CMC ran the page below Karma on a separate
+     black; Geneva has no Karma and one ground, so the tail is the same
+     wood-dark a shade deeper — the close settles rather than switches. */
+  --bg-black:        #110D0A;
+  --bg-raised-black: #1C1612;
+  --bg-black-rgb:    17 13 10;
+
+  /* ---- Ink ---------------------------------------------------
+     Warm off-white leaning toward the badge lettering. Never #FFF.
+     --ink-3 is the floor for 14px functional text on the darkest
+     ground: 5.4:1 on --bg-sunk, 5.2:1 on --bg-raised.            */
+  --ink:         #F3EEE6;
+  --ink-2:       rgba(243, 238, 230, 0.64);
+  --ink-3:       rgba(243, 238, 230, 0.54);
+
+  /* ---- Accent ------------------------------------------------
+     The barn roof in the ADJUSTED logo (from client/logo_adjsuted.png,
+     2026-09-10), measured across 80,943 barn pixels: median #BC0F0D.
+     It replaced the old badge's dull #6C3018 the moment the logo did —
+     an accent that disagreed with the logo beside it would be two reds.
+
+     --ink on --accent 5.66:1 · --accent on --bone 5.18:1 (text allowed
+     on the light band) · --accent on --bg 2.89:1 — under 3, so on the
+     dark ground it is a FILL and a hover state only, never a hairline
+     or small text. Four roles, as CMC's red had: the active chapter
+     mark, the reel's current segment, the error glyph beside a
+     sentence, the primary control on hover. No fifth.
+
+     Close to CMC's red by hue — stated, not hidden. Geneva's difference
+     from CMC is carried by ground, light, logo and the shipping chapter;
+     the red is rationed exactly as CMC's was.                      */
+  --accent:      #BC0F0D;
+  --accent-deep: #940C0A;
+
+  /* ---- Action surface ----------------------------------------
+     One step deeper than the mark, as CMC's was: a 2px mark and a
+     300×54 plane are different objects. ink on it 6.65:1, hover 7.85,
+     press 9.55. Its own edge vs --bg is 2.46, so a filled control on
+     the dark ground carries --action-edge.                          */
+  --action:       #A80E0B;
+  --action-hover: #940C0A;
+  --action-press: #7C0A08;
+  --action-ink:   #F3EEE6;
+  --action-edge:  rgba(243, 238, 230, 0.34);
+  --action-focus: #F3EEE6;
+
+  /* ---- The light band ----------------------------------------
+     The badge lettering (#C0A478) lifted to a reading ground. Used
+     for ONE band on the page — the warranty — so the dark has a
+     tonal event to mean something against. Never #FFF.
+     bone-ink on bone 14.5:1; bone-ink-2 at .68 is 5.7:1.          */
+  --bone:        #ECE4D6;
+  --bone-ink:    #1A140E;
+  --bone-ink-2:  rgba(26, 20, 14, 0.68);
+  --bone-ink-2-onfilm: rgba(26, 20, 14, 0.74);
+
+  --r-section: clamp(14px, 1.6vw, 24px);
+  --r-cut: clamp(4px, 0.5vw, 8px);
+  --bone-rule:   rgba(26, 20, 14, 0.16);
+
+  /* ---- Rules -------------------------------------------------
+     Separation by hairline and air, not by card. --rule-onfilm is
+     for a control over a photograph, used with an OPAQUE ground
+     under it (the reasoning is CMC's and carries unchanged).       */
+  --rule:        rgba(243, 238, 230, 0.14);
+  --rule-strong: rgba(243, 238, 230, 0.28);
+  --rule-onfilm: rgba(243, 238, 230, 0.82);
+
+  /* ---- Radius ------------------------------------------------ */
+  --r-control:   6px;
+  --r-rail:      18px;
+  --r-panel:     14px;
+
+  /* ---- Type --------------------------------------------------
+     CMC's settled system, carried: TWO families. Inter Tight for
+     display and figures, Instrument Sans for body and every label.
+     No serif, no mono, no tracking on labels — each was tried on CMC
+     and rejected. Figures align with tabular-nums, not with a mono.  */
+  /* Zilla Slab (Alex, 2026-09-10): the slab lettering on Geneva's badge.
+     Inter Tight was CMC's — the loudest 1:1 on the page. */
+  --font-display: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+  --font-body:    'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-data:    var(--font-display);
+  --font-label:   'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display-set: normal;
+
+  /* Scale — every size resolves here. 14px is the floor. */
+  --t-count: clamp(5rem, 12vw, 12rem);
+  --t-claim: clamp(2.75rem, 5.6vw, 5.25rem);
+  --t-h1:    clamp(1.625rem, 3.2vw, 3.25rem);
+  --t-lede:  clamp(1rem, 1.1vw, 1.0625rem);
+  --t-body:  1rem;
+  --t-micro: 0.875rem;
+
+  --lh-display: 0.94;
+  --lh-count:   0.82;
+  --lh-head:    1.08;
+  --lh-body:    1.6;
+  --lh-label:   1.4;
+
+  --tr-label:   normal;
+  --tr-display: -0.012em;  /* a slab's serifs space it; Inter Tight's -0.03 made it clot */
+  --tr-serif:   -0.005em;
+  --tr-claim:   -0.006em;
+  --tr-count:   -0.02em;
+
+  /* ---- Space — 4px base ---------------------------------------
+       1  hairline nudges, icon gaps      6  card padding, stack gaps
+       2  inside small controls           7  sub-block separation
+       3  label to field                  8  section padding, mobile
+       4  body paragraph rhythm           9  section padding, desktop
+       5  component internal padding     10  major section breaks
+                                         11  chapter breaks, hero air   */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+
+  --gap-eyebrow: var(--sp-3);
+
+  --t-eyebrow:  0.9375rem;
+  --fw-eyebrow: 600;
+  --tr-eyebrow: 0.045em;
+  --ink-eyebrow: rgba(243, 238, 230, 0.86);
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+  --sp-11: 192px;
+  --sp-12: 256px;
+
+  /* ---- Layout ------------------------------------------------ */
+  --container:   1440px;
+  --pad:   clamp(24px, 3.4vw, 60px);
+  --maxw:  1700px;
+  --bleed: calc((100vw - min(100vw, var(--maxw))) / 2 + var(--pad));
+  --grid-gap: var(--sp-5);
+
+  --page-gutter: clamp(24px, 3.4vw, 60px);
+  --shell:       1580px;
+
+  --control-h-header:  46px;
+  --control-h-primary: 54px;
+
+  --gutter:      clamp(24px, 4vw, 64px);
+  --header-h:    88px;
+
+  /* ---- Motion ------------------------------------------------
+     Entering decelerates, exiting accelerates. --ease is the ENTRANCE
+     curve; an exit uses --ease-in (anti-patterns U20).             */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:  cubic-bezier(0.55, 0, 1, 0.45);
+  --ease:     var(--ease-out);
+  --dur-1: 180ms;
+  --dur-2: 320ms;
+  --rv-line: 640ms;
+  --rv-lede: 560ms;
+  --rv-cta:  440ms;
+  --rv-step: 130ms;
+  --dur-3: 520ms;
+  --dur-4: 760ms;
+  --stage-lag: 90ms;
+  --stage-recede: 0.98;
+  --stage-defocus: 14px;
+  --slide-reach: 72px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 68px;
+  }
+}

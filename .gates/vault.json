@@ -1,0 +1,78 @@
+{
+  "gate": "Gate 1 · delegated — the vault was read",
+  "queriedTags": [
+    "automotive",
+    "dealer",
+    "inventory",
+    "showroom",
+    "photography",
+    "motion"
+  ],
+  "considered": 40,
+  "taken": [
+    {
+      "id": "semlerpremium-dk-showroom",
+      "what": "An inventory page read as a curated collection without disguising the inventory: the stage keeps a real index — make, model, price, mileage, a link per car — beside one large uncut photograph.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "semlerpremium-dk-brands-porsche-911-gt3-11cec851-9b66-4905-a",
+      "what": "One vehicle treated as a significant object rather than a database row: the open stage record carries price and mileage as plates, and the photograph is the dealer's own frame, uncut.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "ciridae-com",
+      "what": "Restrained labels on fine rules as the calm counterpoint to a loud voice: the hours plate, the dated lines and the quotes' rail are hairline and label, never boxed.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "morningstar-ventures",
+      "what": "Motion has to advance the page's argument, not make the visitor advance an animation: the only scroll-driven device is the distance rings, which state the one temporal fact on the page — the car travels.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    }
+  ],
+  "rejected": [
+    {
+      "id": "oilstainlab-com",
+      "why": "One car mythologised as a manifesto. Geneva has twenty-three cars that must stay findable, and its story is the owner and the distance, not a single object.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "rolls-roycemotorcars-com-en-us-home-html",
+      "why": "Video as a continuous environment is its strength; Geneva has no film, and a daylight phone frame cannot be made into one without inventing footage.",
+      "rating": 3,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "porsche-com-usa",
+      "why": "Moving each car between cinematic object and classified record is close to the stage, but its register is a manufacturer's configurator; a used-car floor of 23 does not need the configurator half.",
+      "rating": 2,
+      "resolved": true,
+      "problems": []
+    },
+    {
+      "id": "rmsothebys-com",
+      "why": "Anti-reference: a strong opening that never develops. Checked against by holding the last masses — reviews, the door, the footer — to the standard of the hero (C19).",
+      "rating": 1,
+      "resolved": true,
+      "problems": []
+    }
+  ],
+  "nothingApplied": null,
+  "verdict": "pass",
+  "blockers": [],
+  "finishedAt": "2026-09-11T01:38:41.849Z",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "humanConfirmed": false
+}

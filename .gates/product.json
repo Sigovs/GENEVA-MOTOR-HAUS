@@ -1,0 +1,80 @@
+{
+  "gate": "Gate 3 · Product Usefulness",
+  "sourceSeal": "8a1863e7df9166acc0d79ccd68c41c1c2421957e524986f8ba4e2a73dfaf0593",
+  "answers": {
+    "businessIdentifiableInFiveSeconds": null,
+    "primaryActionIdentifiableInFiveSeconds": null,
+    "primaryPathProminentAndUnderstandable": null,
+    "itemsScannableAndComparable": null,
+    "detailAffordancesVisibleWithoutInstruction": null,
+    "secondaryConversionsDiscoverable": null,
+    "mobilePreservesThePrimaryTask": null,
+    "noInteractionRequiresExplanatoryCopy": null,
+    "atLeastAsUsableAsTheIncumbent": null
+  },
+  "means": [
+    {
+      "name": "header search (desktop bar; first item of the phone menu)",
+      "selector": ".gmh-search",
+      "present": true,
+      "count": 2
+    },
+    {
+      "name": "call the showroom",
+      "selector": "a[href^='tel:']",
+      "present": true,
+      "count": 3
+    },
+    {
+      "name": "view inventory",
+      "selector": "a[href$='/inventory']",
+      "present": true,
+      "count": 5
+    },
+    {
+      "name": "a car's detail page",
+      "selector": ".rec__cta",
+      "present": true,
+      "count": 8
+    },
+    {
+      "name": "sell your car",
+      "selector": "a[href$='/sell-your-car']",
+      "present": true,
+      "count": 5
+    },
+    {
+      "name": "financing",
+      "selector": "a[href$='/financing']",
+      "present": true,
+      "count": 4
+    },
+    {
+      "name": "directions to the door",
+      "selector": "a[href*='maps/dir']",
+      "present": true,
+      "count": 1
+    },
+    {
+      "name": "email",
+      "selector": "a[href^='mailto:']",
+      "present": true,
+      "count": 1
+    }
+  ],
+  "humanConfirmed": false,
+  "note": "Generic usability is necessary and insufficient. This gate cannot pass a build on its own — Gate 2 and authorship are conjunctive with it.",
+  "blockers": [
+    "unanswered: businessIdentifiableInFiveSeconds",
+    "unanswered: primaryActionIdentifiableInFiveSeconds",
+    "unanswered: primaryPathProminentAndUnderstandable",
+    "unanswered: itemsScannableAndComparable",
+    "unanswered: detailAffordancesVisibleWithoutInstruction",
+    "unanswered: secondaryConversionsDiscoverable",
+    "unanswered: mobilePreservesThePrimaryTask",
+    "unanswered: noInteractionRequiresExplanatoryCopy",
+    "unanswered: atLeastAsUsableAsTheIncumbent"
+  ],
+  "verdict": "fail",
+  "finishedAt": "2026-09-11T01:39:28.300Z"
+}

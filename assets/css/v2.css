@@ -1,0 +1,1461 @@
+/* ============================================================
+   v2.css — WHAT IS DIFFERENT ON index_2.html
+   ============================================================
+   Loaded by index_2.html only, last, after tokens.css and main.css.
+   index.html does not load it, so nothing in here can reach the
+   approved page.
+
+   THE ANSWER TO "do we need a second design system": no, and we should
+   not have one. The scale lives in custom properties, and a custom
+   property can be redefined for one subtree. `body.v2` is that subtree,
+   so redefining a token here changes it for every consumer inside
+   version two and for nothing else. One line instead of a second
+   10,000-line stylesheet that starts drifting the day it is copied.
+
+   Verified: html only sets -webkit-text-size-adjust; every token-driven
+   rule in main.css hangs off body or below, so a .v2 override reaches
+   all of them.
+
+   TWO RULES FOR WRITING IN HERE
+   1. If a size is a token, change the TOKEN in the block below. Every
+      consumer follows in one move, which is the whole reason the tokens
+      exist.
+   2. If a size is hard-coded in main.css — several display sizes are
+      their own clamp() — override that component under `.v2` in the
+      second block. Never edit main.css for a v2-only change; it is one
+      file serving both pages.
+
+   IF v2 IS APPROVED: the first block is promoted into tokens.css
+   verbatim, the second block's rules are folded into their own
+   components, this file is deleted and index_2.html becomes index.html.
+   Keeping the deltas in one small readable file is what makes that a
+   morning's work rather than a diff archaeology exercise.
+   ============================================================ */
+
+
+/* ---- 1. THE SCALE ---------------------------------------------------
+   The tokens as they stand today, listed so the available handles are
+   visible without opening tokens.css. Uncomment and change what moves;
+   leave the rest alone rather than restating it, so this file reads as
+   a list of DIFFERENCES and not as a second copy of the system.
+
+   TYPE
+     --t-count    clamp(5rem, 12vw, 12rem)          the big figures
+     --t-claim    clamp(2.75rem, 5.6vw, 5.25rem)    hero
+     --t-h1       clamp(1.625rem, 3.2vw, 3.25rem)   section headlines
+     --t-lede     clamp(1rem, 1.1vw, 1.0625rem)
+     --t-body     1rem
+     --t-micro    0.875rem                          the 14px floor
+     --t-eyebrow  0.9375rem
+
+   SPACE      4 8 12 16 24 32 48 64 96 128 192 256
+     --sp-1 … --sp-12
+
+   MEASURE
+     --container  1440px
+     --shell      1580px
+     --maxw       1700px
+     --gutter     clamp(24px, 4vw, 64px)
+*/
+.v2 {
+  /* GENEVA: CMC's v2 ground override removed — the ground comes from
+     tokens.css (the badge's wood-dark). Kept, it would put #15100C over
+     every Geneva value, because .v2 outranks :root. */
+}
+
+
+/* ---- 2. THE SIZES THAT ARE NOT TOKENS -------------------------------
+   Some display sizes in main.css carry their own clamp() rather than a
+   token — the section headlines mostly. They cannot be moved from the
+   block above, so they get a scoped rule here instead.
+
+   Written as `.v2 .thing`, always. A bare `.thing` in this file would
+   still only load on index_2, but the class is what makes the intent
+   readable at a glance and what survives the file being merged later.
+
+   AND THAT IS MOST OF THEM. Surveyed at 1440 by overriding the tokens
+   and watching what moved: --t-lede is the ONLY one the sections
+   actually follow. Every display size on the page carries its own
+   clamp():
+
+     .brk__title      60px      .fin__title      63px
+     .about__title    58px      .locs__title     58px
+     .warranty__title 56px      .sell__title     52px
+     .inv__title      49px      .story__title    49px
+     .svc__title      49px      .karma__title    49px
+     .ig__title       43px      .revs__title     37px
+     .stat__n        130px
+
+   So a "make the headlines bigger" instruction is thirteen rules here,
+   not one token. Worth knowing before quoting the change, and worth
+   fixing properly if v2 is approved — those thirteen clamps are a type
+   scale that was never written down as one.
+
+   e.g.
+     .v2 .warranty__title { font-size: clamp(2rem, 3.4vw, 3rem); }
+*/
+
+
+/* ---- 2. THE BLUE THAT IS NOT THE GROUND -----------------------------
+   The ground was four tokens. The blue LIGHT is a separate system, and
+   it is what a client is actually pointing at: a black page lit blue
+   still reads blue. Confirmed by test — swapping only the tokens left
+   the glow under the active record blue.
+
+   Every rule below keeps its geometry and its alphas and changes only
+   its hue. The lighting design is not being redone, it is being taken
+   off the blue. The new light is the page's own ink, #F3EEE6, pulled
+   down in value — warm-neutral, so it agrees with the ground it now
+   sits on and with the type standing in it. */
+
+/* The room the cut-outs stand in. */
+.v2 .showcase,
+.v2 .fin__showcase {
+  background:
+    radial-gradient(125% 118% at 34% 44%,
+      transparent 34%, rgba(4, 4, 3, 0.5) 82%, rgba(3, 3, 2, 0.72) 100%),
+    radial-gradient(24% 27% at 31% 56%,
+      rgba(240, 237, 231, 0.115) 0%, rgba(190, 186, 179, 0.05) 54%, transparent 76%),
+    radial-gradient(58% 62% at 38% 37%,
+      rgba(190, 186, 179, 0.10) 0%, rgba(146, 143, 137, 0.045) 44%, transparent 78%),
+    radial-gradient(46% 34% at 21% 62%,
+      rgba(168, 164, 157, 0.07) 0%, rgba(128, 125, 120, 0.03) 50%, transparent 80%),
+    radial-gradient(30% 44% at 52% 46%,
+      rgba(196, 192, 185, 0.055) 0%, transparent 74%),
+    radial-gradient(18% 16% at 24% 28%,
+      rgba(220, 216, 209, 0.05) 0%, transparent 72%),
+    linear-gradient(180deg, #151311 0%, #0E0D0B 48%, #080706 100%);
+}
+
+/* The "Just in" plate. RED, on Alex's call 2026-08-17.
+
+   It was a dark plate that had to be found; in the accent it is the
+   first thing read in the frame, which is what a status mark is for.
+
+   THE ACCENT BUDGET SURVIVES THIS, and that was the thing to check
+   before agreeing. Featured Inventory carried no red at all — the
+   keyword field's action and the index's closing CTA are both the
+   outlined variant, deliberately, because the hero owns the page's one
+   Accent Action. This pill is not an action: pointer-events is none, it
+   states a fact about the car behind it. So it adds a second red ROLE to
+   the page rather than a second red button competing with SEARCH
+   INVENTORY, and at roughly 110 x 40px in a 654 x 790 panel it is well
+   inside the 5% budget.
+
+   Nothing here is carried by hue alone — the pill says the words.
+
+   The gradient construction is kept rather than flattened, mirrored into
+   the accent: #BC0F0D to #940C0A across the same 133deg, shallow enough
+   to read as a plate catching the light rather than as a gradient
+   effect. The ban on gradient fills is a ban on gradient BUTTONS, and
+   this is a non-interactive mark that already had this construction. */
+.v2 .justin {
+  background: linear-gradient(133deg, #BC0F0D 0%, #A50D0B 52%, #940C0A 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* The record being read. The edge and the lift still carry the state, so
+   nothing here depends on hue alone — which is the point: this cue was
+   blue-only and it did not have to be. */
+/* Dimmed, on Alex's call. 0.42 was doing the job of a selection ring on
+   a page whose selections are made of one hairline going slightly
+   brighter than its neighbours. 0.24 against the resting 0.10 is still a
+   clear step — the eye reads the RATIO, not the absolute — and the tint
+   and the light underneath carry the rest of the state. */
+.v2 .rec.is-active,
+.v2 .fin__rec.is-lead {
+  border-color: rgba(240, 237, 231, 0.24);
+  background: rgba(243, 238, 230, 0.04);
+}
+.v2 .rec.is-active .rec__pill {
+  background: rgba(240, 237, 231, 0.10);
+  /* The last one. A sweep of every computed property on the rendered
+     page found this survivor hiding in box-shadow rather than in a
+     colour — which is why the sweep was run instead of trusting the
+     grep. */
+  box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.14);
+}
+
+/* The light under it, and the same light under the big figures. */
+/* A WEDGE, NOT A LOZENGE. Alex's shape: the light stands highest at the
+   bottom-left corner and narrows away to the right, rather than sitting
+   as a symmetrical pool under the middle of the record.
+
+   Two things make that, because one gradient cannot vary its height
+   along its own width. The radial is anchored at 6% of the strip and
+   given more vertical reach than horizontal, so its brightest part is
+   the left corner and it climbs there. A horizontal mask then takes the
+   whole thing away toward the right, which is what turns a rounded
+   falloff into a taper.
+
+   The strip is taller than it was — 74px against 40 — because a wedge
+   needs somewhere to be tall, and it starts further left: 4% rather than
+   8%, with the shift Alex asked for on top. */
+/* MIRRORED, on Alex's call 2026-08-17. Every value in this block and in
+   the motion block below is the same number reflected about the card's
+   vertical centre — the wedge now stands highest at the bottom-RIGHT
+   corner and tapers away to the left. Nothing about its shape, reach or
+   timing changes; only which corner it is anchored to.
+
+   Mirrored by hand rather than with scale: -1, because the strip is
+   already using scale to open out on hover and a negative x factor there
+   would fight the animation instead of composing with it. */
+.v2 .rec::before {
+  inset: auto 4% -1px 8%;
+  height: 74px;
+  background: radial-gradient(72% 132% at 94% 100%,
+    rgba(243, 238, 230, 0.30) 0%,
+    rgba(196, 192, 185, 0.13) 36%,
+    rgba(150, 146, 140, 0.05) 62%,
+    transparent 82%);
+  /* THE MASK FADES IN AT ITS LEFT EDGE TOO, and that is the gap Alex
+     marked. The radial is anchored at 6% of this strip, so at the
+     strip's own left edge the light is already near its brightest — and
+     the mask was opaque from 0%, which meant the wedge began with a hard
+     vertical cut against the card. A bright line down the inside of the
+     border, ending where the strip ends.
+
+     Fading the first 12% closes it: the light now starts at nothing,
+     comes up to full just inside the card, and tapers away to the right
+     as before. The wedge is unchanged; only its leading edge stops being
+     a straight line. */
+  -webkit-mask-image: linear-gradient(to left,
+    transparent 0%, rgba(0,0,0,0.55) 6%, #000 14%, rgba(0,0,0,0.58) 44%, transparent 82%);
+          mask-image: linear-gradient(to left,
+    transparent 0%, rgba(0,0,0,0.55) 6%, #000 14%, rgba(0,0,0,0.58) 44%, transparent 82%);
+}
+.v2 .stat__fig::after {
+  background: radial-gradient(50% 100% at 50% 100%,
+    rgba(243, 238, 230, 0.8) 0%,
+    rgba(196, 192, 185, 0.3) 34%,
+    transparent 74%);
+}
+
+/* The stage's arrows. */
+.v2 .stage__arrow {
+  background: rgba(30, 28, 25, 0.52);
+  box-shadow: inset 0 1px 0 rgba(240, 237, 231, 0.16),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.28);
+}
+.v2 .stage__arrow:hover { background: rgba(46, 44, 40, 0.66); }
+
+/* The bloom behind About and Reviews. Same five lobes, same uneven
+   outline, same mask — warm smoke instead of dirty blue. */
+.v2 [data-bloom]::before {
+  background:
+    radial-gradient(52% 58% at 34% 38%, rgba(128, 124, 116, 0.50), transparent 66%),
+    radial-gradient(40% 34% at 72% 24%, rgba(104, 101, 95, 0.44), transparent 70%),
+    radial-gradient(32% 46% at 58% 80%, rgba(92, 89, 84, 0.40), transparent 68%),
+    radial-gradient(26% 22% at 18% 70%, rgba(140, 136, 128, 0.32), transparent 72%),
+    radial-gradient(22% 30% at 84% 58%, rgba(100, 97, 91, 0.28), transparent 74%);
+}
+
+
+/* ---- 3. ONE THING THE SWEEP FOUND THAT IS NOT ABOUT COLOUR TEMPERATURE
+   The Financing eyebrow is --accent-deep, and its ground is dark, not
+   bone. Measured on the composited render with the text hidden: 2.60:1
+   against a 4.5 floor at 15px. It fails on the approved page too — 2.51
+   there — so this is a pre-existing defect that the black change merely
+   walked past, not one it caused.
+
+   It is my error from the eyebrow standardisation: --accent-deep was
+   given to Warranty and Financing together as "the bone grounds", and
+   Financing's card is a dark photograph. Red is a fill-and-rule colour
+   on a dark ground; it cannot carry 15px of text. So this eyebrow joins
+   the other dark-ground ones and takes --ink-eyebrow.
+
+   FIXED HERE ONLY. index.html carries the same failure and is the
+   approved page, so patching it is Alex's call rather than something to
+   do quietly under a colour change. */
+.v2 .fin__label:not(#x) { color: var(--ink-eyebrow); }
+
+
+/* ---- 4. THE KEYWORD SEARCH ------------------------------------------
+   Above the tiles, under the paragraph. Client request 2026-08-17.
+
+   ON A HAIRLINE, NOT IN A BOX. The page's registers — Service, Locations,
+   the footer — are all built on hairlines, and a bordered pill here would
+   have been a control drawn as an object on a page that draws them as
+   lines. It also keeps this visibly subordinate to the hero's finder,
+   which is the point: that one is the chapter's action, this one is a
+   shortcut for someone who already knows the model name.
+
+   The line lifts to full ink on focus-within, so the field answers the
+   keyboard as clearly as it answers the pointer. */
+.v2 .invsearch {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  max-inline-size: 46rem;
+  margin-block: clamp(var(--sp-6), 2.6vw, var(--sp-7)) clamp(var(--sp-7), 3.4vw, var(--sp-8));
+  padding-block-end: var(--sp-4);
+  border-block-end: 1px solid var(--rule);
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.v2 .invsearch:focus-within { border-block-end-color: var(--ink); }
+
+.v2 .invsearch__icon { flex: none; color: var(--ink-3); }
+
+.v2 .invsearch__field {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--t-lede);
+  line-height: 1.4;
+  color: var(--ink);
+}
+/* --ink-3 measures 4.9:1 on this ground, so the placeholder clears the
+   4.5 floor as text rather than being decoration you have to guess at. */
+.v2 .invsearch__field::placeholder { color: var(--ink-3); opacity: 1; }
+/* The field's own outline is redundant — the rule under it already moves
+   on focus-within — but only once that is guaranteed to be visible. */
+.v2 .invsearch__field:focus { outline: none; }
+.v2 .invsearch__field::-webkit-search-cancel-button { filter: invert(1); opacity: 0.5; }
+
+.v2 .invsearch__go { flex: none; }
+
+@media (max-width: 620px) {
+  /* The action drops under the field rather than squeezing it: a search
+     input narrower than the phrase it holds is worse than a second row. */
+  .v2 .invsearch { flex-wrap: wrap; }
+  .v2 .invsearch__field { flex-basis: calc(100% - 17px - var(--sp-4)); }
+  .v2 .invsearch__go { margin-block-start: var(--sp-5); margin-inline-start: auto; }
+}
+
+/* It joins the section's existing staircase as an action — the same
+   quiet settle the CTAs use — rather than arriving with the tiles. */
+.reveal-armed [data-reveal] .v2 .invsearch,
+.v2 .reveal-armed [data-reveal] .invsearch { opacity: 0; translate: 0 10px; }
+.v2 .invsearch {
+  transition: opacity var(--rv-cta) var(--ease-out),
+              translate var(--rv-cta) var(--ease-out),
+              border-color var(--dur-2) var(--ease-out);
+}
+.reveal-armed [data-reveal].is-revealed .invsearch { opacity: 1; translate: 0 0; }
+html.reveal-armed [data-reveal]:not(.is-revealed) .invsearch { opacity: 0; translate: 0 10px; }
+
+
+/* ---- 5. THE LIGHT ARRIVES SHORT AND LENGTHENS ----------------------
+   Client request, refined: on hover the glow under the record starts
+   SHORT near the right edge and lengthens as it travels toward the middle
+   — not a light sliding across at a fixed size, a light opening out.
+
+   SCALE FROM A RIGHT ANCHOR, which is what makes it read as lengthening
+   rather than as growing in both directions. transform-origin is the
+   right edge, so the strip stretches leftward from where it starts; the
+   constant shift puts that start at roughly a fifth in from the record's
+   right edge and lands the finished light just past centre, which is the
+   travel Alex marked — mirrored 2026-08-17.
+
+   Scale and translate only — both compositor work, both inside the
+   project's motion rule. Nothing here animates geometry.
+
+   760ms and ease-out, the page's slowest interval, because a light
+   opening across a surface is the one thing here that should not look
+   quick. It rides in on the same activation that fades it up, so the
+   record lights and the light arrives as one gesture. */
+.v2 .rec::before {
+  transform-origin: right center;
+  translate: 4% 0;
+  scale: 0.42 1;
+  transition: opacity var(--dur-3) var(--ease-out),
+              scale var(--dur-4) var(--ease-out);
+}
+.v2 .rec.is-active::before { scale: 1 1; }
+
+/* The designed static path: no growth, the light simply appears at the
+   length it would have reached. */
+@media (prefers-reduced-motion: reduce) {
+  .v2 .rec::before,
+  .v2 .rec.is-active::before { scale: 1 1; transition: none; }
+}
+
+
+/* ---- 6. THE PINK HOVER GOES GREY ------------------------------------
+   The warranty card's glyph tile took the accent at 10% on hover, and
+   10% of #BC0F0D over the bone ground composites to a pale pink — a
+   colour this palette does not have and did not intend. It was written
+   as "the tile warms", which is what a translucent red does on paper and
+   not what it does here.
+
+   Neutral now: the same lift, made of the ground's own ink. The mark
+   still goes to --accent-deep, so red is still spent in these cards
+   exactly once and the hover keeps its colour event. */
+.v2 .wcard:hover .wcard__ico { background: rgba(26, 20, 14, 0.09); }
+
+
+/* ---- 7. THE OUTLINE CTA GETS MORE BODY ------------------------------
+   --rule-strong is a hairline built for dividing, and the secondary
+   action was wearing it: at rest the pill read as an outline someone had
+   forgotten to finish. 1.5px and a brighter value give it a real edge
+   without turning it into a second filled button — it is still the quiet
+   control, it is just no longer a faint one. Hover still goes to full
+   ink, so the state change survives the stronger resting edge. */
+.v2 .btn--line {
+  box-shadow: inset 0 0 0 1.5px rgba(243, 238, 230, 0.42);
+}
+.v2 .btn--line:hover,
+.v2 .btn--line.is-hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+/* On the bone bands the same move, in that ground's ink. */
+.v2 .on-bone .btn--line {
+  box-shadow: inset 0 0 0 1.5px rgba(26, 20, 14, 0.42);
+}
+.v2 .on-bone .btn--line:hover,
+.v2 .on-bone .btn--line.is-hover { box-shadow: inset 0 0 0 1.5px var(--bone-ink); }
+
+
+/* ---- 8. THE FINANCING FRAME GOES DARKER AND LOSES ITS BLUE ----------
+   The garage photograph carries a cool cast in its shadows and across
+   the right-hand wall, and against a warm black ground that cast is the
+   most blue thing left on the page.
+
+   Graded, not replaced. saturate() takes 30% of the chroma out, and
+   because the cast is LOW-chroma to begin with it loses far more of its
+   presence than the Mustang's yellow or the Ducati's red do — those are
+   saturated enough to survive the same cut and stay the subject.
+   brightness and contrast then put the frame into the darker phase Alex
+   asked for: the blacks close up, the lit surfaces hold.
+
+   A filter rather than a re-export, because the master is Alex's supplied
+   file and the grade is a page decision — it should be visible and
+   reversible in the stylesheet rather than baked into an asset nobody
+   can un-bake. */
+.v2 .fin__bg img {
+  filter: saturate(0.7) brightness(0.88) contrast(1.08);
+}
+
+
+/* ---- 9. THE FILM BAND HAS NO SEAM AT EITHER END ---------------------
+   The band's own scrim started at 0.92, so 8% of the film was still
+   showing at the very top and bottom edges — and against a near-black
+   ground that is a visible line, which is what Alex is pointing at.
+
+   Both ends are opaque now and hold briefly before they let go. Same fix
+   as Karma's, and the same reasoning: the picture has to have ENDED
+   before the seam, not merely faded a long way toward it. The middle of
+   the band is untouched. */
+.v2 .brk__scrim {
+  background:
+    linear-gradient(to bottom,
+      rgb(var(--bg-rgb) / 1) 0%,
+      rgb(var(--bg-rgb) / 1) 2%,
+      rgb(var(--bg-rgb) / 0.72) 8%,
+      rgb(var(--bg-rgb) / 0.24) 20%,
+      rgb(var(--bg-rgb) / 0) 34%),
+    linear-gradient(to top,
+      rgb(var(--bg-rgb) / 1) 0%,
+      rgb(var(--bg-rgb) / 1) 2%,
+      rgb(var(--bg-rgb) / 0.72) 8%,
+      rgb(var(--bg-rgb) / 0.24) 20%,
+      rgb(var(--bg-rgb) / 0) 34%),
+    rgb(var(--bg-rgb) / 0.46);
+}
+
+
+/* ---- 11. THE FINDER IS ONE LINE PER FIELD ---------------------------
+   Every row was saying its name twice: "MAKE" above and "Any Make"
+   below. The second line was carrying no information at rest and the
+   field was two lines tall to hold it.
+
+   The uppercase label goes — visually, not from the accessible tree,
+   where the <label> still names the control — and the row's single line
+   becomes the value: "Make" until something is chosen, then the choice.
+   That is what a select does, and it is what the row was pretending to
+   do with twice the height.
+
+   The two-row grid that held space for the value is no longer needed
+   either: with one line there is nothing to grow into, so nothing can
+   move when a value arrives. */
+.v2 .hunt__label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.v2 .hunt__field {
+  grid-template-rows: auto;
+  padding-block: var(--sp-4);
+}
+.v2 .hunt__value {
+  font-size: var(--t-lede);
+  line-height: 1.3;
+}
+
+
+/* ---- 12. THE RECORD'S CORNER STAYS ROUND ----------------------------
+   The wedge is taller than the strip it replaced, so at the bottom-left
+   it now reaches into the card's rounded corner — and because the glow's
+   own box is square, it painted straight through it and squared the
+   corner off.
+
+   overflow: hidden on the record clips everything inside to its own
+   radius, which is where the fix belongs: the corner is the card's
+   property, not something each layer inside it should have to know
+   about. */
+.v2 .rec { overflow: hidden; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- 21/22 REMOVED — the marque band ---------------------------------
+   Built on a misread of the brief: Alex was pointing at three ANIMATED
+   BOXES under the reference's hero and wanted that mechanic for the
+   ADDRESSES, not a band of marque names. He has said it can go.
+
+   Not kept commented out, because it was a whole section with its own
+   markup and two blocks of CSS, and a dead section that large is a thing
+   the next person has to read past. It is one revert away in git if the
+   idea is ever wanted: see "A marque band under the hero" and "Cars in
+   the marque band".
+   ------------------------------------------------------------------- */
+
+
+/* ============================================================
+   THE LOCATIONS PANEL ACCORDION
+   ============================================================
+   The mechanic from the Vegas reference Alex pointed at, read off its
+   own stylesheet: equal panels on flex-grow, one carrying .is-open,
+   and the row collapsing that one the moment the pointer enters so the
+   hovered panel can take its place.
+
+     .loc            flex: 1 1 0            equal base
+     .loc.is-open    flex-grow: 2.4         the default-open one
+     :hover .loc     flex-grow: 1           the row gives way
+     :hover .loc:hover flex-grow: 2.4       and the pointer decides
+
+   THE MECHANIC IS BORROWED, THE STYLING IS NOT — which is the line
+   CLAUDE.md's AAN ban actually draws. The type is this page's, the
+   radius is --r-panel, the spacing is off --sp-*, the scrim is built
+   from --bg-rgb, and the accent stays rationed. Nothing of that page's
+   component kit comes across.
+
+   This replaces the previous construction outright rather than tuning
+   it: fixed columns with a plate travelling beside them was a different
+   idea, and two ideas layered on one section is how a stylesheet stops
+   being readable.
+
+   RECORDED YIELD — motion-taste, transform and opacity only. flex-grow
+   is layout, and there is no transform that widens one panel by taking
+   width from four others. Five items, one row.
+   ============================================================ */
+.v2 .locs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(var(--sp-3), 1vw, var(--sp-4));
+  border: 0;
+}
+
+.v2 .loc {
+  flex: 1 1 0;
+  min-inline-size: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  border-radius: var(--r-panel);
+  /* HORIZONTAL. At 403px tall the open panel was 1.17:1 and the closed
+     ones were 0.49 — five portraits standing in a row. 274 puts the open
+     one at 1.71:1, which is a landscape frame, and leaves the closed ones
+     reading as what they are: tabs waiting their turn.
+
+     The floor is the caption, not the picture. City, address and phone
+     with their padding come to about 150px, so a panel shorter than
+     ~15rem starts pushing the address into the photograph rather than
+     sitting under it. */
+  block-size: clamp(15rem, 19vw, 19rem);
+  /* 1.05s on a SYMMETRIC curve. --dur-4 on cubic-bezier(0.22,1,0.36,1)
+     was the snap: that is an expo-out, and it spends most of its travel
+     in the first third — correct for something arriving from off-screen,
+     wrong for a panel opening under the pointer. This one accelerates
+     and decelerates evenly, so the panel is seen to widen rather than
+     found already wide. */
+  transition: flex-grow 0.68s cubic-bezier(0.33, 0, 0.2, 1);
+}
+.v2 .loc.is-open { flex-grow: 2.4; }
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc { flex-grow: 1; }
+  .v2 .locs__list:hover .loc:hover { flex-grow: 2.4; }
+}
+.v2 .loc:focus-within { flex-grow: 2.4; }
+
+/* ---- the photograph ------------------------------------------------- */
+.v2 .loc__media { position: absolute; inset: 0; display: block; }
+.v2 .loc__media img {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* Graded down: five photographs at full strength directly above the
+     footer would be the loudest thing on a page that has spent nine
+     chapters being quiet. */
+  filter: saturate(0.72) brightness(0.72) contrast(1.04);
+  transition: scale var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1),
+              filter var(--dur-3) var(--ease-out);
+}
+/* ---- CHOOSING ONE STEPS THE OTHER FOUR BACK -------------------------
+   Alex 2026-08-17. The grade above was one value for all five and a
+   small lift on the chosen one — 0.72 brightness against 0.82. That is
+   a step you have to look for, and with the panel widths already
+   carrying the selection it made the row read as five equally lit
+   pictures, one of which happened to be wider.
+
+   The unselected panels now drop to 0.42 and lose most of their colour.
+   The chosen panel does not get brighter to achieve this; the others
+   get quieter, which is the version that keeps the section as dark as
+   the nine chapters above it. Selection is carried by width AND by
+   light, so it is never on one channel alone.
+
+   Two triggers, because there are two ways a panel becomes the one
+   being read: .is-open, set by click and on the default panel, and
+   hover, which previews without committing. The hover rules sit last on
+   purpose — moving the pointer to a neighbour has to be able to dim a
+   panel that is .is-open, and that only works if the hover pass is
+   allowed to win on source order.
+
+   Filter and scale only. Both composite, neither is layout, so a row of
+   five films re-lighting costs no reflow. */
+/* NO :has() HERE, AND THAT IS THE WHOLE BUG THIS AVOIDS.
+
+   The first version keyed the dim off .locs__list:has(.loc.is-open),
+   which reads naturally and is wrong: :has() takes the specificity of
+   its most specific argument, so :has(.loc.is-open) counts TWO classes.
+   The dim rule landed at (0,7,1) and quietly outweighed the hover rule
+   at (0,6,1) — every panel dimmed, including the one under the pointer,
+   and the selector looked correct while doing it.
+
+   Rewritten as four rules of strictly increasing weight, dim then
+   bright at each level. The row always has exactly one .is-open panel,
+   so :not(.is-open) is a complete description of "the other four" and
+   the ancestor test was never needed.
+
+     (0,4,1)  the other four, at rest        dim
+     (0,4,1)  the chosen one, at rest        bright   [later wins]
+     (0,5,1)  all five, while the row is hovered      dim
+     (0,6,1)  the one under the pointer      bright
+
+   Filter and scale only. Both composite, so five panels re-lighting
+   together costs no layout. */
+.v2 .loc:not(.is-open) .loc__media img {
+  filter: saturate(0.42) brightness(0.42) contrast(1.02);
+}
+.v2 .loc.is-open .loc__media img {
+  filter: saturate(0.8) brightness(0.82) contrast(1.04);
+}
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc .loc__media img {
+    filter: saturate(0.42) brightness(0.42) contrast(1.02);
+  }
+  .v2 .locs__list:hover .loc:hover .loc__media img {
+    scale: 1.05;
+    filter: saturate(0.8) brightness(0.82) contrast(1.04);
+  }
+}
+
+/* The scrim is always up, because the name is always on the picture —
+   this is the "overlay" variant, and text that appears over a photograph
+   only when you hover it is text you cannot read at rest. */
+/* TWO LAYERS, NOT ONE RAMP. Alex 2026-08-17: a soft plate along the
+   foot of the card, under the caption, with no visible seam.
+
+   A single full-height ramp cannot do both jobs. Deep enough at the
+   bottom to carry type, it is also still dark at mid-panel, so the
+   photograph is veiled everywhere and the caption is not actually
+   separated from anything — it is dark type region on dark picture.
+
+   So the ramp is SOFTENED and a short plate is added under it. The
+   plate occupies the bottom 46% and dies to nothing by its top. What
+   changes is the SHAPE of the falloff, not the total ink: the
+   composite at the very foot is 0.94 against the 0.92 it was, while
+   mid-panel drops from about 0.36 to 0.24 and gives the building back.
+   The caption reads better because the band around it is now a band,
+   not because more black was poured over the picture.
+
+   SEVEN STOPS ON THE PLATE, approximating an ease-out. This is the "no
+   seam" part and it is the whole reason the stop list looks excessive:
+   a two-stop linear gradient has a constant slope, and a constant slope
+   meeting flat transparency puts a visible straight shoulder across the
+   photograph. The eased tail arrives at zero with zero gradient, so
+   there is no line to find.
+
+   Built on --bg-rgb, so it is the page's own ground closing over the
+   frame rather than a grey wash — the panels sit directly on the
+   section and any other black would show as a seam at the card edge. */
+.v2 .loc__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top,
+      rgb(var(--bg-rgb) / 0.80) 0%,
+      rgb(var(--bg-rgb) / 0.76) 14%,
+      rgb(var(--bg-rgb) / 0.68) 30%,
+      rgb(var(--bg-rgb) / 0.56) 46%,
+      rgb(var(--bg-rgb) / 0.40) 60%,
+      rgb(var(--bg-rgb) / 0.22) 74%,
+      rgb(var(--bg-rgb) / 0.08) 86%,
+      rgb(var(--bg-rgb) / 0.015) 95%,
+      rgb(var(--bg-rgb) / 0)  100%) 0 100% / 100% 62% no-repeat,
+    linear-gradient(to top,
+      rgb(var(--bg-rgb) / 0.72) 0%,
+      rgb(var(--bg-rgb) / 0.44) 34%,
+      rgb(var(--bg-rgb) / 0.11) 66%,
+      rgb(var(--bg-rgb) / 0.05) 100%);
+}
+
+/* ---- the caption, pinned to the foot of its own panel ---------------- */
+.v2 .loc__info {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  /* No gap: the hidden lines have to collapse to nothing, and a flex gap
+     keeps its 12px whether its item has height or not. Each line carries
+     its own top margin instead, and that margin collapses with it. */
+  gap: 0;
+  padding: clamp(var(--sp-5), 2.2vw, var(--sp-6));
+}
+.v2 .loc__city {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  /* SIZED FOR THE CLOSED PANEL, not the open one. At 22px "Newport
+     Beach" is 160px against the 144 a 196px panel leaves after its
+     padding, so four of the five names were being clipped by their own
+     edge. 17px closed clears it with room; the open panel — which has
+     470px — takes the larger size, and the name grows with the panel
+     rather than being the reason it has to be wide. */
+  font-size: clamp(1rem, 1.15vw, 1.0625rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: font-size var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1);
+}
+.v2 .loc.is-open .loc__city { font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc .loc__city { font-size: clamp(1rem, 1.15vw, 1.0625rem); }
+  .v2 .locs__list:hover .loc:hover .loc__city { font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+}
+.v2 .loc:focus-within .loc__city { font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+.v2 .loc__pin { flex: none; color: var(--accent); }
+
+/* The address and the number only make sense on the panel that is open —
+   a 200px-wide panel cannot hold a street, and truncating one is worse
+   than not showing it. They fade with the panel rather than being
+   clipped by it. */
+/* THE ESCALATION IS SPLIT ON PURPOSE. main.css sets this margin through
+   a :not(#x) rule, so beating it needs the same weight — but carrying
+   OPACITY at that weight put it out of reach of .is-open and :hover,
+   which are ordinary class selectors, and the address never appeared on
+   any panel. The margin is escalated; everything that changes with state
+   is not. This file's own trap, caught by measuring the rendered
+   opacity rather than trusting the cascade. */
+.v2 .loc__addr:not(#x) { margin: 0; }
+/* THE HIDDEN LINES TAKE NO ROOM. Alex's mark: on a closed panel the city
+   should sit on the bottom line, level with the open panel's phone
+   number — not floating a third of the way up because an invisible
+   address and an invisible number are still holding their space.
+
+   So they collapse rather than just fading. Opening a panel is then one
+   gesture: the picture widens, the city rides up, and the two lines open
+   underneath it. */
+/* 1.7em, not 4: both lines are single lines, and a ceiling three times
+   their height leaves 34px of empty box under the text. Bottom-pinned,
+   that box pushed the open panel's phone 16px below the closed panels'
+   city names — the two lines Alex asked to have level. */
+.v2 .loc__addr {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  max-block-size: 0;
+  margin-block-start: 0;
+  opacity: 0;
+  transition: max-block-size var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1),
+              margin-block-start var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1),
+              opacity var(--dur-3) var(--ease-out);
+}
+/* ---- the action row -------------------------------------------------
+   Two pills, and the collapse belongs to the ROW now rather than to the
+   phone: with each pill hiding itself the pair could fall out of step,
+   and half an action row appearing is worse than none. */
+.v2 .loc__acts {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  overflow: hidden;
+  max-block-size: 0;
+  margin-block-start: 0;
+  opacity: 0;
+  transition: max-block-size var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1),
+              margin-block-start var(--dur-4) cubic-bezier(0.22, 1, 0.36, 1),
+              opacity var(--dur-3) var(--ease-out);
+}
+
+/* THE SECOND PILL IS QUIET, and that is the whole point of a pair: the
+   red one is the thing to do, this is the thing to do instead. Hairline
+   ring and ink on the photograph, no fill — a second solid pill beside
+   the first would give the panel two primaries and neither would read as
+   one.
+
+   Its destination is real: Google's directions endpoint with the
+   showroom's own address. Newport Beach has no pill at all, because it
+   has no address yet and a directions link to a place that does not open
+   until later is the same lie as printing the street. */
+.v2 .loc__map {
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  line-height: 1.4;
+  letter-spacing: var(--tr-label);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1.5px rgba(243, 238, 230, 0.42);
+  white-space: nowrap;
+  transition: box-shadow var(--dur-2) var(--ease-out),
+              background-color var(--dur-2) var(--ease-out);
+}
+.v2 .loc__map:hover {
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+  background: rgba(243, 238, 230, 0.08);
+}
+
+.v2 .loc__tel {
+  align-self: flex-start;
+  font-family: var(--font-label);
+  font-size: var(--t-micro);
+  /* A RED PILL, because the number is the one thing on this panel that
+     DOES something — you tap it and the phone rings. Red is the action
+     colour on this page and it is rationed to one use per chapter; here
+     that use is a call button, which is the most literal action the
+     register has.
+
+     White on #BC0F0D measures 5.77:1, which is the pairing the token
+     file already clears for a label. */
+  line-height: 1.4;
+  letter-spacing: var(--tr-label);
+  color: var(--ink);
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--dur-2) var(--ease-out);
+}
+.v2 .loc__tel:hover { background: #C8201A; }
+
+.v2 .loc.is-open .loc__addr,
+.v2 .loc.is-open .loc__acts { opacity: 1; max-block-size: 3em; margin-block-start: var(--sp-4); }
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc .loc__addr,
+  .v2 .locs__list:hover .loc .loc__acts { opacity: 0; max-block-size: 0; margin-block-start: 0; }
+  .v2 .locs__list:hover .loc:hover .loc__addr,
+  .v2 .locs__list:hover .loc:hover .loc__acts { opacity: 1; max-block-size: 3em; margin-block-start: var(--sp-4); }
+}
+.v2 .loc:focus-within .loc__addr,
+.v2 .loc:focus-within .loc__acts { opacity: 1; max-block-size: 3em; margin-block-start: var(--sp-4); }
+
+@media (prefers-reduced-motion: reduce) {
+  .v2 .loc, .v2 .loc__media img, .v2 .loc__addr, .v2 .loc__tel { transition: none; }
+}
+
+/* Stacked, an accordion has nothing to trade width with: five panels
+   become five rows and every one is open. */
+@media (max-width: 900px) {
+  .v2 .locs__list { flex-direction: column; }
+  .v2 .loc,
+  .v2 .loc.is-open,
+  .v2 .locs__list:hover .loc { flex-grow: 1; block-size: clamp(13rem, 42vw, 18rem); }
+  .v2 .loc .loc__addr,
+  .v2 .loc .loc__acts { opacity: 1; max-block-size: 3em; margin-block-start: var(--sp-4); }
+}
+
+
+/* ---- THE WEST CHICAGO PANEL PLAYS ------------------------------------
+   The film sits over its own still and fades up when the panel opens, so
+   the panel is never empty while the video is deciding whether it is
+   ready — the poster IS the still underneath rather than a separate
+   frame the browser has to fetch.
+
+   It is the only panel with footage, and that is the honest state of the
+   folder: this is the one location Alex has shot. The other four keep
+   their placeholder photographs and their loud note. */
+.v2 .loc__video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0;
+  filter: saturate(0.72) brightness(0.72) contrast(1.04);
+  transition: opacity var(--dur-3) var(--ease-out),
+              filter var(--dur-3) var(--ease-out);
+  pointer-events: none;
+}
+.v2 .loc.is-open .loc__video { opacity: 1; filter: saturate(0.8) brightness(0.82) contrast(1.04); }
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc .loc__video { opacity: 0; }
+  .v2 .locs__list:hover .loc:hover .loc__video {
+    opacity: 1;
+    filter: saturate(0.8) brightness(0.82) contrast(1.04);
+  }
+}
+.v2 .loc:focus-within .loc__video { opacity: 1; }
+
+/* The scrim has to sit ABOVE the film, or the caption loses its ground
+   the moment the video fades up. */
+.v2 .loc__media::after { z-index: 1; }
+
+/* ============================================================
+   FEATURED INVENTORY — rebuilt to the Figma, node 179:403
+   ============================================================
+   Supplied by Alex 2026-08-17 as the client's own design for this
+   chapter, and it moves ONE structural idea: the modelled light stops
+   being the whole section's room and becomes the car's own box.
+
+   What the file actually specifies, measured off the 1600px export
+   rather than eyeballed:
+
+     page ground        #15100C   (already ours)
+     outer container    #120E0A   radius ~24, NO border, no light
+     stage panel        #111213 -> near-black, 1px #272727, radius ~16
+     record card        #111213   1px hairline, radius ~12
+     container padding  77 top/left/right, 106 bottom, on a 1428 box
+     columns            695 stage : 34 gap : 547 rail  (~56 / 44)
+     records            148 tall, 26 apart
+     CTA                full-width outline pill, its foot LEVEL with the
+                        stage's foot
+
+   That last measurement is the one that decides the geometry. The stage
+   and the rail end on the same line, so the stage takes its height from
+   the rail instead of from an aspect ratio — four cards and a button
+   set the height, and the picture fills whatever they make. Forcing a
+   ratio here would either float the button or crop the car.
+
+   WHAT IS NOT TOUCHED, on Alex's instruction 2026-08-17: the right-hand
+   column's hover. The wedge glow, the crossfade, the thumbnail lift and
+   the chevron all stay exactly as they are. This pass gives each record
+   a ground and an edge to sit in; it does not re-time or re-light one.
+   ============================================================ */
+
+/* ---- the outer container --------------------------------------
+   Flat. Every radial that used to model this box has moved into the
+   stage below, because in the Figma the light is inside the frame and
+   the container around it is a plain raised plane. Keeping both would
+   have lit the same scene twice. */
+.v2 .showcase {
+  background: #120E0A;
+  border-radius: 24px;
+  padding: clamp(var(--sp-6), 4.8vw, var(--sp-8));
+  /* 56/44 rather than 59/41, and a much tighter gap — 34px on a 1428
+     box is 2.4%, where ours was running near 4%. The narrower gutter is
+     what makes the two columns read as one panel rather than as two
+     objects sharing a background. */
+  grid-template-columns: minmax(0, 56fr) minmax(20rem, 44fr);
+  gap: clamp(var(--sp-5), 2.4vw, var(--sp-6));
+  align-items: stretch;
+}
+
+/* ---- the stage becomes a framed panel -------------------------
+   It had no ground and no radius of its own — deliberately, back when
+   the whole section was one lit room. The Figma puts the frame back, so
+   the light comes with it: the same lobed construction as before,
+   re-centred on a box that is now nearly square instead of 16:10. */
+.v2 .showcase__stage {
+  aspect-ratio: auto;
+  block-size: 100%;
+  align-self: stretch;
+  border-radius: 16px;
+  border: 1px solid rgba(243, 238, 230, 0.13);
+  overflow: hidden;
+  isolation: isolate;
+  /* LIT FROM ABOVE AND FROM THE LEFT, FALLING AWAY DOWNWARD.
+
+     Two passes got this wrong in opposite directions and the reference
+     settles it. In the Figma the mass of the light is HIGH — the upper
+     band is the brightest part of the frame, strongest toward the left —
+     and it falls steadily all the way to the floor. The car reads as a
+     silhouette standing in front of that, with the ground immediately
+     around it darker than the field above it, and one soft sheen on the
+     floor beneath.
+
+     The first pass had the height right and let the left edge die
+     halfway down. The second fixed the left edge by dragging the whole
+     light down onto the car — which put the brightest pixels directly
+     behind the subject, so the car competed with its own halo, and left
+     the top band the DARKEST thing on the panel at 13-15. A centred pool
+     has no direction, and this frame is supposed to have one.
+
+     So: the mass goes back up and to the left, the spill down the left
+     edge stays, and the region behind the car is deliberately not the
+     peak. Falloff is monotonic downward — every row darker than the one
+     above it — which is what makes it read as light from a source rather
+     than as a vignette. */
+  background:
+    /* The corner falloff, centred on the light rather than on the box,
+       so the darkening arrives from the corners the light left last. */
+    radial-gradient(128% 118% at 38% 24%,
+      transparent 38%, rgba(4, 4, 3, 0.40) 78%, rgba(3, 3, 2, 0.72) 100%),
+    /* The mass. High and left — this is the brightest thing in the
+       frame and it is nowhere near the car.
+
+       RAISED AND KNOCKED BACK, Alex 2026-08-17. It was centred a fifth
+       of the way down and peaking at 42-49 on the render, which put a
+       bright band across the upper-middle rather than light entering
+       from above the frame. At 11% the source sits at the top edge and
+       what the panel shows is its falloff, which is the correct half of
+       a lamp to be looking at. Alphas come down about a fifth with it:
+       raising a light and keeping its strength would have traded one
+       overlit region for another. */
+    radial-gradient(56% 42% at 32% 11%,
+      rgba(240, 237, 231, 0.085) 0%, rgba(190, 186, 179, 0.037) 50%, transparent 80%),
+    /* The same light carrying right along the top, so the upper band is
+       continuous instead of a lobe sitting in one corner. */
+    radial-gradient(72% 50% at 58% 9%,
+      rgba(190, 186, 179, 0.058) 0%, rgba(146, 143, 137, 0.024) 48%, transparent 82%),
+    /* The left spill — kept from the last pass, because that part was
+       right. It is what stops the left edge clamping to the base colour
+       at mid-height. Tall and narrow, so it reads as the wall staying
+       open rather than as a second lamp. */
+    radial-gradient(40% 54% at 12% 40%,
+      rgba(168, 164, 157, 0.045) 0%, rgba(128, 125, 120, 0.020) 52%, transparent 84%),
+    /* The floor. A wide, very shallow sheen under the car — the only
+       light below the subject, and the thing that gives the contact
+       shadow something to sit on. */
+    radial-gradient(42% 11% at 46% 63%,
+      rgba(200, 196, 189, 0.036) 0%, transparent 78%),
+    linear-gradient(180deg, #17191B 0%, #0F1113 36%, #08090A 100%);
+}
+
+/* THE CAR IS SMALLER IN THE FIGMA THAN IT IS HERE — 59% of the stage's
+   width against our 80%. On a 16:10 box 80% was right; in a near-square
+   one it runs the car to both edges and the frame stops being a frame.
+
+   The four per-model widths are NOT replaced by one number. They exist
+   because the four cut-outs have different amounts of empty margin baked
+   into their own files, and the percentages were solved so all four
+   render at the same physical size — a single value here would undo that
+   and the cars would jump size as the list is stepped through. Every one
+   is scaled by the same 0.75, so the correction is uniform and the
+   solved relationship survives it. */
+.v2 .stage__car[src*="gt2rs"]     { width: 59.9%; }
+.v2 .stage__car[src*="aventador"] { width: 59.1%; }
+.v2 .stage__car[src*="regera"]    { width: 61.4%; }
+.v2 .stage__car[src*="812-gts"]   { width: 59.8%; }
+
+/* ---- THE TWO OBJECTS IN THE FIELD, AND THEIR CLEARANCE ---------------
+   "Just in" was hidden for one pass because the Figma does not show it.
+   Alex's call 2026-08-17: it comes back. Its content warning stands and
+   is unchanged — the pill claims an arrival date the feed never exposes,
+   asserted statically over all four cars, and it needs binding to a real
+   date-added field before this ships. That is a data question, not a
+   layout one, and hiding the pill was never the answer to it.
+
+   NOTHING TOUCHES THE EDGES. Both objects were pinned flush: main.css
+   sets .justin to inset-block-start: 0 and .stage__nav to
+   inset-block-end: 0, and those zeroes were correct when the stage had
+   no frame — the pill and the arrows aligned to the SECTION's padding
+   and the section's own edge was somewhere else entirely.
+
+   The stage now has a border and a radius of its own, so a zero inset
+   puts both of them hard against a drawn line, and the arrows land in
+   the corner where the radius is curving away from them. They get the
+   panel's own inset back — the same clamp the stage would have used as
+   padding, so the clearance reads as one measurement rather than as two
+   objects each nudged until they looked right. */
+.v2 .justin {
+  inset-block-start: clamp(var(--sp-5), 2.4vw, var(--sp-6));
+  inset-inline-start: clamp(var(--sp-5), 2.4vw, var(--sp-6));
+}
+.v2 .stage__nav {
+  inset-block-end: clamp(var(--sp-5), 2.4vw, var(--sp-6));
+  inset-inline-start: clamp(var(--sp-5), 2.4vw, var(--sp-6));
+}
+
+/* ---- the rail -------------------------------------------------
+   Four cards and the button, distributed down the column so their feet
+   land on the stage's foot. The list was a ruled index — a top hairline
+   and a divider under each row; cards have their own edges, so both
+   rules go and the dividers become gaps. */
+.v2 .showcase__index { gap: var(--sp-4); }
+.v2 .recs {
+  border-top: 0;
+  gap: var(--sp-4);
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+.v2 .rec {
+  border: 1px solid rgba(243, 238, 230, 0.10);
+  border-radius: 12px;
+  background: rgba(243, 238, 230, 0.022);
+  padding: var(--sp-4) var(--sp-5);
+}
+/* .rec.is-active already sets border-color and a lift; it is stated
+   again here only because the resting rule above now sets all four
+   borders where before it set one, and shorthand order would otherwise
+   decide the winner. The values are the approved ones, unchanged. */
+.v2 .rec.is-active {
+  border-color: rgba(240, 237, 231, 0.24);
+  background: rgba(243, 238, 230, 0.05);
+}
+
+/* THE THUMBNAIL WAS EATING THE RECORD'S HEIGHT, NOT ITS WIDTH.
+
+   It had grown to 160px, which left the type column 202px — narrower
+   than two price pills side by side. So the pills wrapped, the model
+   name wrapped, and the card came out 214px tall against the Figma's
+   138. The card was not too tall; the picture inside it was too wide.
+
+   104px is the Figma's own proportion measured back to our container
+   (112px on its 1600 export, x 1.327/1.428). It gives the type ~292px,
+   the pills fit on one line, the names fit on one line, and the card
+   lands on its drawn height without a single value being forced. */
+.v2 .rec__thumb { width: 104px; }
+.v2 .rec.is-active .rec__facts { flex-wrap: nowrap; }
+
+/* Full width and centred, level with the foot of the picture. It was a
+   left-aligned link at the end of a list; in the Figma it is the rail's
+   fifth object and it spans the rail. */
+.v2 .index__all {
+  align-self: stretch;
+  justify-content: center;
+  margin-block-start: 0;
+}
+
+@media (max-width: 60rem) {
+  /* Stacked, the rail no longer has a stage to match, so the stage takes
+     a shape of its own again rather than inheriting a column height that
+     has stopped existing. */
+  .v2 .showcase__stage { aspect-ratio: 3 / 2; block-size: auto; }
+  .v2 .stage__car { max-block-size: 68%; }
+}
+
+
+/* ---- THE HERO CLAIM COMES DOWN A FIFTH -------------------------------
+   Client direction 2026-08-17, size chosen by Alex from a four-way
+   comparison: 106.6px at 1440 becomes 85.0px.
+
+   Only the slope and the cap move. The floor stays at 2.75rem, because
+   that is the value the phone is already sitting on — 44px at 390 — and
+   the note was about the desktop display, not about a hero that is
+   modest on a small screen to begin with.
+
+   Below roughly 80px the claim stops out-ranking SEARCH INVENTORY, the
+   other dominant object in this composition, and the two start to argue.
+   85 is the largest reduction that keeps the headline first in the
+   reading order, which is the thing the size was carrying.
+
+   No reflow risk: .claim__line is white-space: nowrap and the two lines
+   are fixed in the markup, so the lockup is the same shape at any size.
+
+   AND THE SPACE IT FREES STAYS EMPTY. That is what makes this read as a
+   quieter headline rather than as a smaller one. */
+.v2 .claim { font-size: clamp(2.75rem, 5.9vw, 5.375rem); }
+
+
+/* ---- THE ADDRESS LINE GOES OPAQUE ------------------------------------
+   Measured on the composite render, glyphs diffed out, on the Newport
+   Beach panel — the brightest of the five and therefore the one that
+   decides this: the address line came in at 3.49:1 where AA asks 4.5.
+   The city name above it passed at 8.10, so this is one line, not the
+   caption.
+
+   TWO CAUSES, AND ONLY FIXING ONE WOULD NOT HAVE CLEARED IT.
+
+   The plate is the first. The caption's glyphs sit 29-48% up from the
+   foot of the panel, and the plate only ran to 46% — so the address was
+   standing almost entirely above the thing built to carry it, held up
+   by the base ramp alone. The plate now runs to 62% and holds more of
+   its strength through the middle, which is where the type actually is.
+   The very foot is unchanged: it was already dark enough and more ink
+   there would have bought nothing.
+
+   The ink is the second, and it is the one the plate could not solve. A
+   TRANSLUCENT INK INHERITS ITS GROUND — at 0.62 alpha the line is
+   partly made of whatever is behind it, so darkening the ground darkens
+   the type in the same move and the ratio converges instead of opening.
+   Deepening the plate alone got it to about 3.95 and would have kept
+   asking for more black over a photograph to buy less and less.
+
+   An opaque value at the same apparent lightness breaks that coupling.
+   #D3CABB is where 0.62 of the bone lands over this ground, so nothing
+   in the caption's hierarchy moves — the address still reads quieter
+   than the city name — but it no longer dims when its ground does.
+
+   This is a colour choice, not a rescue. No shadow, no outline, no
+   heavier weight: those trade a contrast defect for a typographic one,
+   and the rule says fix the background or fix the colour. */
+.v2 .loc__addr { color: #D3CABB; }
+
+/* ---- THE OUTLINE ON THE BONE BANDS WAS PAINTED WHITE -----------------
+   My own regression, and Alex caught it on the render. The "make the
+   secondary CTA more solid" pass wrote one blanket rule —
+
+     .v2 .btn--line { box-shadow: inset 0 0 0 1.5px rgba(243, 238, 230,.42) }
+
+   — which is right on the dark page and wrong everywhere the page turns
+   light. It also outweighs what it broke: .sell__how is a single class,
+   .v2 .btn--line is two, so main.css's carefully-argued dark hairline
+   lost to a rule that never looked at its ground.
+
+   .on-bone was covered in that same pass. .sell__how was not, because
+   the sell band is not .on-bone — its light ground is a PHOTOGRAPH of a
+   white wall, not a bone fill, so it never carried the class.
+
+   The values are main.css's own, at the new weight. The hairline is the
+   DEEP red rather than the bright one, and that is measured, not
+   stylistic: on this wall #BC0F0D falls to 3.67:1 and #940C0A holds
+   4.77:1. Non-text would clear 3:1 either way, but hover recolours the
+   label too, so the border and the label have to agree on one red. */
+.v2 .sell__how {
+  box-shadow: inset 0 0 0 1.5px rgba(26, 20, 14, 0.42);
+}
+.v2 .sell__how:hover,
+.v2 .sell__how:focus-visible {
+  box-shadow: inset 0 0 0 1.5px var(--accent-deep);
+}
+
+/* ---- The record gains a second action -------------------------------
+   The card was a <button> that selected a vehicle. It now also has to
+   offer a way INTO that vehicle, and a link inside a button is invalid
+   markup that no browser will let you click. So the card is a <div>, an
+   invisible button fills it and carries the selecting and the pressed
+   state, and "See details" is a real <a> sitting above it.
+
+   The pill goes in the fact row rather than in a corner of its own: the
+   price and the mileage are what the reader is weighing, and the way to
+   the full record belongs on the same line as the reasons for wanting
+   it. It is the only accent object in the section, which is what makes
+   it read as the action rather than as a third fact. */
+.v2 .rec { position: relative; }
+
+.v2 .rec__select {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.v2 .rec__select:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; border-radius: 12px; }
+
+.v2 .rec__cta {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  white-space: nowrap;
+  /* Held out of the flow's way until the row is pointed at: opacity and
+     a short rise, never width — a pill that grew from nothing would push
+     the two facts beside it sideways every time the pointer crossed. */
+  opacity: 0;
+  translate: 0 4px;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-out),
+              translate var(--dur-2) var(--ease-out),
+              background var(--dur-2) var(--ease-out);
+}
+.v2 .rec:hover .rec__cta,
+.v2 .rec:focus-within .rec__cta,
+.v2 .rec.is-active .rec__cta {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+/* The pill answers the pointer. --accent-hi is not a token in this
+   project, so the lift is stated: #BC0F0D to #C8201A is a step the eye
+   reads without the pill changing size — a fill that grew would shove
+   the two facts beside it, which is the thing this row was built to
+   avoid. The ring carries the rest of the signal. */
+.v2 .rec__cta:hover {
+  background: #C8201A;
+  box-shadow: 0 0 0 4px rgba(188, 15, 13, 0.22);
+}
+.v2 .rec__cta:active { background: #B8121A; box-shadow: none; }
+.v2 .rec__cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* The arrow answers the pill: the record's one action is red, so the
+   mark that points at it is red too rather than staying neutral ink. */
+.v2 .rec:hover .rec__chev,
+.v2 .rec:focus-within .rec__chev,
+.v2 .rec.is-active .rec__chev { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .v2 .rec__cta { transition: opacity var(--dur-1) var(--ease-out); translate: none; }
+}
+
+/* ---- the showroom's own social accounts -------------------------------
+   Alex asked for social icons in every location card, and said broken
+   links would be acceptable just to indicate the pattern. They are not
+   needed: every icon here resolves, because the ones a showroom does
+   not have fall back to the main CMC account rather than to nothing.
+
+   VERIFIED 2026-08-28, one request per account. What is actually theirs:
+
+     Rock Hill, SC    own Instagram, own Facebook, own YouTube
+     Tonganoxie, KS   own Instagram, own Facebook
+     West Chicago     own Facebook — facebook.com/chicagomotorcars is
+                      titled "Chicago Motor Cars | West Chicago IL", so
+                      the main page IS the West Chicago page
+     Naperville       none
+     Newport Beach    none, and it has not opened
+
+   A fallback is not a lie: following @chicagomotorcars from the
+   Naperville card takes you to Chicago Motor Cars, which is whose
+   showroom it is. A dead link would have been the lie.
+
+   THE ICONS ARE NOT ALL THE SAME WEIGHT, and that is the one piece of
+   information this row carries beyond "we are on Instagram". A showroom
+   with its own account gets full ink; one falling back to the house
+   account gets the quiet value. Same shapes, same sizes, same order —
+   nothing is hidden, and the difference reads as "this one posts its
+   own floor" rather than as an error. Never hue alone: it is value, and
+   the accessible name says which showroom and which network. */
+.v2 .loc__social {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-inline-start: var(--sp-2);
+}
+.v2 .loc__soc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
+  block-size: 32px;
+  border-radius: 999px;
+  color: var(--ink-3);
+  box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.10);
+  transition: color var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out);
+}
+.v2 .loc__soc.is-own { color: var(--ink); box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.24); }
+.v2 .loc__soc:hover { color: var(--ink); box-shadow: inset 0 0 0 1px rgba(240, 237, 231, 0.4); }
+.v2 .loc__soc:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.v2 .loc__soc svg { inline-size: 16px; block-size: 16px; display: block; }
+
+/* The row is part of the actions, so it inherits their reveal — it must
+   not be the one thing that stays visible on a closed panel. */
+.v2 .loc:not(.is-open) .loc__social { pointer-events: none; }
+
+@media (max-width: 60rem) {
+  .v2 .loc__social { margin-inline-start: 0; }
+}
+
+/* ---- the actions wrap, and the open height follows ---------------------
+   Four social icons on the end of the phone-plus-directions row overran
+   the panel and sheared the last one off at the edge. The row wraps now
+   and the social icons take their own line: contact first, then where to
+   follow — which is the order they are read in anyway.
+
+   THE COLLAPSE HAS TO LEARN THE NEW HEIGHT. .loc__acts closes by
+   animating max-block-size from a 3em cap, and 3em was one line. Left
+   alone it would clip the second row instead of showing it, which is
+   the same defect one step further in. Every state that opens the
+   actions gets the taller cap, and there are four of them — is-open,
+   the two hover rules, and focus-within — because they were written as
+   four copies of one value rather than as a token.
+
+   6.4em, not "auto": max-block-size cannot transition to auto, and the
+   panel's whole open-and-close gesture depends on that transition. */
+.v2 .loc__acts { flex-wrap: wrap; row-gap: var(--sp-3); }
+
+.v2 .loc.is-open .loc__acts,
+.v2 .loc:focus-within .loc__acts { max-block-size: 6.4em; }
+@media (hover: hover) {
+  .v2 .locs__list:hover .loc:hover .loc__acts { max-block-size: 6.4em; }
+}
+@media (hover: none) {
+  .v2 .loc .loc__acts { max-block-size: 6.4em; }
+}
+
+/* On its own line the row no longer needs to be pushed off the button
+   beside it. */
+.v2 .loc__social { margin-inline-start: 0; }
+
+/* ---- the panel opens quicker, and stops trailing itself ---------------
+   Alex: a bit faster, no delay, still smooth.
+
+   THERE WAS NO transition-delay ANYWHERE. What read as one was the
+   panel finishing before its own contents: the width settled at 680ms
+   while the address and the action row were still travelling on
+   --dur-4, 760ms. So the frame arrived, and then the writing caught up —
+   which is exactly what a delay feels like, and no amount of shortening
+   the panel alone would have fixed it.
+
+   So the whole gesture is one duration now. --dur-3, 520ms, on every
+   part of it: the width, the caption, the action row and the
+   photograph's own grade. Nothing can trail anything else, because
+   nothing is running on a different clock.
+
+   The curve stays symmetric — cubic-bezier(0.32, 0, 0.24, 1) — for the
+   reason recorded above it: an expo-out spends its travel in the first
+   third, which is right for something arriving from off-screen and
+   wrong for a panel widening under the pointer. Faster, not snappier.
+
+   Opacity comes in over --dur-2 and still lands inside the movement, so
+   the text is legible before the panel stops rather than fading in
+   after it.
+
+   Recorded because it has now been retimed three times: the number to
+   change is --dur-3 in this block, and everything in the gesture must
+   change with it. */
+.v2 .loc { transition: flex-grow var(--dur-3) cubic-bezier(0.32, 0, 0.24, 1); }
+
+.v2 .loc__addr,
+.v2 .loc__acts {
+  transition: max-block-size var(--dur-3) cubic-bezier(0.32, 0, 0.24, 1),
+              margin-block-start var(--dur-3) cubic-bezier(0.32, 0, 0.24, 1),
+              opacity var(--dur-2) var(--ease-out);
+}
+
+.v2 .loc__media img {
+  transition: scale var(--dur-3) cubic-bezier(0.32, 0, 0.24, 1),
+              filter var(--dur-3) var(--ease-out);
+}
