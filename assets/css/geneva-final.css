@@ -1829,3 +1829,59 @@ html.has-js .is-gmh .gf-head .menu-toggle,
   .reveal-armed .gmh-ship[data-reveal] .gmh-ship__cta,
   .reveal-armed .sell[data-reveal] .sell__title .ttl-line { opacity: 1; translate: none; transition: none; }
 }
+
+/* ---- F18. The header, combed ------------------------------------------
+   The bar leaves the page grid and takes the window's own gutter — a
+   header is a bleed, and the six routes need the room. Search is a
+   visible field (a hairline pill with the glyph and the word), the phone
+   is a pill of the same height, the two nav groups keep a fixed breath
+   from the badge, and the full row is only kept where it fits: from
+   1400px; below that the compact bar with the menu. */
+.is-gmh .gf-head__bar {
+  max-inline-size: none;
+  padding-inline: var(--page-gutter);
+  column-gap: clamp(var(--sp-7), 4.5vw, 84px);
+}
+.is-gmh .gf-head__side { gap: clamp(var(--sp-5), 2vw, var(--sp-7)); }
+.is-gmh .gf-head__nav { gap: clamp(var(--sp-5), 2vw, 36px); }
+.is-gmh .gf-head__nav a { font-size: 0.8125rem; letter-spacing: 0.06em; }
+.is-gmh .gf-search {
+  inline-size: clamp(11rem, 12vw, 13.5rem);
+  block-size: 40px;
+  padding-inline: var(--sp-4) var(--sp-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: rgb(var(--bg-rgb) / 0.35);
+  color: var(--ink);
+}
+.is-gmh .gf-search:focus-within { inline-size: clamp(13rem, 15vw, 17rem); border-color: var(--ink); background: rgb(var(--bg-rgb) / 0.6); }
+.is-gmh .gf-search__field::placeholder { color: var(--ink); opacity: 0.8; }
+.is-gmh .gf-search__icon { color: var(--ink); }
+.is-gmh .gf-head__tel--text,
+.is-gmh .gf-head__tel--glyph {
+  block-size: 40px;
+  padding-inline: var(--sp-5);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  transition: border-color var(--dur-1) var(--ease-out), background-color var(--dur-1) var(--ease-out);
+}
+.is-gmh .gf-head__tel--text:hover,
+.is-gmh .gf-head__tel--glyph:hover { border-color: var(--ink); background: rgb(var(--bg-rgb) / 0.35); }
+.is-gmh .gf-head__tel--glyph { inline-size: auto; padding-inline: var(--sp-4); }
+/* the compact bar from 1400 down (was 1200): the routes and the field
+   go into the menu, the search glyph and the phone pill stay */
+@media (max-width: 1400px) {
+  .is-gmh .gf-head__nav,
+  .is-gmh .gf-head .gf-search,
+  .is-gmh .gf-head__tel--text { display: none; }
+  .is-gmh .gf-head__side--l { justify-content: flex-start; }
+  .is-gmh .gf-head__side--r { justify-content: flex-end; gap: var(--sp-3); }
+  html.has-js .is-gmh .gf-head .menu-toggle,
+  .is-gmh .gf-head .menu-toggle { display: inline-flex; }
+  .is-gmh .gf-head__find,
+  .is-gmh .gf-head__tel--glyph { display: inline-flex; align-items: center; justify-content: center; inline-size: 40px; block-size: 40px; color: var(--ink); }
+  .is-gmh .gf-head__find { border: 1px solid var(--rule-strong); border-radius: 999px; }
+  .is-gmh .gf-head__tel--glyph { inline-size: 40px; padding: 0; }
+}
