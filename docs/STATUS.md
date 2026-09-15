@@ -1,6 +1,33 @@
 # Geneva Motor Haus — status (handoff)
 
-Last updated 2026-09-11. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/
+Last updated 2026-09-14. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/ (redirects to `index_finale_v2.html`)
+
+## THE SITE — 2026-09-14 (current)
+- **Pages.** `index_finale_v2.html` (homepage, hand-edited) · `srp.html` · `sold.html` · `cars/*.html` (23) ·
+  `finance.html` · `sell.html` · `about.html` · `contact.html` · **`ds.html` — the design system**.
+- **Everything except the homepage is generated** by `tools/build-*.py`; the header, menu and footer are lifted
+  from the homepage through `tools/gmh_chrome.py` (`ROUTES` maps every live address to a local page). Change the
+  homepage's chrome, then rebuild every generator, `build-ds.py` last.
+- **Design system: `ds.html`** (`tools/build-ds.py`, `assets/css/ds-v1.css`, `assets/js/ds-v1.js`). Tokens, contrast
+  and type sizes are read live from the CSS; the car card, sold card, pills and accordion are lifted from the built
+  pages. It supersedes the palette in `DESIGN-READ.md`.
+- **Palette.** Ground `#161617`; eyebrow plate `#313C29` with `#DFD4AF` text (7.8:1).
+- **Motion.** Entrance roles on every page (`geneva-final-v2.css` F25: `.ttl-line`, `.rv-eyebrow`, `.rv-lede`, `.rv-act`,
+  `.rv-item`, `.rv-stagger`, `.rv-photo`, `.rv-self`), played once by the observer in `main-final-v2.js`.
+- **Forms.** Financing, Sell and Contact use the AAN field names and required sets; `finance-v2.css/js` is the shared
+  form layer. The static preview answers in place and does not send.
+- **Content.** One ledger per page in `docs/content-ledger-*.json`, with what was not used. Sources in `docs/source/`.
+- **Cleanup 2026-09-14.** Removed the earlier versions — `index.html` (now a redirect), `index2.html`, `index_finale.html`,
+  `geneva.css`, `geneva-v3.css`, `geneva-final.css`, `tokens-v3.css`, `main.js`, `main-v3.js`, `main-final.js`, `geneva.js`,
+  `geneva-final.js` — and 21 images only they used. All of it is in git history (last commit carrying them: `df27fb6`).
+  Two originals (`HERO FINALE.jpg`, `passion.png`) moved to the ignored `assets/img/source/web-originals/`.
+  The sections below are history and name some of those files.
+- **Security note for the client.** The live genevamotorhaus.com contact page reads its SMTP username and password
+  from Firestore in the browser (found 2026-09-14). Tell AAN / Devritech.
+- **Waiting for Alex.** The step-plate hover (`_preview-sell-motion.html`) and whether the homepage's step plates
+  link to `sell.html`; the proposed ink `#EFEEEA` / bone `#E7E5E0`; image weight (car pages ≈56MB, sold ≈16MB).
+- **Known debt.** Radii 8/10/12/16px are values in the page layers, not tokens. `main.css` still points at a missing
+  `assets/img/financing/fin-mobile-900.jpg` from an unused CMC rule. Car-page contact pills are 41px tall.
 
 ## FINALE v2 — `index_finale_v2.html` (2026-09-11) — Alex's working copy ("finale 3")
 - A clone of `index_finale.html` with its own `assets/css/geneva-final-v2.css`, `assets/js/main-final-v2.js`

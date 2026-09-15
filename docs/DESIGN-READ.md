@@ -1,6 +1,11 @@
 # Geneva Motor Haus — Design Read (homepage)
 
 2026-09-10 · **v2, the same day** · Design DNA from `/Users/alex/Desktop/WORK/design_dna/TASTE.md` (canonical Mac path).
+
+> **Superseded values (2026-09-14).** This Read records the decisions of 10 Sep. Since then the ground
+> is `#161617` (not `#15100C`), the eyebrow plate is `#313C29` with `#DFD4AF`, and the entrance motion
+> is a set of roles on every page. The current tokens, components and rules are in **`ds.html`**, which
+> reads its values from the live CSS.
 Brief: the client's AAN ticket (`from client/`), recorded verbatim in `DISCOVERY.md`.
 
 ```
