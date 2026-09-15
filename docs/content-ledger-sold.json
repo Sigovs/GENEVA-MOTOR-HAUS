@@ -1,0 +1,944 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "sold.html",
+  "compiled": "2026-09-14",
+  "note": "Every figure on sold.html is the dealer's own sold list, rendered 2026-09-14 (docs/source/site-live-sold-2026-09-14.json).",
+  "entries": [
+    {
+      "id": "sold-count",
+      "claim": "82 cars sold",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold: 'Showing 82 vehicles', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-head__title",
+        ".srp-count"
+      ]
+    },
+    {
+      "id": "sold-2005-nissan-350z-6-speed-manual",
+      "claim": "2005 Nissan 350Z 6 Speed Manual — sold — 18,852 miles — $17,500",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2005 NISSAN 350Z 6 SPEED MANUAL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2005-nissan-350z-6-speed-manual']"
+      ]
+    },
+    {
+      "id": "sold-2007-toyota-tacoma-trd-off-road",
+      "claim": "2007 Toyota Tacoma TRD Off Road — sold — 73,630 miles — $21,500",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 Toyota Tacoma TRD OFF ROAD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-toyota-tacoma-trd-off-road']"
+      ]
+    },
+    {
+      "id": "sold-2018-ford-focus-st",
+      "claim": "2018 Ford Focus ST — sold — 45,131 miles — $17,999",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2018 FORD FOCUS ST', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2018-ford-focus-st']"
+      ]
+    },
+    {
+      "id": "sold-2006-mitsubishi-eclipse-gt",
+      "claim": "2006 Mitsubishi Eclipse GT — sold — 8,600 miles — $16,000",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Mitsubishi Eclipse GT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-mitsubishi-eclipse-gt']"
+      ]
+    },
+    {
+      "id": "sold-2007-bmw-335i",
+      "claim": "2007 BMW 335I — sold — 69,832 miles — $12,500",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 BMW 335I', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-bmw-335i']"
+      ]
+    },
+    {
+      "id": "sold-2010-porsche-911-carrera-s-cabriolet",
+      "claim": "2010 Porsche 911 Carrera S Cabriolet — sold — 52,900 miles — $71,997",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2010 Porsche 911 Carrera S Cabriolet', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2010-porsche-911-carrera-s-cabriolet']"
+      ]
+    },
+    {
+      "id": "sold-2014-mercedes-benz-ml350-4matic",
+      "claim": "2014 Mercedes-Benz ML350 4MATIC — sold — 94,500 miles — $14,555",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2014 Mercedes-Benz ML350 4MATIC', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2014-mercedes-benz-ml350-4matic']"
+      ]
+    },
+    {
+      "id": "sold-2005-bmw-330ci",
+      "claim": "2005 BMW 330Ci — sold — 70,693 miles — $12,500",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2005 BMW 330Ci', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2005-bmw-330ci']"
+      ]
+    },
+    {
+      "id": "sold-2021-audi-rs6-avant",
+      "claim": "2021 Audi RS6 Avant — sold — $98,600",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2021 AUDI RS6 AVANT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2021-audi-rs6-avant']"
+      ]
+    },
+    {
+      "id": "sold-2014-mercedes-benz-e350-combi-wagon",
+      "claim": "2014 Mercedes-Benz E350 Combi Wagon — sold — 95,942 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2014 Mercedes-Benz E350 COMBI WAGON', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2014-mercedes-benz-e350-combi-wagon']"
+      ]
+    },
+    {
+      "id": "sold-2004-audi-s4-cabriolet",
+      "claim": "2004 Audi S4 Cabriolet — sold — 29,315 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2004 AUDI S4 CABRIOLET', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2004-audi-s4-cabriolet']"
+      ]
+    },
+    {
+      "id": "sold-2016-lexus-es300h",
+      "claim": "2016 Lexus ES300h — sold — 100,543 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 LEXUS ES300h', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-lexus-es300h']"
+      ]
+    },
+    {
+      "id": "sold-2008-ford-mustang-gt500kr",
+      "claim": "2008 Ford Mustang GT500KR — sold — 3,700 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2008 FORD MUSTANG GT500KR', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2008-ford-mustang-gt500kr']"
+      ]
+    },
+    {
+      "id": "sold-2007-chevrolet-suburban-2500",
+      "claim": "2007 Chevrolet Suburban 2500 — sold — 92,600 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 CHEVROLET SUBURBAN 2500', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-chevrolet-suburban-2500']"
+      ]
+    },
+    {
+      "id": "sold-2014-audi-rs5",
+      "claim": "2014 Audi RS5 — sold — 44,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2014 AUDI RS5', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2014-audi-rs5']"
+      ]
+    },
+    {
+      "id": "sold-2013-toyota-corolla-s",
+      "claim": "2013 Toyota Corolla S — sold — 99,800 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 TOYOTA COROLLA S', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-toyota-corolla-s']"
+      ]
+    },
+    {
+      "id": "sold-2021-porsche-boxster-gts-4-0",
+      "claim": "2021 Porsche Boxster GTS 4.0 — sold — 15,820 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2021 PORSCHE BOXSTER GTS 4.0', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2021-porsche-boxster-gts-4-0']"
+      ]
+    },
+    {
+      "id": "sold-2011-bmw-335d-turbo-diesel",
+      "claim": "2011 BMW 335D Turbo Diesel — sold — 98,932 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2011 BMW 335D TURBO DIESEL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2011-bmw-335d-turbo-diesel']"
+      ]
+    },
+    {
+      "id": "sold-2003-mercedes-benz-sl55-amg",
+      "claim": "2003 Mercedes-Benz SL55 AMG — sold — 64,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2003 Mercedes-Benz SL55 AMG', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2003-mercedes-benz-sl55-amg']"
+      ]
+    },
+    {
+      "id": "sold-2017-honda-civic",
+      "claim": "2017 Honda Civic — sold — 105,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2017 HONDA CIVIC', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2017-honda-civic']"
+      ]
+    },
+    {
+      "id": "sold-2020-audi-q7-prestige",
+      "claim": "2020 Audi Q7 Prestige — sold — 65,680 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2020 AUDI Q7 PRESTIGE', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2020-audi-q7-prestige']"
+      ]
+    },
+    {
+      "id": "sold-2027-rivian-r2-performance-launch",
+      "claim": "2027 Rivian R2 Performance Launch — sold — 399 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2027 RIVIAN R2 PERFORMANCE- LAUNCH', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2027-rivian-r2-performance-launch']"
+      ]
+    },
+    {
+      "id": "sold-2006-bmw-330i-6-speed-manual",
+      "claim": "2006 BMW 330I 6 Speed Manual — sold — 92,131 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 BMW 330I 6 SPEED MANUAL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-bmw-330i-6-speed-manual']"
+      ]
+    },
+    {
+      "id": "sold-2006-chevrolet-corvette",
+      "claim": "2006 Chevrolet Corvette — sold — 26,003 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 CHEVROLET CORVETTE', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-chevrolet-corvette']"
+      ]
+    },
+    {
+      "id": "sold-2013-chevrolet-volt",
+      "claim": "2013 Chevrolet Volt — sold — 39,800 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 CHEVROLET VOLT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-chevrolet-volt']"
+      ]
+    },
+    {
+      "id": "sold-2013-porsche-cayenne-diesel",
+      "claim": "2013 Porsche Cayenne Diesel — sold — 129,999 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 PORSCHE CAYENNE DIESEL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-porsche-cayenne-diesel']"
+      ]
+    },
+    {
+      "id": "sold-2013-toyota-prius",
+      "claim": "2013 Toyota Prius — sold — 129,350 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 TOYOTA PRIUS', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-toyota-prius']"
+      ]
+    },
+    {
+      "id": "sold-2005-porsche-911-carerra-s-dream-build",
+      "claim": "2005 Porsche 911 Carerra S Dream Build — sold — 25,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2005 PORSCHE 911 CARERRA S DREAM BUILD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2005-porsche-911-carerra-s-dream-build']"
+      ]
+    },
+    {
+      "id": "sold-2005-honda-s2000-ap2",
+      "claim": "2005 Honda S2000 AP2 — sold — 37,690 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2005 HONDA S2000 AP2', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2005-honda-s2000-ap2']"
+      ]
+    },
+    {
+      "id": "sold-2012-acura-tsx",
+      "claim": "2012 Acura TSX — sold — 86,760 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2012 ACURA TSX', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2012-acura-tsx']"
+      ]
+    },
+    {
+      "id": "sold-2009-ford-ranger-sport",
+      "claim": "2009 Ford Ranger Sport — sold — 106,530 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 FORD RANGER SPORT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-ford-ranger-sport']"
+      ]
+    },
+    {
+      "id": "sold-2023-toyota-gr-corolla-morizo",
+      "claim": "2023 Toyota GR Corolla Morizo — sold — 3,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2023 TOYOTA GR COROLLA MORIZO', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2023-toyota-gr-corolla-morizo']"
+      ]
+    },
+    {
+      "id": "sold-2007-porsche-cayman-s",
+      "claim": "2007 Porsche Cayman S — sold — 40,635 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 PORSCHE CAYMAN S', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-porsche-cayman-s']"
+      ]
+    },
+    {
+      "id": "sold-2015-honda-cr-v-ex-awd",
+      "claim": "2015 Honda CR-V EX AWD — sold — 56,750 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2015 HONDA CR-V EX AWD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2015-honda-cr-v-ex-awd']"
+      ]
+    },
+    {
+      "id": "sold-2009-porsche-911-turbo-6-speed",
+      "claim": "2009 Porsche 911 Turbo 6 Speed — sold — 47,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 PORSCHE 911 TURBO 6 SPEED', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-porsche-911-turbo-6-speed']"
+      ]
+    },
+    {
+      "id": "sold-2019-honda-hr-v-awd",
+      "claim": "2019 Honda HR-V AWD — sold — 62,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2019 HONDA HR-V AWD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2019-honda-hr-v-awd']"
+      ]
+    },
+    {
+      "id": "sold-2005-porsche-911",
+      "claim": "2005 Porsche 911 — sold — 95,402 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2005 PORSCHE 911', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2005-porsche-911']"
+      ]
+    },
+    {
+      "id": "sold-2006-acura-tl",
+      "claim": "2006 Acura TL — sold — 71,323 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 ACURA TL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-acura-tl']"
+      ]
+    },
+    {
+      "id": "sold-2017-honda-civic-si-1-owner",
+      "claim": "2017 Honda Civic Si 1 Owner — sold — 25,055 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2017 Honda Civic Si - 1 Owner', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2017-honda-civic-si-1-owner']"
+      ]
+    },
+    {
+      "id": "sold-2002-lexus-sc430-27k-miles",
+      "claim": "2002 Lexus SC430 27K Miles — sold",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2002 LEXUS SC430 27K MILES', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2002-lexus-sc430-27k-miles']"
+      ]
+    },
+    {
+      "id": "sold-2016-bmw-228i-xdrive",
+      "claim": "2016 BMW 228I XDrive — sold — 46,792 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 BMW 228I XDrive', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-bmw-228i-xdrive']"
+      ]
+    },
+    {
+      "id": "sold-2016-land-rover-range-rover-sport-hse-td6",
+      "claim": "2016 Land Rover Range Rover Sport HSE TD6 — sold — 69,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 Land Rover Range Rover Sport HSE TD6', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-land-rover-range-rover-sport-hse-td6']"
+      ]
+    },
+    {
+      "id": "sold-2006-mercedes-benz-slk-55-amg",
+      "claim": "2006 Mercedes-Benz SLK 55 AMG — sold — 43,400 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Mercedes-Benz SLK 55 AMG', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-mercedes-benz-slk-55-amg']"
+      ]
+    },
+    {
+      "id": "sold-2009-toyota-camry-le",
+      "claim": "2009 Toyota Camry LE — sold — 66,070 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 Toyota Camry LE', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-toyota-camry-le']"
+      ]
+    },
+    {
+      "id": "sold-2013-volkswagen-jetta-tdi-sportwagen-1-owner",
+      "claim": "2013 Volkswagen Jetta TDI Sportwagen 1 OWNER! — sold — 38,200 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 VOLKSWAGEN JETTA TDI SPORTWAGEN 1 OWNER!', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-volkswagen-jetta-tdi-sportwagen-1-owner']"
+      ]
+    },
+    {
+      "id": "sold-2018-mercedes-benz-e300-4matic-15k-in-options",
+      "claim": "2018 Mercedes-Benz E300 4MATIC 15K IN Options — sold — 93,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2018 MERCEDES-BENZ E300 4MATIC 15K IN OPTIONS', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2018-mercedes-benz-e300-4matic-15k-in-options']"
+      ]
+    },
+    {
+      "id": "sold-2007-porsche-911-carrera-4s-cabriolet-x51-power-pkg-pccb",
+      "claim": "2007 Porsche 911 Carrera 4S Cabriolet X51 Power PKG Pccb — sold — 71,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 Porsche 911 Carrera 4S Cabriolet X51 Power PKG PCCB', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-porsche-911-carrera-4s-cabriolet-x51-power-pkg-pccb']"
+      ]
+    },
+    {
+      "id": "sold-2000-porsche-911-millenium-edition",
+      "claim": "2000 Porsche 911 Millenium Edition — sold — 29,586 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2000 Porsche 911 Millenium Edition', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2000-porsche-911-millenium-edition']"
+      ]
+    },
+    {
+      "id": "sold-2009-bmw-335i-6-speed",
+      "claim": "2009 BMW 335I 6-SPEED — sold — 73,117 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 BMW 335I 6-SPEED', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-bmw-335i-6-speed']"
+      ]
+    },
+    {
+      "id": "sold-2006-porsche-911-carrera-s",
+      "claim": "2006 Porsche 911 Carrera S — sold — 79,056 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Porsche 911 Carrera S', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-porsche-911-carrera-s']"
+      ]
+    },
+    {
+      "id": "sold-2009-honda-pilot",
+      "claim": "2009 Honda Pilot — sold — 131,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 HONDA PILOT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-honda-pilot']"
+      ]
+    },
+    {
+      "id": "sold-2013-bmw-m3",
+      "claim": "2013 BMW M3 — sold — 49,995 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 BMW M3', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-bmw-m3']"
+      ]
+    },
+    {
+      "id": "sold-2020-bmw-x5-x40i-m-sport",
+      "claim": "2020 BMW X5 X40I M-SPORT — sold — 54,330 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2020 BMW X5 X40I M-SPORT', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2020-bmw-x5-x40i-m-sport']"
+      ]
+    },
+    {
+      "id": "sold-2007-toyota-4-runner",
+      "claim": "2007 Toyota 4 Runner — sold — 76,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2007 Toyota 4 Runner', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2007-toyota-4-runner']"
+      ]
+    },
+    {
+      "id": "sold-2013-jeep-wrangler-sahara-3-inch-lift-custom-matte-black-paint",
+      "claim": "2013 Jeep Wrangler Sahara 3 Inch Lift Custom matte black paint — sold — 48,180 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 Jeep Wrangler Sahara 3 Inch Lift - Custom matte black paint', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-jeep-wrangler-sahara-3-inch-lift-custom-matte-black-paint']"
+      ]
+    },
+    {
+      "id": "sold-2016-mercedes-benz-e400-coupe-4matic",
+      "claim": "2016 Mercedes-Benz E400 Coupe 4Matic — sold — 65,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 Mercedes - Benz E400 Coupe 4Matic', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-mercedes-benz-e400-coupe-4matic']"
+      ]
+    },
+    {
+      "id": "sold-2002-lexus-is300-5-speed-manual",
+      "claim": "2002 Lexus IS300 5 speed Manual — sold — 40,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2002 2002 Lexus IS300 5 speed Manual', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2002-lexus-is300-5-speed-manual']"
+      ]
+    },
+    {
+      "id": "sold-2004-lexus-is300",
+      "claim": "2004 Lexus IS300 — sold — 99,780 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2004 LEXUS IS300', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2004-lexus-is300']"
+      ]
+    },
+    {
+      "id": "sold-2004-nissan-350z-touring-roadster",
+      "claim": "2004 Nissan 350Z Touring Roadster — sold — 34,000 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2004 NISSAN 350Z TOURING ROADSTER', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2004-nissan-350z-touring-roadster']"
+      ]
+    },
+    {
+      "id": "sold-2010-mazda-mazdaspeed3",
+      "claim": "2010 Mazda MAZDASPEED3 — sold — 66,993 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2010 Mazda MAZDASPEED3', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2010-mazda-mazdaspeed3']"
+      ]
+    },
+    {
+      "id": "sold-2013-bmw-650xi-gran-coupe",
+      "claim": "2013 BMW 650xi Gran Coupe — sold — 49,500 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 BMW 650xi Gran Coupe', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-bmw-650xi-gran-coupe']"
+      ]
+    },
+    {
+      "id": "sold-2015-volvo-s60-premier-t5-awd",
+      "claim": "2015 Volvo S60 Premier T5 AWD — sold — 44,730 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2015 Volvo S60 PREMIER T5 AWD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2015-volvo-s60-premier-t5-awd']"
+      ]
+    },
+    {
+      "id": "sold-2012-mazda-mazda5-wagon-7-passenger",
+      "claim": "2012 Mazda Mazda5 Wagon 7 Passenger — sold — 81,997 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2012 Mazda Mazda5 Wagon 7 Passenger', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2012-mazda-mazda5-wagon-7-passenger']"
+      ]
+    },
+    {
+      "id": "sold-2020-mercedes-benz-e-450-4matic-wagon",
+      "claim": "2020 Mercedes-Benz E 450 4Matic Wagon — sold — 34,734 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2020 Mercedes-Benz E 450 4Matic Wagon', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2020-mercedes-benz-e-450-4matic-wagon']"
+      ]
+    },
+    {
+      "id": "sold-2008-buick-lacrosse-cxl",
+      "claim": "2008 Buick LaCrosse CXL — sold — 54,206 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2008 Buick LaCrosse CXL', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2008-buick-lacrosse-cxl']"
+      ]
+    },
+    {
+      "id": "sold-2009-subaru-tribeca-limited",
+      "claim": "2009 Subaru Tribeca Limited — sold — 59,837 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2009 Subaru Tribeca Limited', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2009-subaru-tribeca-limited']"
+      ]
+    },
+    {
+      "id": "sold-2006-porsche-911-carrera-s-2",
+      "claim": "2006 Porsche 911 Carrera S — sold — 49,900 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Porsche 911 Carrera S', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-porsche-911-carrera-s-2']"
+      ]
+    },
+    {
+      "id": "sold-2011-lexus-rx-350",
+      "claim": "2011 Lexus RX 350 — sold — 111,700 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2011 LEXUS RX 350', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2011-lexus-rx-350']"
+      ]
+    },
+    {
+      "id": "sold-2008-jeep-liberty-limited",
+      "claim": "2008 Jeep Liberty Limited — sold — 38,600 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2008 JEEP LIBERTY LIMITED', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2008-jeep-liberty-limited']"
+      ]
+    },
+    {
+      "id": "sold-2012-toyota-rav4",
+      "claim": "2012 Toyota RAV4 — sold — 53,638 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2012 Toyota RAV4', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2012-toyota-rav4']"
+      ]
+    },
+    {
+      "id": "sold-2006-honda-s2000-ap2",
+      "claim": "2006 Honda S2000 (AP2) — sold — 8,600 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Honda S2000 (AP2)', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-honda-s2000-ap2']"
+      ]
+    },
+    {
+      "id": "sold-2014-bmw-528i-m-sport-1owner",
+      "claim": "2014 BMW 528I M-Sport 1Owner — sold — 76,179 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2014 BMW 528I M-Sport 1Owner', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2014-bmw-528i-m-sport-1owner']"
+      ]
+    },
+    {
+      "id": "sold-2013-volkswagen-jetta-sportwagen-tdi",
+      "claim": "2013 Volkswagen Jetta SportWagen TDI — sold — 66,783 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 Volkswagen Jetta SportWagen TDI', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-volkswagen-jetta-sportwagen-tdi']"
+      ]
+    },
+    {
+      "id": "sold-2013-bmw-128i",
+      "claim": "2013 BMW 128i — sold — 64,375 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 BMW 128i', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-bmw-128i']"
+      ]
+    },
+    {
+      "id": "sold-1999-toyota-rav4",
+      "claim": "1999 Toyota RAV4 — sold — 58,450 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '1999 TOYOTA RAV4', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='1999-toyota-rav4']"
+      ]
+    },
+    {
+      "id": "sold-2015-mazda-mx-5-miata-hardtop-supercharged",
+      "claim": "2015 Mazda MX-5 Miata Hardtop Supercharged — sold — 80,999 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2015 Mazda MX-5 Miata Hardtop SUPERCHARGED', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2015-mazda-mx-5-miata-hardtop-supercharged']"
+      ]
+    },
+    {
+      "id": "sold-2006-pontiac-grand-prix-gxp",
+      "claim": "2006 Pontiac Grand Prix GXP — sold — 39,689 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2006 Pontiac Grand Prix GXP', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2006-pontiac-grand-prix-gxp']"
+      ]
+    },
+    {
+      "id": "sold-2016-volvo-xc70-premier",
+      "claim": "2016 Volvo XC70 Premier — sold",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 VOLVO XC70 PREMIER', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-volvo-xc70-premier']"
+      ]
+    },
+    {
+      "id": "sold-2016-bmw-x5-m",
+      "claim": "2016 BMW X5 M — sold — 16,800 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2016 BMW X5 M', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2016-bmw-x5-m']"
+      ]
+    },
+    {
+      "id": "sold-2003-toyota-rav4",
+      "claim": "2003 Toyota RAV4 — sold — 82,057 miles",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2003 Toyota RAV4', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2003-toyota-rav4']"
+      ]
+    },
+    {
+      "id": "sold-2012-honda-cr-v-awd",
+      "claim": "2012 Honda CR-V AWD — sold",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2012 Honda CR-V AWD', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2012-honda-cr-v-awd']"
+      ]
+    },
+    {
+      "id": "sold-2013-mercedes-benz-c63-p31-pkg",
+      "claim": "2013 Mercedes-Benz C63 P31 PKG — sold",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/sold card '2013 Mercedes - Benz C63 P31 PKG', rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".srp-card[data-slug='2013-mercedes-benz-c63-p31-pkg']"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "2021 AUDI RS6 AVANT — mileage as listed 0",
+      "reason": "0 or an impossible figure; not shown"
+    },
+    {
+      "claim": "2002 LEXUS SC430 27K MILES — mileage as listed 200,243,027",
+      "reason": "0 or an impossible figure; not shown"
+    },
+    {
+      "claim": "2016 VOLVO XC70 PREMIER — mileage as listed 0",
+      "reason": "0 or an impossible figure; not shown"
+    },
+    {
+      "claim": "2012 Honda CR-V AWD — mileage as listed 0",
+      "reason": "0 or an impossible figure; not shown"
+    },
+    {
+      "claim": "2013 Mercedes - Benz C63 P31 PKG — mileage as listed 0",
+      "reason": "0 or an impossible figure; not shown"
+    }
+  ]
+}

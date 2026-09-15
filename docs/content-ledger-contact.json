@@ -1,0 +1,144 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "contact.html",
+  "compiled": "2026-09-14",
+  "note": "The form is AAN's contact form (aanmaster2027.aandemo.com/contact-us/, formname=contacts, read 2026-09-14). The facts and words are Geneva's /contact, trimmed.",
+  "entries": [
+    {
+      "id": "ct-heading",
+      "claim": "Get in touch.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14: hero 'Get In Touch'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#ct-title"
+      ]
+    },
+    {
+      "id": "ct-lede",
+      "claim": "Whether you prefer to call, email or visit us in person, we’re here to help.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, 'Multiple Ways to Connect', trimmed of 'with all your automotive needs. Our team is ready to help you find the perfect vehicle.'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-head__lede"
+      ]
+    },
+    {
+      "id": "ct-phone",
+      "claim": "(262) 249-6777 — Call us during business hours.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, Phone card; homepage ledger contact-phone",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-way",
+        ".ct-head__acts",
+        ".fin-apply__lede",
+        ".fin-sent__p"
+      ]
+    },
+    {
+      "id": "ct-email",
+      "claim": "Info@GenevaMotorHaus.com — Send us an email anytime.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, Email card; homepage ledger contact-email",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-way"
+      ]
+    },
+    {
+      "id": "ct-address",
+      "claim": "600 Faust Rd, Unit 8, Burlington, WI 53105 — Visit our showroom. Saturdays by appointment.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, Address card ('Visit our showroom') and hours ('Saturday Appt Only'); homepage ledger contact-address",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-way",
+        ".ct-card"
+      ]
+    },
+    {
+      "id": "ct-hours",
+      "claim": "Monday – Friday 10AM – 4PM · Saturday by appointment · Sunday closed",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, 'Business Hours'; homepage ledger hours",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-hours"
+      ]
+    },
+    {
+      "id": "ct-holidays",
+      "claim": "We’re closed on major holidays. Please call ahead to confirm hours during holiday seasons.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, verbatim (also docs/source/site-copy-2026-09-10.json)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-card__note"
+      ]
+    },
+    {
+      "id": "ct-form-intro",
+      "claim": "Fill out the form and we’ll get back to you. For immediate assistance, call us at (262) 249-6777.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, 'Contact Form' intro, 'as soon as possible' removed",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-apply__lede"
+      ]
+    },
+    {
+      "id": "ct-form",
+      "claim": "Form fields (fname, lname, email, phone, contact_mode, message, i_agree) and the consent sentence",
+      "status": "verified",
+      "source": "AAN contacts form config, GET /api/?module=form&formname=contacts&action=get_config, 2026-09-14",
+      "sourceType": "client-data",
+      "appearsAt": [
+        "#fin-form"
+      ]
+    },
+    {
+      "id": "ct-social",
+      "claim": "Instagram https://www.instagram.com/genevamotorhaus/ · YouTube https://www.youtube.com/@GenevaMotorHaus · TikTok https://www.tiktok.com/@geneva.motor.haus · Facebook https://www.facebook.com/profile.php?id=61583395092139",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14, footer profile links (the page's own social tiles link to '#')",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-social"
+      ]
+    },
+    {
+      "id": "ct-map",
+      "claim": "Google Maps embed of 600 Faust Rd #8, Burlington, WI",
+      "status": "verified",
+      "source": "genevamotorhaus.com/contact, rendered 2026-09-14 and the homepage's map section: the same embed URL",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ct-map"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "Hero photograph: aerial of Geneva, Switzerland (uploads/media/6917438463681_1763132292.jpg)",
+      "reason": "not the Burlington showroom; on a contact page it misleads about where the business is (CP7)"
+    },
+    {
+      "claim": "We're Here to Help You Find Your Dream Vehicle · all your automotive needs · the perfect vehicle",
+      "reason": "template superlatives (CP6)"
+    },
+    {
+      "claim": "we'll get back to you as soon as possible · We will get back to you shortly",
+      "reason": "an unconfirmed response-time promise (CP6)"
+    },
+    {
+      "claim": "Stay updated with our latest inventory, special offers, and automotive news",
+      "reason": "'special offers' is unconfirmed; the links stand on their own"
+    },
+    {
+      "claim": "Geneva's own short form (name, email, phone, subject, message)",
+      "reason": "the AAN contacts form is the spec"
+    }
+  ]
+}

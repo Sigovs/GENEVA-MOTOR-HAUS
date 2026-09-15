@@ -502,13 +502,13 @@ html.has-js .is-gmh .gf-head .menu-toggle,
   gap: var(--sp-5);
   min-block-size: 12.5rem;
   padding: var(--sp-6);
-  background: rgb(26 24 24 / 0.035);
+  background: rgb(26 26 27 / 0.035);
   border: 1px solid var(--bone-rule);
   border-radius: var(--r-control);
   box-shadow: none;
   transition: border-color var(--dur-2) var(--ease-out);
 }
-.is-gmh.is-v3 .sell__steps li:hover { border-color: rgba(26, 24, 24, 0.4); }
+.is-gmh.is-v3 .sell__steps li:hover { border-color: rgba(26, 26, 27, 0.4); }
 .is-gmh.is-v3 .sell__step-n {
   font-family: var(--font-display);
   font-weight: 700;
@@ -2071,7 +2071,7 @@ html.has-js .is-gmh .gf-head .menu-toggle,
 .is-gmh .gmh-sellcard .sell__how {
   color: var(--bone-ink);
   background: transparent;
-  box-shadow: inset 0 0 0 1px rgb(26 24 24 / 0.34);
+  box-shadow: inset 0 0 0 1px rgb(26 26 27 / 0.34);
 }
 .is-gmh .gmh-sellcard .sell__how:hover,
 .is-gmh .gmh-sellcard .sell__how:focus-visible {
@@ -2483,27 +2483,27 @@ html.has-js .is-gmh .gf-head .menu-toggle,
 }
 
 /* ============================================================
-   F21. PALETTE — the ground is #151414 (Alex, 2026-09-11)
+   F21. PALETTE — the ground is #161617 (Alex, 2026-09-14; #151414 on 09-11)
    ============================================================
-   The warm brown ground (#15100C) gives way to Alex's #151414 — the
-   Featured frame's own ground — and the dark family is re-derived from
-   it at the same lightness steps: raised, sunk, the "black" pair, and
+   The warm brown ground (#15100C) gave way to #151414 and then to Alex's
+   #161617 — a hair lighter and a hair cool — and the dark family is
+   re-derived from it at the same lightness steps: raised, sunk, the "black" pair, and
    the ink that sits on bone. Bone, the ink, the rules and the reds are
    unchanged. Scoped to this page: tokens.css is shared with index and
    index_finale, which keep the brown. Everything built on --bg-rgb
    (fades, scrims, the feather) follows on its own. */
 :root {
-  --bg:                #151414;
-  --bg-rgb:            21 20 20;
-  --bg-raised:         #211F1F;
-  --bg-sunk:           #0E0D0D;
-  --bg-black:          #111010;
-  --bg-raised-black:   #1C1A1A;
-  --bg-black-rgb:      17 16 16;
-  --bone-ink:          #1A1818;
-  --bone-ink-2:        rgba(26, 24, 24, 0.68);
-  --bone-ink-2-onfilm: rgba(26, 24, 24, 0.74);
-  --bone-rule:         rgba(26, 24, 24, 0.16);
+  --bg:                #161617;   /* Alex 2026-09-14; was #151414, and #15100C before that */
+  --bg-rgb:            22 22 23;
+  --bg-raised:         #222223;
+  --bg-sunk:           #0F0F10;
+  --bg-black:          #121213;
+  --bg-raised-black:   #1C1C1D;
+  --bg-black-rgb:      18 18 19;
+  --bone-ink:          #1A1A1B;
+  --bone-ink-2:        rgba(26, 26, 27, 0.68);
+  --bone-ink-2-onfilm: rgba(26, 26, 27, 0.74);
+  --bone-rule:         rgba(26, 26, 27, 0.16);
 }
 
 /* ============================================================
@@ -2615,14 +2615,15 @@ html .is-gmh .gf-head__nav a:focus-visible { outline: 2px solid var(--ink); outl
    is the label's own.
    Included: the hero's place line, the four tile kickers, the haus
    eyebrow and its four kickers, Shipping, Warranty, Reviews, the
-   newsletter's, the two visual breaks. Not eyebrows, and left alone:
+   newsletter's, the two visual breaks, and the SRP head. Not eyebrows, and left alone:
    the ruled running heads (over the tiles, over the haus chapter), the
    footer's column heads, the e-mail field's label.
    The id-weight :not(#x) outranks the section rules that set colour
    and size; opacity and translate stay with the reveals. */
-.is-gmh { --eyebrow-plate: #1B2926; }
+.is-gmh { --eyebrow-plate: #313C29; --eyebrow-ink: #DFD4AF; }   /* Alex 2026-09-14; were #1B2926 and ink-2. #DFD4AF on #313C29: 7.8:1 */
 .is-gmh :is(.hero__slide-title, .gmh-tile__k, .gmh-haus__eyebrow, .gmh-haus__k, .brk__eyebrow,
-            .warranty__eyebrow, .revs__eyebrow, .gmh-newsband__k, .gmh-vbreak__k):not(#x) {
+            .warranty__eyebrow, .revs__eyebrow, .gmh-newsband__k, .gmh-vbreak__k, .srp-head__eyebrow, .vdp-plate__eyebrow, .srp-tools__eyebrow, .vdp-stds__eyebrow,
+            .fin-head__eyebrow, .fin-apply__eyebrow, .gmh-plate):not(#x) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2636,7 +2637,7 @@ html .is-gmh .gf-head__nav a:focus-visible { outline: 2px solid var(--ink); outl
   border: 0;
   border-radius: 0;
   background: var(--eyebrow-plate);
-  color: var(--ink-2);
+  color: var(--eyebrow-ink);
   font-family: var(--font-label);
   font-size: var(--t-micro);
   font-weight: 500;
@@ -2651,3 +2652,76 @@ html .is-gmh .gf-head__nav a:focus-visible { outline: 2px solid var(--ink); outl
 /* the hero is a centred composition: its plate stands on the axis */
 .is-gmh .hero__slide-title:not(#x) { margin-inline: auto; }
 
+
+
+/* ============================================================
+   F25 — THE ENTRANCE, BY ROLE — every page, not only the homepage
+   ============================================================
+   main.css's section entry names the homepage's INSTANCES (.sell__actions,
+   .fin__row …), so a new page inherited nothing and simply arrived still,
+   with nothing reporting it. These are the same gestures as ROLES that any
+   page marks, and the same timing tokens (--rv-line/-lede/-cta/-step):
+
+     .ttl-line    a headline line — main.css's staircase from the left
+     .rv-eyebrow  the plate — a fade with almost no travel
+     .rv-lede     the paragraph — one block rising from below, after the lines
+     .rv-act      the buttons — a quiet settle, last
+     .rv-item     one of several blocks — steps up, --rv-i apart
+     .rv-stagger  a list whose children step up in order (--rv-from: where)
+     .rv-photo    a photograph — floats up from further below, and slower
+     .rv-self     the element is its own trigger (a card, a photograph in a
+                  grid, a form section): several entering together step up in
+                  the order they arrived (--rv-batch, set by main-final-v2.js)
+
+   The contract is main.css's: nothing is hidden until .reveal-armed is on
+   the root, which the script adds only when motion is allowed — script off
+   or reduced motion, and every page is simply complete. Only the HIDDEN
+   state is written; revealed is the element itself, so no translate is left
+   behind (a lingering translate would become the containing block of the
+   SRP's fixed filter sheet). Transform and opacity only; one entrance per
+   visit. The travel yields motion-taste D1 for the reason main.css states:
+   the lines are a sequence and the staircase is the gesture. */
+.is-gmh { --rv-photo: 1100ms; }
+
+html.reveal-armed [data-reveal]:not(.is-revealed) .rv-eyebrow { opacity: 0; translate: 0 6px; }
+html.reveal-armed [data-reveal]:not(.is-revealed) .rv-lede { opacity: 0; translate: 0 32px; }
+html.reveal-armed [data-reveal]:not(.is-revealed) .rv-act { opacity: 0; translate: 0 10px; }
+html.reveal-armed [data-reveal]:not(.is-revealed) :is(.rv-item, .rv-stagger > *),
+html.reveal-armed .rv-stagger[data-reveal]:not(.is-revealed) > * { opacity: 0; translate: 0 24px; }
+html.reveal-armed .rv-self[data-reveal]:not(.is-revealed) { opacity: 0; translate: 0 32px; }
+html.reveal-armed [data-reveal]:not(.is-revealed) .rv-photo,
+html.reveal-armed .rv-photo[data-reveal]:not(.is-revealed) { opacity: 0; translate: 0 64px; }
+
+html.reveal-armed :is(.rv-eyebrow, .rv-lede, .rv-act, .rv-item, .rv-stagger > *, .rv-self, .rv-photo) {
+  transition-property: opacity, translate;
+  transition-timing-function: var(--ease-out);
+}
+html.reveal-armed .rv-eyebrow { transition-duration: var(--rv-cta); }
+html.reveal-armed .rv-lede { transition-duration: var(--rv-lede); transition-delay: calc(var(--rv-step) * 2.2); }
+html.reveal-armed .rv-act { transition-duration: var(--rv-cta); transition-delay: calc(var(--rv-step) * 3.4); }
+html.reveal-armed .rv-item { transition-duration: var(--rv-lede); transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + var(--rv-i, 0) * 0.7)); }
+html.reveal-armed .rv-stagger > * { transition-duration: var(--rv-lede); }
+html.reveal-armed .rv-stagger > :nth-child(1) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 0.0)); }
+html.reveal-armed .rv-stagger > :nth-child(2) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 0.7)); }
+html.reveal-armed .rv-stagger > :nth-child(3) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 1.4)); }
+html.reveal-armed .rv-stagger > :nth-child(4) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 2.1)); }
+html.reveal-armed .rv-stagger > :nth-child(5) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 2.8)); }
+html.reveal-armed .rv-stagger > :nth-child(6) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 3.5)); }
+html.reveal-armed .rv-stagger > :nth-child(7) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 4.2)); }
+html.reveal-armed .rv-stagger > :nth-child(8) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 4.9)); }
+html.reveal-armed .rv-stagger > :nth-child(9) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 5.6)); }
+html.reveal-armed .rv-stagger > :nth-child(10) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 6.3)); }
+html.reveal-armed .rv-stagger > :nth-child(11) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 7.0)); }
+html.reveal-armed .rv-stagger > :nth-child(12) { transition-delay: calc(var(--rv-step) * (var(--rv-from, 2.6) + 7.7)); }
+html.reveal-armed .rv-self { transition-duration: var(--rv-lede); transition-delay: calc(min(var(--rv-batch, 0), 8) * 90ms); }
+html.reveal-armed .rv-photo { transition-duration: var(--rv-photo); transition-delay: calc(var(--rv-step) * var(--rv-delay, 0)); }
+html.reveal-armed .rv-self.rv-photo { transition-delay: calc(min(var(--rv-batch, 0), 8) * 90ms); }
+
+/* a reduced-motion setting turned on after load still ends every entrance */
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-armed :is(.rv-eyebrow, .rv-lede, .rv-act, .rv-item, .rv-stagger > *, .rv-self, .rv-photo) {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none !important;
+  }
+}

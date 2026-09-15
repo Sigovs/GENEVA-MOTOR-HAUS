@@ -1,0 +1,124 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — sell-v2.css — the sell-your-car page
+   ============================================================
+   Loaded after finance-v2.css on sell.html: the form layer (fields,
+   sections, the summary panel) is the financing page's. This file holds
+   the head with its photograph, the four step plates on the bone ground
+   (the homepage's own .sell__steps), the car line in the panel, and the
+   photograph drop.
+   ============================================================ */
+
+/* ---- 1. head --------------------------------------------------------------- */
+.is-sell .sl-head { padding-block: calc(var(--gf-head-h) + clamp(48px, 5vw, 96px)) clamp(var(--sp-8), 7vw, var(--sp-9)); }
+.is-sell .sl-head__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(var(--sp-7), 5vw, var(--sp-9));
+  align-items: center;
+}
+.is-sell .sl-head__title { margin: 28px 0 0; color: var(--ink); font: 700 clamp(2.5rem, 5vw, 4.5rem)/1.02 var(--font-display); letter-spacing: -0.012em; }
+.is-sell .sl-head__lede { max-inline-size: 44ch; margin: var(--sp-5) 0 0; color: var(--ink-2); font: 400 1.125rem/1.6 var(--font-body); }
+.is-sell .sl-head__acts { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-block-start: var(--sp-6); }
+.is-sell .sl-head__photo { margin: 0; overflow: hidden; border-radius: 16px; aspect-ratio: 4 / 3; background: var(--bg-raised); }
+.is-sell .sl-head__photo img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 50% 50%; }
+
+/* ---- 2. how it works: the homepage's step plates, each with its sentence ----- */
+.is-sell .sl-how { padding-block: clamp(var(--sp-8), 7vw, var(--sp-9)) clamp(var(--sp-9), 9vw, var(--sp-10)); background: var(--bone); }
+.is-sell .sl-how__title { margin: 22px 0 0; color: var(--bone-ink); font: 700 clamp(1.75rem, 3vw, 2.75rem)/1.08 var(--font-display); letter-spacing: -0.012em; }
+.is-gmh.is-sell .sl-steps { display: grid; margin: var(--sp-7) 0 0; padding: 0; list-style: none; }
+/* every plate the same padding (the homepage row indents its first), and the
+   title straight under the numeral, so the four titles share one line */
+.is-gmh.is-v3.is-sell .sl-steps li,
+.is-gmh.is-v3.is-sell .sl-steps li:first-child { gap: var(--sp-3); min-block-size: 0; padding: var(--sp-6); }
+.is-gmh.is-v3.is-sell .sl-steps .sell__step-n { margin-block-end: var(--sp-4); }
+.is-gmh.is-v3.is-sell .sl-steps .sell__step-t { margin-block-start: 0; max-inline-size: none; }
+.is-sell .sl-steps__p { margin: 0; color: var(--bone-ink-2); font: 400 1rem/1.55 var(--font-body); }
+
+/* ---- 3. the form: what the homepage's form layer does not have ------------------ */
+.is-sell .fin-apply { border-block-start: 0; }
+.is-sell .sl-car { margin: var(--sp-2) 0 0; color: var(--ink-3); font: 400 var(--t-micro)/1.4 var(--font-body); }
+.is-sell .sl-car.is-set { color: var(--ink); font-weight: 600; }
+
+/* the photograph drop: the whole field is the target */
+.is-sell .sl-drop {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-7) var(--sp-5);
+  border: 1px solid var(--rule-strong);
+  border-radius: 12px;
+  background: var(--bg-sunk);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 150ms var(--ease-out), background-color 150ms var(--ease-out);
+}
+.is-sell .sl-drop input { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.is-sell .sl-drop:hover,
+.is-sell .sl-drop.is-over { border-color: var(--ink); background-color: rgb(243 238 230 / 0.04); }
+.is-sell .sl-drop:focus-within { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-sell .sl-drop__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--bone);
+  color: var(--bone-ink);
+  font: 500 var(--t-micro)/1 var(--font-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.is-sell .sl-drop__t { color: var(--ink-2); font: 400 1rem/1.5 var(--font-body); }
+.is-sell .sl-drop__note { color: var(--ink-3); font: 400 var(--t-micro)/1.5 var(--font-body); }
+.is-sell .sl-drop__msg { margin: var(--sp-3) 0 0; color: var(--ink); font: 400 var(--t-micro)/1.5 var(--font-body); }
+.is-sell .sl-drop__msg:empty { display: none; }
+
+.is-sell .sl-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: var(--sp-3);
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.is-sell .sl-thumb { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border: 1px solid var(--rule); border-radius: 8px; background: var(--bg-sunk); }
+.is-sell .sl-thumb img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
+.is-sell .sl-thumb__doc { display: grid; place-items: center; block-size: 100%; color: var(--ink-2); font: 600 var(--t-micro)/1 var(--font-label); letter-spacing: 0.06em; }
+.is-sell .sl-thumb__x {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-end: 6px;
+  display: grid;
+  place-items: center;
+  inline-size: 32px;
+  block-size: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(var(--bg-rgb) / 0.82);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 150ms var(--ease-out);
+}
+.is-sell .sl-thumb__x:hover { background-color: rgb(var(--bg-rgb)); }
+.is-sell .sl-thumb__x:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ---- narrower ------------------------------------------------------------------ */
+@media (max-width: 960px) {
+  .is-sell .sl-head__inner { grid-template-columns: minmax(0, 1fr); }
+  .is-sell .sl-head__photo { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 900px) {
+  .is-gmh.is-v3.is-sell .sl-steps li,
+  .is-gmh.is-v3.is-sell .sl-steps li:first-child { padding: var(--sp-5); }
+}
+@media (max-width: 520px) {
+  .is-gmh.is-v3.is-sell .sl-steps li,
+  .is-gmh.is-v3.is-sell .sl-steps li:first-child { flex-direction: column; align-items: stretch; gap: var(--sp-2); }
+  .is-gmh.is-v3.is-sell .sl-steps .sell__step-n { margin-block-end: var(--sp-2); }
+  .is-sell .sl-head__acts .btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-sell :is(.sl-drop, .sl-thumb__x) { transition: none; }
+}

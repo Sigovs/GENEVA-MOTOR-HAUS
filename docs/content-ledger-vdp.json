@@ -1,0 +1,332 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "cars/*.html",
+  "compiled": "2026-09-14",
+  "note": "Every figure and sentence about a car on its detail page is the dealer's own listing, rendered 2026-09-14. Dealer statements inside descriptions (Clean Carfax, new clutch, one owner…) are the dealer's claims, shown as theirs, not verified by the design work.",
+  "entries": [
+    {
+      "id": "vdp-porsche-911-carrera-4s-2010",
+      "claim": "2010 Porsche 911 Carrera 4S: price $75,000, 47,587 miles; VIN WP0AB2A95AS720309; ENGINE 3.8L; HORSEPOWER 385; TORQUE 310; overview 681 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/porsche-911-carrera-4s-2010 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/porsche-911-carrera-4s-2010.html"
+      ]
+    },
+    {
+      "id": "vdp-porsche-boxster-1999",
+      "claim": "1999 Porsche Boxster: price $49,999, 2,800 miles; ; no overview on the listing",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/porsche-boxster-1999 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/porsche-boxster-1999.html"
+      ]
+    },
+    {
+      "id": "vdp-mercedes-benz-400-sel-1993",
+      "claim": "1993 Mercedes-Benz 400 SEL: price $12,990, 135,000 miles; VIN WDBGA43EXPA10523; ENGINE 4.2L V8; HORSEPOWER 275; TORQUE 395; overview 1119 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/mercedes-benz-400-sel-1993 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/mercedes-benz-400-sel-1993.html"
+      ]
+    },
+    {
+      "id": "vdp-mercedes-benz-cl55-amg-2003",
+      "claim": "2003 Mercedes-Benz CL55 AMG: price $29,990, 33,150 miles; VIN WDBPJ74J73A031525; ENGINE 5.O V8 SUPERCHARGED; HORSEPOWER 493; TORQUE 516; overview 54 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/mercedes-benz-cl55-amg-2003 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/mercedes-benz-cl55-amg-2003.html"
+      ]
+    },
+    {
+      "id": "vdp-bmw-330ci-2006",
+      "claim": "2006 BMW 330Ci: price $11,000, 73,878 miles; VIN WBABW53416PZ39982; ENGINE 3.0 INLINE 6 M54; overview 437 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/bmw-330ci-2006 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/bmw-330ci-2006.html"
+      ]
+    },
+    {
+      "id": "vdp-lexus-es330-2004",
+      "claim": "2004 Lexus ES330: price $9,000, 69,111 miles; VIN JTHBA30G745046629; ENGINE 3.3 V6 VVTI; HORSEPOWER 225; overview 327 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/lexus-es330-2004 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/lexus-es330-2004.html"
+      ]
+    },
+    {
+      "id": "vdp-ford-galaxie-1936-5",
+      "claim": "1963 Ford Galaxie: price $67,000, 98,505 miles; VIN 3U51Q148958; ENGINE 427; HORSEPOWER 410; overview 559 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/ford-galaxie-1936-5 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/ford-galaxie-1936-5.html"
+      ]
+    },
+    {
+      "id": "vdp-porsche-911-carerra-4s-6-speed-1997",
+      "claim": "1997 Porsche 911 Carrera 4S 6-Speed: price $169,993, 101,000 miles; ; no overview on the listing",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/porsche-911-carerra-4s-6-speed-1997 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/porsche-911-carerra-4s-6-speed-1997.html"
+      ]
+    },
+    {
+      "id": "vdp-ford-mustang-saleen-ssc-1989",
+      "claim": "1989 Ford Mustang Saleen SSC: price $170,000, 2,470 miles; VIN 1FABP41E5KF226627; ENGINE 5.0L V8; overview 2177 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/ford-mustang-saleen-ssc-1989 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/ford-mustang-saleen-ssc-1989.html"
+      ]
+    },
+    {
+      "id": "vdp-chrysler-town-country-touring-l-2012",
+      "claim": "2012 Chrysler Town & Country Touring-L: price $11,500, 74,898 miles; VIN 2C4RC1CG2CR375864; ENGINE 3.6 V6; overview 471 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/chrysler-town-country-touring-l-2012 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/chrysler-town-country-touring-l-2012.html"
+      ]
+    },
+    {
+      "id": "vdp-lexus-ls460-2011",
+      "claim": "2011 Lexus LS460: price $19,990, 52,245 miles; VIN JTHBL5EF8B5102743; ENGINE 4.6L V8; overview 341 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/lexus-ls460-2011 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/lexus-ls460-2011.html"
+      ]
+    },
+    {
+      "id": "vdp-lexus-is-f-2008",
+      "claim": "2008 Lexus IS-F: price $47,000, 38,100 miles; VIN JTHBP262785002575; ENGINE 5.0 YAMAHA V8; HORSEPOWER 416; TORQUE 371; overview 128 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/lexus-is-f-2008 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/lexus-is-f-2008.html"
+      ]
+    },
+    {
+      "id": "vdp-porsche-911-c4s-2004",
+      "claim": "2004 Porsche 911 C4S Cabriolet: price $54,996, 35,132 miles; VIN WP0CA29924S652703; ENGINE 3.6 H6; HORSEPOWER 315; TORQUE 273; overview 422 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/porsche-911-c4s-2004 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/porsche-911-c4s-2004.html"
+      ]
+    },
+    {
+      "id": "vdp-nissan-frontier-sve-supercharged-2003",
+      "claim": "2003 Nissan Frontier SVE Supercharged: price $17,990, 77,180 miles; VIN 1N6MD27Y93C410034; ENGINE 3.3L V6 SUPERCHARGED; no overview on the listing",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/nissan-frontier-sve-supercharged-2003 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/nissan-frontier-sve-supercharged-2003.html"
+      ]
+    },
+    {
+      "id": "vdp-chevrolet-blazer-2lt-2001",
+      "claim": "2001 Chevrolet Blazer 2LT: price $12,550, 84,375 miles; VIN 1GNDT13W712120132; ENGINE 4.3L VORTEC; HORSEPOWER 190; TORQUE 250; overview 360 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/chevrolet-blazer-2lt-2001 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/chevrolet-blazer-2lt-2001.html"
+      ]
+    },
+    {
+      "id": "vdp-ford-galaxie-500-xl-hardtop-1963",
+      "claim": "1963 Ford Galaxie 500 XL Hardtop: price $45,000, 22,378 miles; VIN 3J67G101600; ENGINE FORD 406 3-2 CARB; overview 484 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/ford-galaxie-500-xl-hardtop-1963 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/ford-galaxie-500-xl-hardtop-1963.html"
+      ]
+    },
+    {
+      "id": "vdp-porsche-911-targa-4s-2007",
+      "claim": "2007 Porsche 911 Targa 4S: price $99,997, 42,200 miles; VIN WP0BB29957S755238; ENGINE 3.8; HORSEPOWER 355; overview 683 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/porsche-911-targa-4s-2007 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/porsche-911-targa-4s-2007.html"
+      ]
+    },
+    {
+      "id": "vdp-toyota-landcruiser-collectors-edition-1997",
+      "claim": "1997 Toyota Land Cruiser Collectors Edition: price $28,990, 170,000 miles; ENGINE STRAIGHT 6; overview 79 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/toyota-landcruiser-collectors-edition-1997 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/toyota-landcruiser-collectors-edition-1997.html"
+      ]
+    },
+    {
+      "id": "vdp-bmw-m3-2015",
+      "claim": "2015 BMW M3: price $59,990, 33,080 miles; VIN WBS3C9C54FP803340; ENGINE 3.0 TT; HORSEPOWER 425; TORQUE 400; overview 283 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/bmw-m3-2015 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/bmw-m3-2015.html"
+      ]
+    },
+    {
+      "id": "vdp-bmw-x5-4-4i-2003",
+      "claim": "2003 BMW X5 4.4i: price $12,990, 48,944 miles; VIN 5UXFB33573LH45412; ENGINE 4.4L V8; HORSEPOWER 290; TORQUE 324; overview 1225 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/bmw-x5-4-4i-2003 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/bmw-x5-4-4i-2003.html"
+      ]
+    },
+    {
+      "id": "vdp-mercedes-benz-ml320-2000",
+      "claim": "2000 Mercedes-Benz ML320: price $13,490, 36,000 miles; ; no overview on the listing",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/mercedes-benz-ml320-2000 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/mercedes-benz-ml320-2000.html"
+      ]
+    },
+    {
+      "id": "vdp-cadillac-xlr-v-2006",
+      "claim": "2006 Cadillac XLR-V: price $39,990, 47,701 miles; VIN 1G6YX36D665602605; ENGINE SUPERCHARGED 4.4L V8; HORSEPOWER 443; TORQUE 414; overview 39 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/cadillac-xlr-v-2006 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/cadillac-xlr-v-2006.html"
+      ]
+    },
+    {
+      "id": "vdp-chevrolet-blazer-2001",
+      "claim": "2001 Chevrolet Blazer: price $10,990, 52,651 miles; VIN 1GNDT13W012184948; ENGINE 4.3L VORTEC V6; overview 523 chars",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "https://www.genevamotorhaus.com/car/chevrolet-blazer-2001 rendered 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "cars/chevrolet-blazer-2001.html"
+      ]
+    },
+    {
+      "id": "vdp-showroom",
+      "claim": "600 Faust Rd, Unit 8, Burlington, WI 53105 · (262) 249-6777 · Info@GenevaMotorHaus.com",
+      "status": "verified",
+      "source": "live site header and contact block, 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".vdp-act"
+      ]
+    },
+    {
+      "id": "vdp-shipping",
+      "claim": "Nationwide transportation available; half the cars sold leave Wisconsin; photographs and inspections first, then the car, by carrier",
+      "status": "verified",
+      "source": "the homepage's shipping chapter, itself sourced in docs/content-ledger.json (nationwide-transport, half-out-of-state, ship-quotes)",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        "#shipping"
+      ]
+    },
+    {
+      "id": "vdp-in-stock",
+      "claim": "In stock",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "every car is listed under 'Current Inventory' on /inventory, 2026-09-14",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".vdp-plate__eyebrow"
+      ]
+    },
+    {
+      "id": "vdp-standard-hand-selected",
+      "claim": "Each vehicle in our inventory is hand-selected in Burlington, Wisconsin.",
+      "status": "verified",
+      "source": "docs/content-ledger.json#hand-selected (/about: 'Each vehicle in our inventory is hand-selected')",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".vdp-stds__item"
+      ]
+    },
+    {
+      "id": "vdp-standard-reputation",
+      "claim": "We stand behind every vehicle we sell.",
+      "status": "verified",
+      "source": "docs/content-ledger.json#reputation-stand-behind (home page Reputation tab)",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".vdp-stds__item"
+      ]
+    },
+    {
+      "id": "vdp-standard-warranty",
+      "claim": "Warranty options are available on the vehicles we sell.",
+      "status": "verified",
+      "source": "docs/content-ledger.json#warranty-offered (client's AAN ticket)",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".vdp-stds__item"
+      ]
+    },
+    {
+      "id": "vdp-standard-transport",
+      "claim": "Half our cars leave Wisconsin, and transportation is available nationwide.",
+      "status": "verified",
+      "source": "docs/content-ledger.json#half-out-of-state + #nationwide-transport",
+      "sourceType": "client-statement",
+      "appearsAt": [
+        ".vdp-stds__item"
+      ]
+    }
+  ]
+}

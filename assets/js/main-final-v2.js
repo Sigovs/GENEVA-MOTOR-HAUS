@@ -716,10 +716,16 @@
 
   document.documentElement.classList.add('reveal-armed');
 
+  /* Targets that are their own trigger (.rv-self — a card, a photograph,
+     a form section) and arrive together step up in the order they arrived:
+     each gets its place in the batch, which geneva-final-v2.css F25 turns
+     into a delay. Sections without .rv-self are untouched. */
   var io = new IntersectionObserver(function (entries) {
+    var k = 0;
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
+      if (e.target.classList.contains('rv-self')) e.target.style.setProperty('--rv-batch', k++);
       e.target.classList.add('is-revealed');
     });
   }, { threshold: 0, rootMargin: '0px 0px -22% 0px' });
@@ -730,9 +736,11 @@
      scroll position — reveals immediately rather than waiting for a
      scroll that may never come. */
   requestAnimationFrame(function () {
+    var k = 0;
     sections.forEach(function (s) {
       if (s.getBoundingClientRect().top < window.innerHeight * 0.78) {
         io.unobserve(s);
+        if (s.classList.contains('rv-self')) s.style.setProperty('--rv-batch', k++);
         s.classList.add('is-revealed');
       }
     });

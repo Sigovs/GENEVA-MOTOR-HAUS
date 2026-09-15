@@ -138,7 +138,7 @@
       "id": "stock-date",
       "claim": "In stock · Prices and mileage as listed on 10 Sep 2026",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/inventory captured 2026-09-10",
       "sourceType": "live-site",
       "appearsAt": [
@@ -150,7 +150,7 @@
       "id": "price-targa",
       "claim": "2007 Porsche 911 Targa 4S — $99,997 — 42,200 miles",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/car/porsche-911-targa-4s-2007",
       "sourceType": "live-site",
       "appearsAt": [
@@ -161,7 +161,7 @@
       "id": "price-saleen",
       "claim": "1989 Ford Mustang Saleen SSC — $170,000 — 2,470 miles",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/car/ford-mustang-saleen-ssc-1989",
       "sourceType": "live-site",
       "appearsAt": [
@@ -172,7 +172,7 @@
       "id": "price-c4s-2010",
       "claim": "2010 Porsche 911 Carrera 4S — $75,000 — 47,587 miles",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/car/porsche-911-carrera-4s-2010",
       "sourceType": "live-site",
       "appearsAt": [
@@ -183,7 +183,7 @@
       "id": "price-993",
       "claim": "1997 Porsche 911 Carrera 4S (6-speed) — $169,993 — 101,000 miles",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/car/porsche-911-carerra-4s-6-speed-1997 (their spelling 'CARERRA' in the URL and title)",
       "sourceType": "live-site",
       "appearsAt": [
@@ -194,7 +194,7 @@
       "id": "stock-count",
       "claim": "23 vehicles in stock",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/inventory, 23 listings on 2026-09-10",
       "sourceType": "live-site",
       "appearsAt": [
@@ -205,7 +205,7 @@
       "id": "price-range",
       "claim": "From $9,000 to $170,000",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com/inventory: lowest 2004 Lexus ES330 $9,000, highest 1989 Saleen SSC $170,000",
       "sourceType": "live-site",
       "appearsAt": [
@@ -366,10 +366,10 @@
     },
     {
       "id": "price-isf",
-      "claim": "$49,990 · 38,100 miles (2008 Lexus IS-F)",
+      "claim": "$47,000 · 38,100 miles (2008 Lexus IS-F)",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
-      "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
+      "captureDate": "2026-09-14",
+      "source": "genevamotorhaus.com/car/lexus-is-f-2008 rendered 2026-09-14 (price changed from $49,990 on 2026-09-10)",
       "sourceType": "live-site",
       "appearsAt": [
         ".rec__pill"
@@ -379,7 +379,7 @@
       "id": "price-m3",
       "claim": "$59,990 · 33,080 miles (2015 BMW M3)",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
       "sourceType": "live-site",
       "appearsAt": [
@@ -390,7 +390,7 @@
       "id": "price-c4s-cab-2004",
       "claim": "$54,996 · 35,132 miles (2004 Porsche 911 C4S Cabriolet)",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
       "sourceType": "live-site",
       "appearsAt": [
@@ -401,7 +401,7 @@
       "id": "price-x5",
       "claim": "$12,990 · 48,944 miles (2003 BMW X5 4.4i)",
       "status": "dated-requires-reconciliation",
-      "captureDate": "2026-09-10",
+      "captureDate": "2026-09-14",
       "source": "genevamotorhaus.com home page, Featured Inventory, rendered 2026-09-10 (Playwright)",
       "sourceType": "live-site",
       "appearsAt": [

@@ -1,0 +1,145 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — about-v2.css — the About page
+   ============================================================
+   Loaded after geneva-final-v2.css on about.html. Tokens, header, footer,
+   buttons and the eyebrow plate (.gmh-plate) are the finale page's.
+   The rhythm: the head and the lot at sunset · mission, photograph left ·
+   values on hairlines · the story on the bone ground, photograph right ·
+   the reasons as raised cards, each with its way in · the visit.
+   ============================================================ */
+
+/* ---- 1. head + the wide photograph ------------------------------------- */
+.is-about .ab-head { padding-block: calc(var(--gf-head-h) + clamp(48px, 5vw, 96px)) var(--sp-7); }
+.is-about .ab-head__title {
+  max-inline-size: 16ch;
+  margin: 28px 0 0;
+  color: var(--ink);
+  font: 700 clamp(2.5rem, 5vw, 4.5rem)/1.02 var(--font-display);
+  letter-spacing: -0.012em;
+}
+.is-about .ab-head__lede { max-inline-size: 48ch; margin: var(--sp-5) 0 0; color: var(--ink-2); font: 400 1.125rem/1.6 var(--font-body); }
+.is-about .ab-head__acts { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-block-start: var(--sp-6); }
+
+.is-about .ab-hero__frame { margin: 0; overflow: hidden; border-radius: 16px; aspect-ratio: 21 / 9; background: var(--bg-raised); }
+.is-about .ab-hero__frame img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 50% 62%; }
+
+/* ---- sections ----------------------------------------------------------------- */
+.is-about .ab-sec { padding-block: clamp(var(--sp-8), 7vw, var(--sp-9)) clamp(var(--sp-9), 9vw, var(--sp-10)); }
+.is-about .ab-sec__title {
+  margin: 22px 0 0;
+  color: var(--ink);
+  font: 700 clamp(1.75rem, 3vw, 2.75rem)/1.08 var(--font-display);
+  letter-spacing: -0.012em;
+}
+
+.is-about .ab-split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(var(--sp-7), 6vw, var(--sp-10));
+  align-items: center;
+}
+.is-about .ab-split--flip { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+.is-about .ab-photo { margin: 0; overflow: hidden; border-radius: 12px; background: var(--bg-raised); }
+.is-about .ab-photo img { display: block; inline-size: 100%; block-size: auto; }
+
+.is-about .ab-copy > p:not(.gmh-plate) { max-inline-size: 60ch; margin: var(--sp-4) 0 0; color: var(--ink-2); font: 400 1.0625rem/1.65 var(--font-body); }
+.is-about .ab-copy > .ab-sec__title + p { margin-block-start: var(--sp-5); }
+
+/* values: four statements on the homepage's hairlines */
+.is-about .ab-mission { padding-block-end: clamp(var(--sp-8), 7vw, var(--sp-9)); }
+.is-about .ab-values__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-6);
+  margin: var(--sp-7) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.is-about .ab-values__item { padding-block-start: var(--sp-5); border-block-start: 1px solid var(--rule-strong); }
+.is-about .ab-values__t { margin: 0; color: var(--ink); font: 700 1.375rem/1.2 var(--font-display); }
+.is-about .ab-values__p { margin: var(--sp-3) 0 0; color: var(--ink-2); font: 400 1rem/1.6 var(--font-body); }
+
+/* the story: the bone chapter */
+.is-about .ab-story { background: var(--bone); }
+.is-about .ab-story .ab-sec__title { color: var(--bone-ink); }
+.is-about .ab-story .ab-copy > p:not(.gmh-plate) { color: var(--bone-ink-2); }
+.is-about .ab-quote { margin: var(--sp-6) 0 0; padding-block-start: var(--sp-5); border-block-start: 1px solid var(--bone-rule); }
+.is-about .ab-quote p { margin: 0; color: var(--bone-ink); font: 600 clamp(1.25rem, 1.8vw, 1.5rem)/1.35 var(--font-display); }
+.is-about .ab-quote cite { display: block; margin-block-start: var(--sp-3); color: var(--bone-ink-2); font: 500 var(--t-micro)/1.4 var(--font-label); font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* why us: the VDP standards' cards, each with its way in */
+.is-about .ab-why__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--sp-5);
+  margin: var(--sp-7) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.is-about .ab-why__item {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--bg-raised);
+}
+.is-about .ab-why__k { margin: 0; color: var(--ink); font: 700 1.25rem/1.25 var(--font-display); }
+.is-about .ab-why__v { margin: var(--sp-2) 0 0; color: var(--ink-2); font: 400 1rem/1.6 var(--font-body); }
+.is-about .ab-why__link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: var(--sp-2);
+  margin-block-start: auto;
+  padding-block-start: var(--sp-5);
+  color: var(--ink);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  text-decoration: none;
+  transition: color 150ms var(--ease-out);
+}
+.is-about .ab-why__link:hover { color: var(--ink-2); }
+.is-about .ab-why__link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+/* the visit: one card, the photograph beside the facts */
+.is-about .ab-visit { padding-block: 0 clamp(var(--sp-9), 9vw, var(--sp-10)); }
+.is-about .ab-visit__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background: var(--bg-raised);
+}
+.is-about .ab-visit__media { margin: 0; min-block-size: 100%; }
+.is-about .ab-visit__media img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 55% 60%; }
+.is-about .ab-visit__copy { padding: clamp(var(--sp-6), 4vw, var(--sp-8)); }
+.is-about .ab-visit__title { margin: 0; color: var(--ink); font: 700 clamp(1.75rem, 3vw, 2.5rem)/1.1 var(--font-display); letter-spacing: -0.012em; }
+.is-about .ab-visit__p { margin: var(--sp-4) 0 0; color: var(--ink-2); font: 400 1.0625rem/1.6 var(--font-body); }
+.is-about .ab-visit__facts { display: grid; gap: var(--sp-4); margin: var(--sp-6) 0 0; padding-block-start: var(--sp-5); border-block-start: 1px solid var(--rule); }
+.is-about .ab-visit__facts div { display: grid; grid-template-columns: minmax(0, 7rem) minmax(0, 1fr); gap: var(--sp-4); }
+.is-about .ab-visit__facts dt { color: var(--ink-3); font: 500 var(--t-micro)/1.6 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.is-about .ab-visit__facts dd { margin: 0; color: var(--ink); font: 400 1rem/1.6 var(--font-body); }
+.is-about .ab-visit__acts { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-block-start: var(--sp-6); }
+
+/* ---- narrower ------------------------------------------------------------------ */
+@media (max-width: 1100px) {
+  .is-about .ab-values__list { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--sp-7); }
+}
+@media (max-width: 960px) {
+  .is-about :is(.ab-split, .ab-split--flip) { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); }
+  .is-about .ab-split--flip .ab-photo { grid-row: 1; }
+  .is-about .ab-visit__card { grid-template-columns: minmax(0, 1fr); }
+  .is-about .ab-visit__media { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 720px) {
+  .is-about .ab-hero__frame { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 560px) {
+  .is-about .ab-values__list { grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-6); }
+  .is-about .ab-visit__facts div { grid-template-columns: minmax(0, 1fr); gap: var(--sp-1); }
+  .is-about :is(.ab-head__acts, .ab-visit__acts) .btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-about .ab-why__link { transition: none; }
+}

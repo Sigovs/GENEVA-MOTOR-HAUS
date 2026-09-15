@@ -1,0 +1,124 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "sell.html",
+  "compiled": "2026-09-14",
+  "note": "The form is AAN's sell-your-car form (aanmaster2027.aandemo.com/sell-your-car/, read 2026-09-14; config in docs/source/). The words are Geneva's, trimmed.",
+  "entries": [
+    {
+      "id": "sl-heading",
+      "claim": "Get top dollar for your car.",
+      "status": "verified",
+      "source": "homepage ledger sell-heading ('Get Top Dollar for Your Car')",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#sl-title"
+      ]
+    },
+    {
+      "id": "sl-lede",
+      "claim": "A fair, no-obligation appraisal — whether you’re selling a luxury vehicle, an exotic or a daily driver.",
+      "status": "verified",
+      "source": "homepage ledger sell-appraisal (live homepage Sell section)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sl-head__lede"
+      ]
+    },
+    {
+      "id": "sl-steps",
+      "claim": "Submit your vehicle info: Fill out the form with your vehicle details and contact information. / Get your appraisal: Our team reviews your information and contacts you with an offer. / Schedule inspection: We arrange a convenient time to inspect your vehicle, in person or via photos. / Complete the sale: Once agreed, we handle the paperwork and payment.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car, rendered 2026-09-14, 'Simple 4-Step Process' (titles verbatim; texts trimmed: 'fair market value offer' → 'an offer', 'all paperwork' → 'the paperwork', 'you drive away satisfied' removed)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sl-steps"
+      ]
+    },
+    {
+      "id": "sl-form-intro",
+      "claim": "Fill out the form with your vehicle information and contact details, and our team will review your submission.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car, rendered 2026-09-14, 'Sell Us Your Car' intro, with 'contact you within 24 hours with a competitive offer' removed",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-apply__lede"
+      ]
+    },
+    {
+      "id": "sl-photos-lede",
+      "claim": "We can inspect your vehicle in person or via photos.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car, rendered 2026-09-14, step 03: 'inspect your vehicle in person or via photos'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#sl-photos"
+      ]
+    },
+    {
+      "id": "sl-form",
+      "claim": "Form fields, option lists, twelve-file limit and the consent sentence",
+      "status": "verified",
+      "source": "AAN sell-your-car form config (docs/source/aan-sellyourcar-config-2026-09-14.json, aan-vehicle-makes, aan-states)",
+      "sourceType": "client-data",
+      "appearsAt": [
+        "#fin-form"
+      ]
+    },
+    {
+      "id": "sl-phone",
+      "claim": "(262) 249-6777",
+      "status": "verified",
+      "source": "homepage ledger contact-phone",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sl-head__acts",
+        ".fin-rail__help",
+        ".fin-sent__p"
+      ]
+    },
+    {
+      "id": "sl-photo",
+      "claim": "Photograph: a handshake over a silver Porsche 911 in a snowy home garage",
+      "status": "verified",
+      "source": "genevamotorhaus.com/sell-your-car, rendered 2026-09-14, hero image uploads/media/693cf6bb82e27_1765603003.JPG (assets/img/source/sell/), resized; no one named, no car offered",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".sl-head__photo"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "Get the Best Value · the best value for your car · easy and profitable",
+      "reason": "a superlative promise without a source (CP6)"
+    },
+    {
+      "claim": "Get an appraisal in minutes and complete the sale in as little as one day",
+      "reason": "a time promise not confirmed by the client (CP6)"
+    },
+    {
+      "claim": "contact you within 24 hours with a competitive offer",
+      "reason": "a response-time promise not confirmed (CP6)"
+    },
+    {
+      "claim": "We buy luxury vehicles, exotics, classics, and daily drivers of all makes and models",
+      "reason": "'all makes and models' is an unconfirmed promise; the homepage's verified sentence carries the range"
+    },
+    {
+      "claim": "We respect your privacy and will never share your information with third parties",
+      "reason": "a legal/privacy commitment for the client's counsel, not the design (CP6); AAN's consent sentence is used instead"
+    },
+    {
+      "claim": "free, no-obligation appraisal · stress-free · as easy as possible",
+      "reason": "'free' and the ease claims are unconfirmed; 'fair, no-obligation appraisal' (verified) is used"
+    },
+    {
+      "claim": "CTA background: a stock photograph of a row of parked cars (uploads/media/69174bf6dc021_1763134454.jpg)",
+      "reason": "stock imagery, not Geneva's; no car of theirs in it (CP7)"
+    },
+    {
+      "claim": "Geneva's own short form (fullName, yearMakeModel, titleStatus, desiredPrice, vehicleInfo)",
+      "reason": "the AAN form is the spec; its message field carries the rest"
+    }
+  ]
+}

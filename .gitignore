@@ -13,3 +13,6 @@ from client/
 .DS_Store
 node_modules/
 *.log
+
+# Python bytecode from the page generators
+__pycache__/

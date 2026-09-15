@@ -1,0 +1,113 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "finance.html",
+  "compiled": "2026-09-14",
+  "note": "The application is the AAN finance form (aanmaster2027.aandemo.com/finance/, read 2026-09-14): fields, names and the terms and state notices verbatim. The words around it are genevamotorhaus.com/financing, rendered 2026-09-14.",
+  "entries": [
+    {
+      "id": "fin-heading",
+      "claim": "Get approved today.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/financing: 'Get Approved Today'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-head__title"
+      ]
+    },
+    {
+      "id": "fin-lede",
+      "claim": "we make financing as smooth as it can be: we work with trusted lenders to provide competitive rates and flexible terms",
+      "status": "verified",
+      "source": "/financing: 'we make financing your luxury vehicle as smooth as possible. Our experienced finance team works with trusted lenders to provide competitive rates and flexible terms'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-head__lede"
+      ]
+    },
+    {
+      "id": "fin-rates",
+      "claim": "We work with multiple lenders to find the rate available for your situation.",
+      "status": "verified",
+      "source": "/financing 'Competitive Rates': 'We work with multiple lenders to secure the best financing rates available for your situation.' ('best' removed)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-point"
+      ]
+    },
+    {
+      "id": "fin-terms-flex",
+      "claim": "A variety of loan terms and payment options to fit your budget.",
+      "status": "verified",
+      "source": "/financing 'Flexible Terms'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-point"
+      ]
+    },
+    {
+      "id": "fin-preowned",
+      "claim": "Financing options for the pre-owned cars in our inventory.",
+      "status": "verified",
+      "source": "/financing 'Pre-Owned Financing' ('extensive selection of pre-owned luxury vehicles' trimmed)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-point"
+      ]
+    },
+    {
+      "id": "fin-phone",
+      "claim": "(262) 249-6777",
+      "status": "verified",
+      "source": "live site header",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".fin-head__acts",
+        ".fin-rail__help",
+        ".fin-sent__p"
+      ]
+    },
+    {
+      "id": "fin-cars",
+      "claim": "Vehicle of interest: the 23 cars in stock with their prices",
+      "status": "dated-requires-reconciliation",
+      "captureDate": "2026-09-14",
+      "source": "assets/data/inventory-2026-09-14.json",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#f-stock"
+      ]
+    },
+    {
+      "id": "fin-terms-legal",
+      "claim": "Terms and conditions and state notices",
+      "status": "verified",
+      "source": "AAN finance application, verbatim",
+      "sourceType": "client-data",
+      "appearsAt": [
+        ".fin-terms"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "Fast Approval — get pre-approved in minutes",
+      "reason": "a service promise not confirmed by the client (CP6)"
+    },
+    {
+      "claim": "Bad Credit OK — we work with all credit types",
+      "reason": "a lending promise not confirmed by the client (CP6)"
+    },
+    {
+      "claim": "New Vehicle Financing / Lease Options / Refinancing",
+      "reason": "template services; Geneva sells pre-owned cars and nothing confirms leasing or refinancing"
+    },
+    {
+      "claim": "Our finance team will contact you within 24 hours",
+      "reason": "a response-time promise not confirmed (CP6)"
+    },
+    {
+      "claim": "luxury vehicle / extensive selection / finance experts",
+      "reason": "superlatives the stock does not support"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "project": "geneva-motor-haus",
+  "page": "about.html",
+  "compiled": "2026-09-14",
+  "note": "Words and photographs from genevamotorhaus.com/about, rendered 2026-09-14. Trimmed, never extended; the homepage ledger's refusals (docs/content-ledger.json notUsed) hold here too.",
+  "entries": [
+    {
+      "id": "ab-tagline",
+      "claim": "Where passion meets perfection.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14: hero 'Where Passion Meets Perfection'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        "#ab-title"
+      ]
+    },
+    {
+      "id": "ab-lede",
+      "claim": "From low-mile collectibles to everyday transportation. Each vehicle in our inventory is hand-selected in Burlington, Wisconsin.",
+      "status": "verified",
+      "source": "homepage ledger 'hand-selected' (/about: 'Each vehicle in our inventory is hand-selected') and the live site's hero line; location from the contact section",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-head__lede"
+      ]
+    },
+    {
+      "id": "ab-mission",
+      "claim": "Our mission goes beyond simply selling vehicles. We connect our clients with luxury and performance automobiles through a personalized, transparent process — because buying a vehicle should be an exciting and memorable journey, crafted with care, attention to detail and a genuine passion for the art of motoring. / Each vehicle in our inventory is hand-selected for its quality and condition, from collector cars to modern performance icons. / We take pride in building long-term relationships founded on trust and integrity. Whether you’re searching for your next car or expanding a collection, we’re here to help at every stage.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, 'Our Mission', trimmed: removed 'unlike any other', 'world’s most exceptional', 'exotic' (contradicted by stock), 'provenance', 'meticulously inspected, detailed, and maintained to meet the highest standards', 'rare', 'industry professionals'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-mission"
+      ]
+    },
+    {
+      "id": "ab-values",
+      "claim": "Excellence: We hold every vehicle we offer, and every interaction we have, to our standards. / Integrity: Transparency and honesty are at the core of everything we do. / Passion: Our love for luxury vehicles drives us to provide an exceptional experience for every customer. / Service: We go above and beyond for our customers before, during and after the sale.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, 'Our Values', trimmed: 'the highest standards' → 'our standards'; 'No hidden fees, no surprises.' removed; 'to ensure complete customer satisfaction' shortened",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-values"
+      ]
+    },
+    {
+      "id": "ab-story",
+      "claim": "Geneva Motor Haus was founded with a simple yet powerful vision: to create a destination where automotive enthusiasts and luxury vehicle seekers could find exceptional vehicles matched with unparalleled service. What started as a passion project is now a showroom in Burlington, Wisconsin. / We have built our reputation by carefully selecting each vehicle in our inventory and treating every customer relationship as a long-term partnership — whether you’re looking for a daily driver or a collector’s dream.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, 'Our Story', trimmed: 'has grown into one of the region's most trusted luxury automotive dealerships' → 'is now a showroom in Burlington, Wisconsin' (the published address); 'rigorous quality standards', 'decades of combined experience', 'you'll find exactly what you're seeking' removed",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-story"
+      ]
+    },
+    {
+      "id": "ab-quote",
+      "claim": "“He has very nice vehicles and he stands behind them.” — Patrick",
+      "status": "verified",
+      "source": "customer review on genevamotorhaus.com, as used on the homepage (reputation-stand-behind)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-quote"
+      ]
+    },
+    {
+      "id": "ab-why-selection",
+      "claim": "Every vehicle in our inventory is hand-selected.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, 'Curated Selection', trimmed of 'thoroughly inspected to ensure it meets our exacting standards'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-why__item"
+      ]
+    },
+    {
+      "id": "ab-why-process",
+      "claim": "From initial inquiry to final delivery, we guide you through every step — and handle the paperwork, financing options and logistics.",
+      "status": "verified",
+      "source": "homepage ledger process-copy (Process tab, corroborated by reviews)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-why__item"
+      ]
+    },
+    {
+      "id": "ab-why-shipping",
+      "claim": "Half our cars leave Wisconsin, and transportation is available nationwide.",
+      "status": "verified",
+      "source": "homepage/VDP ledger vdp-shipping (AAN ticket: half the cars go out of state; transportation available)",
+      "sourceType": "client-data",
+      "appearsAt": [
+        ".ab-why__item"
+      ]
+    },
+    {
+      "id": "ab-why-location",
+      "claim": "Located in Burlington, Wisconsin, we’re easily accessible and offer a comfortable showroom experience.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, 'Convenient Location', verbatim (homepage ledger about-location)",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-why__item"
+      ]
+    },
+    {
+      "id": "ab-visit",
+      "claim": "Ready to experience excellence? Visit our showroom or browse our inventory online.",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14, call to action, trimmed of 'We're ready to help you find the perfect luxury vehicle'",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-visit"
+      ]
+    },
+    {
+      "id": "ab-address-hours",
+      "claim": "600 Faust Rd, Unit 8, Burlington, WI 53105 · Monday – Friday 10AM – 4PM · Saturday by appointment · Sunday closed",
+      "status": "verified",
+      "source": "homepage ledger contact-address, hours",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-visit__facts"
+      ]
+    },
+    {
+      "id": "ab-phone",
+      "claim": "(262) 249-6777",
+      "status": "verified",
+      "source": "homepage ledger contact-phone",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-head__acts"
+      ]
+    },
+    {
+      "id": "ab-photos",
+      "claim": "Four photographs, uncaptioned: yellow 911 at sunset; two men with a white 911; white 911 below mountains; 718 Cayman GT4 before a columned house",
+      "status": "verified",
+      "source": "genevamotorhaus.com/about, rendered 2026-09-14: the page's own four images (assets/img/source/about/), resized. No car is named as stock and no person is named.",
+      "sourceType": "live-site",
+      "appearsAt": [
+        ".ab-hero__frame",
+        ".ab-photo",
+        ".ab-visit__media"
+      ]
+    }
+  ],
+  "notUsed": [
+    {
+      "claim": "12+ Years Experience · 5000+ Vehicles Sold · 98% Customer Satisfaction",
+      "reason": "refused on the homepage already: unverified, implausible against the stock and the sold list (82); ask the client"
+    },
+    {
+      "claim": "one of the region's most trusted luxury automotive dealerships · premier destination · unmatched · unlike any other · the world’s most exceptional · the finest",
+      "reason": "superlatives without a source (CP6)"
+    },
+    {
+      "claim": "No hidden fees · complete vehicle history reports · honest pricing",
+      "reason": "business promises not confirmed by the client (CP6)"
+    },
+    {
+      "claim": "meticulously inspected, detailed, and maintained · thoroughly inspected",
+      "reason": "a service promise not confirmed by the client (CP6)"
+    },
+    {
+      "claim": "decades of combined experience · years of specialized expertise",
+      "reason": "an unverified duration (CP5/CP6)"
+    },
+    {
+      "claim": "exotic automobiles",
+      "reason": "contradicted by the stock on the day of capture (homepage ledger)"
+    }
+  ]
+}

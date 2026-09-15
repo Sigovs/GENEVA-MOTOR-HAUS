@@ -1,0 +1,523 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — srp-v2.css — the inventory results page
+   ============================================================
+   Loaded after geneva-final-v2.css on srp.html and on cars/*.html (whose
+   "More from the lot" is this page's card). Tokens, header, footer,
+   buttons and the eyebrow plate are the finale page's.
+
+   THE MEASURES ARE CMC'S SRP, read off its live preview on 2026-09-14,
+   at 1920 / 1440 / 390 — the numbers in the comments are theirs. The
+   ground, faces, plates, pills and radii are Geneva's.
+   ============================================================ */
+
+.is-srp [hidden] { display: none !important; }
+
+/* the inventory pages' measure: 1700 with a 3.4vw gutter → 1580 / 1342 / 342 */
+.is-gmh.is-srp .shell { max-width: 1700px; max-inline-size: 1700px; padding-inline: clamp(24px, 3.4vw, 60px); }
+
+/* ---- 1. the head ------------------------------------------------------
+   eyebrow · 28px · title 48/1.1 · 8 · "Popular makes" · 24 · tiles 72 · 48 */
+.is-srp .srp-head { padding-block: calc(var(--gf-head-h) + clamp(48px, 5vw, 96px)) 0; }
+.is-srp .srp-head__title {
+  margin: clamp(21px, 2vw, 28px) 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.is-srp .srp-head__title .ttl-line { display: block; }
+.is-srp .srp-makes-wrap { padding-block: 8px 48px; }
+.is-srp .srp-makes__title {
+  margin: 0 0 24px;
+  color: var(--ink-2);
+  font: 500 var(--t-micro)/1.5 var(--font-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+/* the marques: the make filter said shorter — filled bone once pressed
+   (state carried by fill and aria-pressed, never by colour alone) */
+.is-srp .srp-makes { display: flex; flex-wrap: wrap; gap: 24px; margin: 0; padding: 0; list-style: none; }
+.is-srp .srp-makes li { flex: 1 1 160px; max-inline-size: 240px; }
+.is-srp .srp-make {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  inline-size: 100%;
+  block-size: 72px;
+  padding: 16px;                                    /* CMC's 24 wraps "Mercedes-Benz" at 1440 */
+  white-space: nowrap;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: 400 1rem/1.6 var(--font-body);
+  cursor: pointer;
+  transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+.is-srp .srp-make span { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.is-srp .srp-make:hover { border-color: var(--ink-2); background: rgb(243 238 230 / 0.04); }
+.is-srp .srp-make:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-srp .srp-make[aria-pressed="true"] { border-color: var(--bone); background: var(--bone); color: var(--bone-ink); }
+.is-srp .srp-make[aria-pressed="true"] span { color: var(--bone-ink-2); }
+
+/* ---- 2. the filters ----------------------------------------------------
+   hairline · 32 · eyebrow · 32 · one row on 24 (40px triggers, 248×42
+   search, count, 296×40 sort to the right) · 32 · hairline */
+.is-srp .srp-tools__box { padding-block: 32px; border-block: 1px solid var(--rule); }
+.is-srp .srp-tools__eyebrow { margin: 0 0 32px; }
+.is-srp .srp-tools__row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.is-srp .srp-facets { display: flex; flex-wrap: wrap; gap: 24px; }
+.is-srp .srp-facet { position: relative; }
+.is-srp .srp-facet__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  block-size: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgb(243 238 230 / 0.04);
+  color: var(--ink);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out);
+}
+.is-srp .srp-facet__trigger::-webkit-details-marker { display: none; }
+.is-srp .srp-facet__trigger::after {
+  content: "";
+  border: 4px solid transparent;
+  border-block-start-color: currentColor;
+  border-block-end-width: 0;
+  transition: rotate 150ms var(--ease-out);
+}
+.is-srp .srp-facet__trigger:hover,
+.is-srp .srp-facet[open] > .srp-facet__trigger { border-color: var(--ink-2); background: rgb(243 238 230 / 0.08); }
+.is-srp .srp-facet[open] > .srp-facet__trigger::after { rotate: 180deg; }
+.is-srp .srp-facet__trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-srp .srp-facet__n,
+.is-srp .srp-filters-open__n {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 20px;
+  block-size: 20px;
+  padding-inline: 6px;
+  border-radius: 999px;
+  background: var(--bone);
+  color: var(--bone-ink);
+  font: 600 var(--t-micro)/1 var(--font-label);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* the panel is above the page, so it casts — the one true elevation here */
+.is-srp .srp-facet__panel {
+  position: absolute;
+  inset-block-start: calc(100% + 8px);
+  inset-inline-start: 0;
+  z-index: 30;
+  inline-size: 18rem;
+  max-inline-size: 90vw;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--bg-raised);
+  box-shadow: inset 0 0 0 1px var(--rule-strong), 0 18px 40px rgb(0 0 0 / 0.45);
+}
+.is-srp .srp-opts { display: grid; gap: 2px; margin: 0; padding: 0; border: 0; min-inline-size: 0; }
+.is-srp .srp-opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-block-size: 44px;
+  padding-inline: 12px;
+  border-radius: 6px;
+  color: var(--ink);
+  font: 400 1rem/1.3 var(--font-body);
+  cursor: pointer;
+}
+.is-srp .srp-opt:hover { background: rgb(243 238 230 / 0.06); }
+.is-srp .srp-opt input { flex: none; inline-size: 18px; block-size: 18px; margin: 0; accent-color: var(--action); cursor: pointer; }
+.is-srp .srp-opt__name { flex: 1; }
+.is-srp .srp-opt__n { color: var(--ink-3); font-size: var(--t-micro); font-variant-numeric: tabular-nums; }
+.is-srp :is(.srp-facet__clear, .srp-chips__clear, .srp-sheet__reset) {
+  padding: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--ink-2);
+  font: 500 var(--t-micro)/1 var(--font-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.is-srp .srp-facet__clear { margin-block-start: 8px; }
+.is-srp :is(.srp-facet__clear, .srp-chips__clear, .srp-sheet__reset):hover { color: var(--ink); }
+.is-srp :is(.srp-facet__clear, .srp-chips__clear, .srp-sheet__reset):focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.is-srp .srp-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  inline-size: 248px;
+  block-size: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgb(243 238 230 / 0.04);
+  color: var(--ink-2);
+  transition: border-color 150ms var(--ease-out);
+}
+.is-srp .srp-search:focus-within { border-color: var(--ink); }
+.is-srp .srp-search svg { flex: none; }
+.is-srp .srp-search input {
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 100%;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 400 var(--t-micro)/1.6 var(--font-body);
+  outline: none;                                   /* the pill's own ring is the focus state */
+}
+.is-srp .srp-search input::placeholder { color: var(--ink-3); opacity: 1; }
+
+.is-srp .srp-count { margin: 0; color: var(--ink-3); font: 500 var(--t-micro)/1.4 var(--font-label); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.is-srp .srp-count b { color: var(--ink); font-weight: 600; }
+.is-srp .srp-dated { text-transform: none; }
+
+.is-srp .srp-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  inline-size: 296px;
+  block-size: 40px;
+  margin-inline-start: auto;
+  padding: 0 16px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: rgb(243 238 230 / 0.04);
+  color: var(--ink-3);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: border-color 150ms var(--ease-out);
+}
+.is-srp .srp-sort:hover,
+.is-srp .srp-sort:focus-within { border-color: var(--ink-2); }
+.is-srp .srp-sort select {
+  flex: 1;
+  min-inline-size: 0;
+  block-size: 100%;
+  padding: 0 16px 0 0;
+  border: 0;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M0 0h8L4 5z' fill='%23F3EEE6'/%3E%3C/svg%3E") no-repeat right center;
+  color: var(--ink);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+.is-srp .srp-sort option { background: var(--bg-raised); color: var(--ink); }
+
+/* the phone's controls — off on a desk */
+.is-srp .srp-filters-open,
+.is-srp .srp-sheet__head,
+.is-srp .srp-sheet__foot { display: none; }
+
+/* the chosen filters, read back */
+.is-srp .srp-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-block-start: 24px; }
+.is-srp .srp-chips__row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.is-srp .srp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  block-size: 36px;
+  padding-inline: 16px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--eyebrow-plate);
+  color: var(--ink);
+  font: 500 var(--t-micro)/1 var(--font-label);
+  cursor: pointer;
+  transition: box-shadow 150ms var(--ease-out);
+}
+.is-srp .srp-chip:hover { box-shadow: inset 0 0 0 1px var(--ink-2); }
+.is-srp .srp-chip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-srp .srp-chip__x { color: var(--ink-2); }
+
+/* ---- 3. the lot ----------------------------------------------------------
+   48 + 32 below the filters · 3 columns on a 2.2vw gap (24 → 32) */
+.is-srp .srp-results { padding-block: calc(clamp(32px, 3vw, 48px) + 32px) clamp(64px, 6vw, 96px); }
+.is-srp .srp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 2.2vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.is-srp .srp-card { min-inline-size: 0; }
+
+/* the card: 12px corners, a hairline, a 3:2 photograph and a 207px body */
+.is-srp .srp-card__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--bg-raised);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 200ms var(--ease-out), background-color 200ms var(--ease-out);
+}
+.is-srp .srp-card__link:hover { border-color: var(--rule-strong); background: color-mix(in srgb, var(--bg-raised) 94%, var(--ink)); }
+.is-srp .srp-card__link:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.is-srp .srp-card__media { position: relative; display: block; aspect-ratio: 3 / 2; overflow: hidden; background: var(--bg-sunk); }
+.is-srp .srp-card__media img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: var(--pos, 50% 50%);
+  transition: transform 760ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .is-srp .srp-card__link:hover .srp-card__media img { transform: scale(1.04); }
+}
+.is-srp .srp-card__nophoto {
+  display: grid;
+  place-items: center;
+  block-size: 100%;
+  padding: 24px;
+  color: var(--ink-3);
+  font: 500 var(--t-micro)/1.4 var(--font-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* make 14 · 8 · name 17 · 8 · two lines of 14 · 24 · pills 37 — in 24 */
+.is-srp .srp-card__body { position: relative; display: flex; flex: 1; flex-direction: column; padding: 24px; }
+.is-srp .srp-card__make { color: var(--ink-3); font: 500 var(--t-micro)/1.4 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.is-srp .srp-card__name {
+  margin-block-start: 8px;
+  overflow: hidden;
+  color: var(--ink);
+  font: 600 1.0625rem/1.24 var(--font-body);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.is-srp .srp-card__year { font-family: var(--font-display); font-weight: 700; font-variant-numeric: lining-nums; }
+/* two lines, always: a card whose height follows its longest listing
+   turns the grid into a ragged wall */
+.is-srp .srp-card__spec {
+  display: -webkit-box;
+  min-block-size: 2.9em;
+  margin-block-start: 8px;
+  overflow: hidden;
+  color: var(--ink-2);
+  font: 400 var(--t-micro)/1.45 var(--font-body);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.is-srp .srp-card__pills { display: flex; flex-wrap: wrap; gap: 8px; margin-block-start: auto; padding-block-start: 24px; }
+.is-srp .srp-pill {
+  padding: 7px 13px 8px;
+  border-radius: 999px;
+  background: rgb(243 238 230 / 0.06);
+  color: var(--ink);
+  font: 600 var(--t-micro)/1.6 var(--font-label);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+/* "See details" arrives over the pills: the card is already the link, so
+   this is its label, not a second target */
+.is-srp .srp-card__go {
+  position: absolute;
+  inset-inline-end: 24px;
+  inset-block-end: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px 9px;
+  border-radius: 999px;
+  background: var(--action);
+  color: var(--action-ink);
+  font: 600 0.9375rem/1.6 var(--font-label);
+  opacity: 0;
+  translate: 12px 0;
+  transition: opacity 320ms var(--ease-out), translate 320ms var(--ease-out), background-color 150ms var(--ease-out);
+}
+.is-srp .srp-card__link:is(:hover, :focus-visible) .srp-card__go { opacity: 1; translate: 0 0; }
+@media (hover: none) {
+  .is-srp .srp-card__go { opacity: 1; translate: 0 0; }
+}
+
+/* ---- sold.html: the same card, tagged, and not a link ---------------------- */
+.is-srp .srp-card__tag {
+  position: absolute;
+  inset-block-start: 16px;
+  inset-inline-start: 16px;
+  z-index: 1;
+  padding: 6px 12px 7px;
+  border-radius: 6px;
+  background: var(--action);
+  color: var(--action-ink);
+  font: 600 var(--t-micro)/1.4 var(--font-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.is-srp .srp-card__link--static { cursor: default; }
+.is-srp .srp-card__link--static:hover { border-color: var(--rule); background: var(--bg-raised); }
+.is-srp .srp-card__link--static:hover .srp-card__media img { transform: none; }
+.is-srp h3.srp-card__name { margin-block-end: 0; }
+.is-srp .srp-onward { display: flex; justify-content: center; margin: clamp(48px, 5vw, 72px) 0 0; }
+
+.is-srp .srp-empty { display: grid; justify-items: start; gap: 24px; padding-block: 96px; }
+.is-srp .srp-empty__t { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.75rem, 2.6vw, 2.5rem); line-height: 1.1; color: var(--ink); }
+
+/* ---- 4. narrower ------------------------------------------------------------ */
+@media (max-width: 1080px) {
+  .is-srp .srp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .is-srp .srp-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* the phone: search on its own line, then Filters and Sort side by side;
+   the facets become a sheet over the page with every group open */
+@media (max-width: 900px) {
+  .is-srp .srp-tools__row { gap: 16px 12px; }
+  .is-srp .srp-search { order: -1; flex: 1 1 100%; inline-size: auto; }
+  .is-srp .srp-search input { font-size: 1rem; }            /* 16px: no zoom on focus */
+  .is-srp .srp-filters-open {
+    display: inline-flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    block-size: 40px;
+    padding-inline: 16px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: rgb(243 238 230 / 0.04);
+    color: var(--ink);
+    font: 500 var(--t-micro)/1.6 var(--font-label);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .is-srp .srp-filters-open:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .is-srp .srp-facets { display: none; }
+  .is-srp .srp-sort { flex: 1 1 0; inline-size: auto; margin-inline-start: 0; letter-spacing: 0.06em; }
+  .is-srp .srp-count { order: 5; flex: 1 1 100%; }
+
+  .is-srp .srp-tools.is-sheet .srp-facets {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0 clamp(24px, 3.4vw, 60px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--bg);
+  }
+  .is-srp .srp-tools.is-sheet .srp-sheet__head {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 16px;
+    background: var(--bg);
+    border-block-end: 1px solid var(--rule);
+  }
+  .is-srp .srp-sheet__title { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; color: var(--ink); }
+  .is-srp .srp-sheet__close {
+    display: grid;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    background: none;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .is-srp .srp-sheet__close:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .is-srp .srp-tools.is-sheet .srp-facet { border-block-end: 1px solid var(--rule); padding-block: 24px; }
+  .is-srp .srp-tools.is-sheet .srp-facet__trigger {
+    block-size: auto;
+    padding: 0 0 12px;
+    border: 0;
+    background: none;
+    pointer-events: none;                           /* in the sheet a group is a heading, always open */
+    color: var(--ink-2);
+  }
+  .is-srp .srp-tools.is-sheet .srp-facet__trigger::after { display: none; }
+  .is-srp .srp-tools.is-sheet .srp-facet__panel {
+    position: static;
+    inline-size: auto;
+    max-inline-size: none;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .is-srp .srp-tools.is-sheet .srp-sheet__foot {
+    position: sticky;
+    inset-block-end: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-block-start: auto;
+    padding-block: 16px;
+    background: var(--bg);
+    border-block-start: 1px solid var(--rule);
+  }
+  .is-srp .srp-sheet__show { flex: 1; justify-content: center; }
+  html.srp-lock { overflow: hidden; }
+}
+
+/* the marque tiles keep their 72px on a phone, in one line that scrolls,
+   so the first car still reaches the first screen (CMC stacks them into a
+   672px column; that is the one measure not carried) */
+@media (max-width: 640px) {
+  .is-srp .srp-makes {
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    margin-inline: calc(-1 * clamp(24px, 3.4vw, 60px));
+    padding-inline: clamp(24px, 3.4vw, 60px);
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .is-srp .srp-makes::-webkit-scrollbar { display: none; }
+  .is-srp .srp-makes li { flex: 0 0 auto; max-inline-size: none; }
+  .is-srp .srp-make { inline-size: auto; min-inline-size: 140px; }
+  .is-srp .srp-makes-wrap { padding-block-end: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-srp :is(.srp-make, .srp-facet__trigger, .srp-facet__trigger::after, .srp-search, .srp-sort, .srp-chip,
+              .srp-card__link, .srp-card__media img, .srp-card__go) { transition: none; }
+  .is-srp .srp-card__link:hover .srp-card__media img { transform: none; }
+  .is-srp .srp-card__go { translate: 0 0; }
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<!-- THROWAWAY PREVIEW (Genjutsu thesis gate) — not part of the site.
+     Shows the proposed motion for the Sell card on the real CSS and the
+     real image. Deleted once the thesis is approved or rejected. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview · Sell card motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css?v=4">
+<link rel="stylesheet" href="assets/css/main.css?v=3">
+<link rel="stylesheet" href="assets/css/v2.css?v=3">
+<link rel="stylesheet" href="assets/css/v3.css?v=3">
+<link rel="stylesheet" href="assets/css/geneva-final-v2.css?v=21">
+<style>
+/* The one-shot lift is retired: on the real page the step now drifts
+   with scroll (Alex). Only the step hover is on trial here. */
+.is-gmh .gmh-sellcard { --lead: 0ms; }
+
+/* ================================================================
+   THESIS 2 — THE HOVER: "the step lights"
+   Mouse only. The plate rises 4px and its shadow deepens, the numeral
+   steps 4px forward, the hairline warms to the barn red. In 200ms on a
+   snappy curve, out in 160ms. Transform and opacity only: the deeper
+   shadow is a second layer faded in, never an animated box-shadow.
+   The plates are not links, so the cursor stays the arrow.
+
+   The lift uses `transform`; the scroll reveal uses `translate`. Two
+   properties, so the reveal's staircase delay (--rv-d) never reaches
+   the hover.
+   ================================================================ */
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li { --rv-d: 0ms; }
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(1) { --rv-d: calc(var(--lead) + 550ms); }
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(2) { --rv-d: calc(var(--lead) + 680ms); }
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(3) { --rv-d: calc(var(--lead) + 810ms); }
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(4) { --rv-d: calc(var(--lead) + 940ms); }
+.reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(n) {
+  transition:
+    opacity var(--rv-cta) var(--ease-out) var(--rv-d),
+    translate var(--rv-cta) var(--ease-out) var(--rv-d),
+    transform 160ms var(--ease-out) 0s,
+    border-color 160ms var(--ease-out) 0s;
+}
+.is-gmh.is-v3 .gmh-sellcard .sell__steps li { position: relative; isolation: isolate; }
+.is-gmh.is-v3 .gmh-sellcard .sell__steps li::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 14px 30px rgb(0 0 0 / 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms var(--ease-out);
+}
+.is-gmh.is-v3 .gmh-sellcard .sell__step-n { transition: transform 160ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .reveal-armed .is-gmh.is-v3 .gmh-sellcard .sell__steps li:nth-child(n):hover,
+  .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover {
+    transform: translateY(-4px);
+    border-color: rgb(148 12 10 / 0.45);
+    transition-duration: var(--rv-cta), var(--rv-cta), 200ms, 200ms;
+    transition-timing-function: var(--ease-out), var(--ease-out), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1);
+  }
+  .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover::after { opacity: 1; transition-duration: 200ms; }
+  .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover .sell__step-n {
+    transform: translateX(4px);
+    transition: transform 200ms cubic-bezier(0.2, 0, 0, 1);
+  }
+}
+/* reduced motion: the step still lights (edge and shadow), nothing moves */
+@media (prefers-reduced-motion: reduce) {
+  .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover,
+  .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover .sell__step-n { transform: none; }
+}
+html.pv-rm .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover,
+html.pv-rm .is-gmh.is-v3 .gmh-sellcard .sell__steps li:hover .sell__step-n { transform: none !important; }
+
+/* ---------- preview chrome (throwaway) ---------- */
+body { background: rgb(var(--bg-rgb)); margin: 0; }
+.pv-space { block-size: 18vh; }
+.pv-panel {
+  position: fixed; inset-inline-start: 16px; inset-block-start: 16px; z-index: 50; max-block-size: calc(100vh - 32px); overflow: auto;
+  inline-size: min(340px, calc(100vw - 32px));
+  padding: 16px; border-radius: 12px;
+  background: rgb(14 11 8 / 0.92); color: #F3EEE6;
+  font: 13px/1.45 'Instrument Sans', system-ui, sans-serif;
+  box-shadow: 0 0 0 1px rgb(243 238 230 / 0.16);
+}
+.pv-panel h1 { margin: 0 0 4px; font: 600 14px/1.3 'Instrument Sans', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+.pv-panel p { margin: 0 0 10px; color: rgb(243 238 230 / 0.7); }
+.pv-row { display: flex; gap: 8px; flex-wrap: wrap; margin-block: 10px; }
+.pv-panel button {
+  appearance: none; border: 1px solid rgb(243 238 230 / 0.34); background: none; color: inherit;
+  padding: 8px 12px; border-radius: 999px; font: inherit; cursor: pointer;
+}
+.pv-panel button[aria-pressed="true"] { background: #F3EEE6; color: #15100C; }
+.pv-panel button:focus-visible { outline: 2px solid #F3EEE6; outline-offset: 2px; }
+.pv-panel dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 10px 0 0; }
+.pv-panel dt { color: rgb(243 238 230 / 0.6); }
+.pv-panel dd { margin: 0; font-variant-numeric: tabular-nums; }
+html.pv-min .pv-panel > :not(.pv-row) { display: none; }
+html.pv-min .pv-row { margin: 0; }
+.pv-curve { display: block; inline-size: 100%; block-size: auto; margin-block: 6px; }
+</style>
+</head>
+<body class="v2 is-v3 is-gmh">
+<div class="pv-space"></div>
+
+<section class="sell gmh-sellcard" id="sell" data-reveal aria-labelledby="sell-title">
+  <div class="gmh-sellcard__card">
+    <div class="gmh-sellcard__media" aria-hidden="true">
+      <img src="assets/img/web/sell-showroom.jpg"
+           srcset="assets/img/web/sell-showroom-sm.jpg 1200w, assets/img/web/sell-showroom.jpg 1854w"
+           sizes="(max-width: 900px) 100vw, min(1500px, 100vw)"
+           alt="" width="1854" height="1119" decoding="async">
+    </div>
+    <div class="gmh-sellcard__inner">
+    <div class="sell__copy">
+      <h2 class="sell__title" id="sell-title"><span class="ttl-line">Get top dollar</span><span class="ttl-line">for your car.</span></h2>
+      <p class="sell__lede">A fair, no-obligation appraisal &mdash; whether you&rsquo;re selling a luxury
+        vehicle, an exotic or a daily driver.</p>
+      <div class="sell__actions">
+        <a class="btn btn--accent sell__go" href="#sell">Get an appraisal
+          <svg class="btn__arrow" width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5h9M7.4 3 11 6.5 7.4 10" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a class="btn btn--line sell__how" href="#sell">Call (262) 249-6777
+          <svg class="btn__arrow" width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 6.5h9M7.4 3 11 6.5 7.4 10" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      </div>
+    </div>
+    <ol class="sell__steps" id="sell-steps">
+      <li><span class="micro sell__step-n">01</span><span class="micro sell__step-t">Submit your vehicle info</span></li>
+      <li><span class="micro sell__step-n">02</span><span class="micro sell__step-t">Get your appraisal</span></li>
+      <li><span class="micro sell__step-n">03</span><span class="micro sell__step-t">Schedule inspection</span></li>
+      <li><span class="micro sell__step-n">04</span><span class="micro sell__step-t">Complete the sale</span></li>
+    </ol>
+    </div>
+  </div>
+</section>
+
+<div class="pv-space"></div>
+
+<aside class="pv-panel" aria-label="Preview controls">
+  <h1>Sell — the step hover</h1>
+  <p>Throwaway preview on the real CSS. Hover a plate. The card's lift is retired: the step drifts with scroll on the real page instead.</p>
+  <h1 style="margin-top:14px">Hover on the steps — thesis 2</h1>
+  <dl>
+    <dt>Plate rises</dt><dd>4 px · in 200 ms · out 160 ms</dd>
+    <dt>Shadow</dt><dd>deepens — a second layer fades in</dd>
+    <dt>Numeral</dt><dd>steps 4 px forward</dd>
+    <dt>Edge</dt><dd>hairline warms to barn red, 45%</dd>
+    <dt>Curve</dt><dd>in cubic-bezier(0.2, 0, 0, 1) · out --ease-out</dd>
+    <dt>Where</dt><dd>mouse only · none on touch · reduced motion: lights, no lift</dd>
+  </dl>
+  <div class="pv-row">
+    <button type="button" id="pv-replay">Replay</button>
+    <button type="button" id="pv-slow" aria-pressed="false">Slow ×4</button>
+    <button type="button" id="pv-rm" aria-pressed="false">Reduced motion</button>
+    <button type="button" id="pv-min" aria-pressed="false">Hide panel</button>
+  </div>
+</aside>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var sec = document.getElementById('sell');
+  root.classList.add('reveal-armed');
+  function play() {
+    root.classList.add('pv-reset');
+    sec.classList.remove('is-revealed');
+    void sec.offsetWidth;
+    root.classList.remove('pv-reset');
+    void sec.offsetWidth;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { sec.classList.add('is-revealed'); }); });
+  }
+  function toggle(btn, cls) {
+    var on = btn.getAttribute('aria-pressed') !== 'true';
+    btn.setAttribute('aria-pressed', String(on));
+    root.classList.toggle(cls, on);
+    play();
+  }
+  document.getElementById('pv-replay').addEventListener('click', play);
+  document.getElementById('pv-slow').addEventListener('click', function () { toggle(this, 'pv-slow'); });
+  document.getElementById('pv-rm').addEventListener('click', function () { toggle(this, 'pv-rm'); });
+  document.getElementById('pv-min').addEventListener('click', function () { var on = this.getAttribute('aria-pressed') !== 'true'; this.setAttribute('aria-pressed', String(on)); this.textContent = on ? 'Show panel' : 'Hide panel'; root.classList.toggle('pv-min', on); });
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { sec.classList.add('is-revealed'); io.disconnect(); } });
+  }, { threshold: 0.25 });
+  if (document.readyState === 'complete') io.observe(sec); else window.addEventListener('load', function () { io.observe(sec); });
+})();
+</script>
+</body>
+</html>

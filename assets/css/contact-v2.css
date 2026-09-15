@@ -1,0 +1,133 @@
+/* ============================================================
+   GENEVA MOTOR HAUS — contact-v2.css — the contact page
+   ============================================================
+   Loaded after finance-v2.css on contact.html: fields, the form card and
+   the sent state are the financing page's form layer. This file holds the
+   head with its three ways in, the best-time pills (the VDP ask form's),
+   and the location card beside the form. The map is the homepage's own
+   .gf-map section.
+   ============================================================ */
+
+/* ---- 1. head: copy left, the three ways in on hairlines right ------------ */
+.is-contact .ct-head { padding-block: calc(var(--gf-head-h) + clamp(48px, 5vw, 96px)) clamp(var(--sp-8), 6vw, var(--sp-9)); }
+.is-contact .ct-head__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: clamp(var(--sp-7), 6vw, var(--sp-10));
+  align-items: end;
+}
+.is-contact .ct-head__title { margin: 28px 0 0; color: var(--ink); font: 700 clamp(2.5rem, 5vw, 4.5rem)/1.02 var(--font-display); letter-spacing: -0.012em; }
+.is-contact .ct-head__lede { max-inline-size: 44ch; margin: var(--sp-5) 0 0; color: var(--ink-2); font: 400 1.125rem/1.6 var(--font-body); }
+.is-contact .ct-head__acts { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-block-start: var(--sp-6); }
+
+.is-contact .ct-ways { margin: 0; padding: 0; list-style: none; border-block-start: 1px solid var(--rule-strong); }
+.is-contact .ct-way {
+  display: grid;
+  grid-template-columns: minmax(0, 8rem) minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-5);
+  align-items: baseline;
+  padding-block: var(--sp-5);
+  border-block-end: 1px solid var(--rule-strong);
+}
+.is-contact .ct-way__k { grid-row: span 2; margin: 0; color: var(--ink-2); font: 500 var(--t-micro)/1.6 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.is-contact .ct-way__v {
+  justify-self: start;
+  color: var(--ink);
+  font: 700 1.25rem/1.3 var(--font-display);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: color 150ms var(--ease-out);
+}
+.is-contact .ct-way__v:hover { color: var(--ink-2); }
+.is-contact .ct-way__v:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.is-contact .ct-way__p { grid-column: 2; margin: 0; color: var(--ink-2); font: 400 1rem/1.5 var(--font-body); }
+
+/* ---- 2. the form: what the shared form layer does not have ---------------------- */
+.is-contact .ct-inline { color: var(--ink); text-underline-offset: 3px; }
+.is-contact .ct-grid-msg { margin-block-start: 20px; }
+
+/* best time to contact: the VDP ask form's pills */
+.is-contact .ct-when { min-inline-size: 0; margin: 20px 0 0; padding: 0; border: 0; }
+.is-contact .ct-when legend { margin: 0 0 var(--sp-2); padding: 0; color: var(--ink-2); font: 500 var(--t-micro)/1.3 var(--font-label); letter-spacing: 0.04em; }
+.is-contact .ct-when__opts { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.is-contact .ct-when label { position: relative; }
+.is-contact .ct-when input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+.is-contact .ct-when__opts span {
+  display: inline-block;
+  padding: 11px 20px 12px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+.is-contact .ct-when__opts label:hover span { border-color: var(--ink-3); color: var(--ink); }
+.is-contact .ct-when input:checked + span { border-color: var(--bone); background: var(--bone); color: var(--bone-ink); }
+.is-contact .ct-when input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+.is-contact .fin-form.was-sent .ct-when input:invalid + span { border-color: var(--action); }
+
+/* the location card: the VDP panel's grammar, sections on hairlines */
+.is-contact .ct-card {
+  position: sticky;
+  inset-block-start: calc(var(--gf-head-h-c) + 24px);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--bg-raised);
+}
+.is-contact .ct-card__sec { padding: var(--sp-5); }
+.is-contact .ct-card__sec + .ct-card__sec { border-block-start: 1px solid var(--rule); }
+.is-contact .ct-card__t { margin: 0; color: var(--ink); font: 700 1.25rem/1.2 var(--font-display); }
+.is-contact .ct-card__addr { margin: var(--sp-3) 0 0; color: var(--ink-2); font: 400 1rem/1.6 var(--font-body); }
+.is-contact .ct-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-block-start: var(--sp-3);
+  color: var(--ink);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  text-decoration: none;
+  transition: color 150ms var(--ease-out);
+}
+.is-contact .ct-card__link:hover { color: var(--ink-2); }
+.is-contact .ct-card__link:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.is-contact .ct-card__k { margin: 0 0 var(--sp-3); color: var(--ink-2); font: 500 var(--t-micro)/1.4 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.is-contact .ct-hours { margin: 0; }
+.is-contact .ct-hours div { display: flex; justify-content: space-between; gap: var(--sp-4); padding-block: var(--sp-2); border-block-end: 1px solid var(--rule); }
+.is-contact .ct-hours div:last-child { border-block-end: 0; }
+.is-contact .ct-hours dt { color: var(--ink-2); font: 400 var(--t-micro)/1.6 var(--font-body); }
+.is-contact .ct-hours dd { margin: 0; color: var(--ink); font: 500 var(--t-micro)/1.6 var(--font-body); text-align: end; }
+.is-contact .ct-card__note { margin: var(--sp-3) 0 0; color: var(--ink-3); font: 400 var(--t-micro)/1.5 var(--font-body); }
+.is-contact .ct-social { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: 0; padding: 0; list-style: none; }
+.is-contact .ct-social a {
+  display: inline-block;
+  padding: 8px 16px 9px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  font: 500 var(--t-micro)/1.6 var(--font-label);
+  text-decoration: none;
+  transition: border-color 150ms var(--ease-out);
+}
+.is-contact .ct-social a:hover { border-color: var(--ink); }
+.is-contact .ct-social a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* once sent, the card stays beside the thanks: where and when still matter */
+.is-contact .fin-apply__body.is-sent { grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); }
+
+/* ---- narrower ------------------------------------------------------------------ */
+@media (max-width: 1100px) {
+  .is-contact .ct-head__inner { grid-template-columns: minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 960px) {
+  .is-contact .fin-apply__body.is-sent { grid-template-columns: minmax(0, 1fr); }
+  .is-contact .ct-card { position: static; }
+}
+@media (max-width: 560px) {
+  .is-contact .ct-way { grid-template-columns: minmax(0, 1fr); gap: var(--sp-1); }
+  .is-contact .ct-way__k { grid-row: auto; }
+  .is-contact .ct-way__p { grid-column: 1; }
+  .is-contact .ct-head__acts .btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-contact :is(.ct-way__v, .ct-when span, .ct-card__link, .ct-social a) { transition: none; }
+}
