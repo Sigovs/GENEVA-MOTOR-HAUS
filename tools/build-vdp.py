@@ -174,6 +174,15 @@ def page(v):
         about = acc("about", "About this car", "\n".join(parts), open_=True) + "\n"
 
     vin = specs.get("VIN")
+    # the history report, under the rows: the CARFAX mark and one link, only
+    # where the listing carries a VIN. WIRING: the report address is the
+    # public VIN form; AAN puts Geneva's own CARFAX partner code in `partner`.
+    carfax = (
+        '      <a class="vdp-carfax" href="https://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&amp;vin=' + e(vin) + '" target="_blank" rel="noopener">\n'
+        '        <img src="../assets/logos/carfax.svg" alt="CARFAX" width="253" height="60">\n'
+        '        <span>See report ' + ARROW + '</span>\n'
+        '      </a>'
+    ) if vin else ""
     message = f"I'm interested in the {name}" + (f" (VIN {vin})" if vin else "") + "."
     ask_body = f"""          <form class="vdp-form vdp-ask" novalidate>
             <input type="hidden" name="vehicle" value="{e(name)}">{f'<input type="hidden" name="vin" value="{e(vin)}">' if vin else ''}
@@ -261,7 +270,7 @@ def page(v):
 <link rel="stylesheet" href="../assets/css/v3.css?v=3">
 <link rel="stylesheet" href="../assets/css/geneva-final-v2.css?v=21">
 <link rel="stylesheet" href="../assets/css/srp-v2.css?v=9">
-<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=4">
+<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=5">
 </head>
 <body class="v2 is-v3 is-gmh is-srp is-vdp">
 
@@ -295,6 +304,7 @@ def page(v):
       <dl class="vdp-panel__specs">
 {rows_html}
       </dl>
+{carfax}
       <div class="vdp-panel__act">
         <a class="btn btn--accent vdp-plate__cta" href="#ask">Ask about this car {ARROW}</a>
       </div>
