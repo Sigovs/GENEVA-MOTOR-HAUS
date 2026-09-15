@@ -184,9 +184,9 @@
   border-radius: 12px;
   background: var(--bg-raised);
 }
-.is-vdp .vdp-panel > * { padding: 24px; }
+.is-vdp .vdp-panel > * { padding: 20px 24px; }
 .is-vdp .vdp-panel > * + * { border-block-start: 1px solid var(--rule); }
-.is-vdp .vdp-plate__title { display: flex; align-items: flex-end; gap: 16px; margin: 18px 0 0; font-weight: inherit; }
+.is-vdp .vdp-plate__title { display: flex; align-items: flex-end; gap: 16px; margin: 14px 0 0; font-weight: inherit; }
 .is-vdp .vdp-plate__year {
   flex: none;
   font-family: var(--font-display);
@@ -206,13 +206,13 @@
 .is-vdp .vdp-price__dated { margin: 12px 0 0; color: var(--ink-3); font: 400 var(--t-micro)/1.6 var(--font-label); }
 /* the rows: 14 on 14, 35px each, a hairline under, 10 between */
 .is-vdp .vdp-panel__specs { margin: 0; }
-.is-vdp .vdp-spec { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block-end: 12px; border-block-end: 1px solid var(--rule); }
-.is-vdp .vdp-spec + .vdp-spec { margin-block-start: 10px; }
+.is-vdp .vdp-spec { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block-end: 9px; border-block-end: 1px solid var(--rule); }
+.is-vdp .vdp-spec + .vdp-spec { margin-block-start: 8px; }
 .is-vdp .vdp-spec dt { flex: none; color: var(--ink-3); font: 400 var(--t-micro)/1.6 var(--font-label); }
 .is-vdp .vdp-spec dd { margin: 0; min-inline-size: 0; color: var(--ink); font: 400 var(--t-micro)/1.6 var(--font-body); text-align: end; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 /* the history report: the CARFAX mark at the left, the one link at the right, on a row of the panel's own rules */
-.is-vdp .vdp-carfax { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-block-start: 4px; padding-block: 14px; border-block-end: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
-.is-vdp .vdp-carfax img { block-size: 24px; inline-size: auto; flex: none; }
+.is-vdp .vdp-carfax { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-block-start: 2px; padding-block: 12px; border-block-end: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+.is-vdp .vdp-carfax img { block-size: 32px; inline-size: auto; flex: none; }
 .is-vdp .vdp-carfax span { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-2); font: 500 var(--t-micro)/1.4 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; transition: color var(--dur-1) var(--ease-out); }
 .is-vdp .vdp-carfax span .btn__arrow { transition: translate var(--dur-2) var(--ease-out); }
 .is-vdp .vdp-carfax:hover span { color: var(--ink); }

@@ -270,7 +270,7 @@ def page(v):
 <link rel="stylesheet" href="../assets/css/v3.css?v=3">
 <link rel="stylesheet" href="../assets/css/geneva-final-v2.css?v=21">
 <link rel="stylesheet" href="../assets/css/srp-v2.css?v=9">
-<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=6">
+<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=7">
 </head>
 <body class="v2 is-v3 is-gmh is-srp is-vdp">
 
@@ -299,7 +299,9 @@ def page(v):
       </div>
       <div class="vdp-panel__price">
         <div class="vdp-price"><span class="vdp-price__k">Price</span><span class="vdp-price__v">{price}</span></div>
-        <p class="vdp-price__dated">Price and mileage as listed on {CAPTURED_HUMAN}</p>
+        <!-- the "as listed on" line was removed at Alex's word (2026-09-15);
+             the figures are still the {CAPTURED_HUMAN} capture (CP5: feed them
+             live before launch). The About accordion keeps its own dated note. -->
       </div>
       <dl class="vdp-panel__specs">
 {rows_html}
