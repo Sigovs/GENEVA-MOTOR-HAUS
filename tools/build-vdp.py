@@ -270,7 +270,7 @@ def page(v):
 <link rel="stylesheet" href="../assets/css/v3.css?v=3">
 <link rel="stylesheet" href="../assets/css/geneva-final-v2.css?v=21">
 <link rel="stylesheet" href="../assets/css/srp-v2.css?v=9">
-<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=5">
+<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=6">
 </head>
 <body class="v2 is-v3 is-gmh is-srp is-vdp">
 

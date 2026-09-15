@@ -270,7 +270,7 @@
 .is-vdp :is(.vdp-pill, .vdp-act__link, .vdp-act__pill):focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* ---- the record: 96px disclosure cards on 16 ------------------------------ */
-.is-vdp .vdp-record { display: grid; gap: 16px; margin-block-start: clamp(72px, 6vw, 128px); }
+.is-vdp .vdp-record { display: grid; gap: 16px; margin-block-start: clamp(40px, 3.4vw, 56px); }   /* the record follows the ways in at a paragraph, not a chapter */
 .is-vdp .vdp-acc { border: 1px solid var(--rule-strong); border-radius: 12px; background: var(--bg-raised); }
 .is-vdp .vdp-acc__sum {
   display: flex;
