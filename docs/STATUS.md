@@ -11,6 +11,7 @@ Last updated 2026-09-14. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/ (r
 - **Design system: `ds.html`** (`tools/build-ds.py`, `assets/css/ds-v1.css`, `assets/js/ds-v1.js`). Tokens, contrast
   and type sizes are read live from the CSS; the car card, sold card, pills and accordion are lifted from the built
   pages. It supersedes the palette in `DESIGN-READ.md`.
+- **Developer handoff: `design-system/`** (`tools/build-ds-static.py`). Standalone HTML and CSS, no script: `index.html`, `tokens.css` + `tokens.json` (generated from the site's CSS), `geneva-ds.css` (components `.g-*` measured from the site, motion roles), `docs.css`, `img/`. Includes HTML, spec, states and rules per component, the observer script, page-pattern wireframes and a handoff-class ↔ site-class map. Rebuild it after any token change. `ds.html` stays as the in-site, live-CSS reference.
 - **Palette.** Ground `#161617`; eyebrow plate `#313C29` with `#DFD4AF` text (7.8:1).
 - **Motion.** Entrance roles on every page (`geneva-final-v2.css` F25: `.ttl-line`, `.rv-eyebrow`, `.rv-lede`, `.rv-act`,
   `.rv-item`, `.rv-stagger`, `.rv-photo`, `.rv-self`), played once by the observer in `main-final-v2.js`.

@@ -334,7 +334,7 @@ page = f"""<!doctype html>
       <p class="micro gmh-plate rv-eyebrow">Design system</p>
       <h1 class="ds-head__title" id="ds-title"><span class="ttl-line">How this site</span> <span class="ttl-line">is built.</span></h1>
       <p class="ds-head__lede rv-lede">The tokens, components, motion and rules every page of this site is made from. The values below are read from the live stylesheets as the page opens, so they cannot drift from the site.</p>
-      <p class="ds-head__meta rv-act">Palette, plate and entrance roles as of 14 Sep 2026 · geneva-final-v2.css ?v=21</p>
+      <p class="ds-head__meta rv-act">Palette, plate and entrance roles as of 14 Sep 2026 · geneva-final-v2.css ?v=21 · For developers: the standalone handoff, plain HTML and CSS, is in <a href="design-system/index.html">design-system/</a></p>
     </div>
   </section>
 
