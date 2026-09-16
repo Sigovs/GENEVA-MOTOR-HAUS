@@ -121,18 +121,6 @@ def page(v):
     photos = v.get("photos") or []
     n = len(photos)
 
-    # CARFAX: the last thing in the gallery column, on the CTA's line (Alex,
-    # 2026-09-16 — moved from the row under the specs). Only where the listing
-    # carries a VIN. WIRING: the report address is the public VIN form; AAN puts
-    # Geneva's own CARFAX partner code in `partner`. The badge is the CMC/AAN
-    # theme artwork (assets/logos/PROVENANCE.md).
-    carfax = ""
-    if specs.get("VIN"):
-        carfax = (f'\n      <a class="vdp-cfx" href="https://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&amp;vin={e(specs["VIN"])}" target="_blank" rel="noopener">'
-                  '<img class="vdp-cfx__logo" src="../assets/logos/carfax.svg" alt="CARFAX vehicle history report" width="253" height="60" loading="lazy" decoding="async">'
-                  '<span class="vdp-cfx__t">See report <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M3 10 10 3M4.4 3H10v5.6" stroke="currentColor" stroke-width="1.3"/></svg></span>'
-                  '<span class="u-visually-hidden"> (opens carfax.com)</span></a>')
-
     # the gallery
     if n:
         frames = []
@@ -153,12 +141,12 @@ def page(v):
         gallery = f"""    <div class="vdp-gal rv-self rv-photo" data-gallery data-reveal>
       <div class="vdp-gal__stage" tabindex="0" role="group" aria-roledescription="gallery" aria-label="Photographs of the {e(name)}">
 {chr(10).join(frames)}{controls}
-      </div>{strip}{carfax}
+      </div>{strip}
     </div>"""
         preload = f'<link rel="preload" as="image" href="../{photos[0]["src"]}" fetchpriority="high">'
     else:
         gallery = f"""    <div class="vdp-gal vdp-gal--none rv-self rv-photo" data-reveal>
-      <div class="vdp-gal__stage"><p class="vdp-gal__none"><span>No photograph available</span><a class="vdp-gal__ask" href="#ask">Ask for photographs {ARROW}</a></p></div>{carfax}
+      <div class="vdp-gal__stage"><p class="vdp-gal__none"><span>No photograph available</span><a class="vdp-gal__ask" href="#ask">Ask for photographs {ARROW}</a></p></div>
     </div>"""
         preload = ""
 
@@ -186,6 +174,15 @@ def page(v):
         about = acc("about", "About this car", "\n".join(parts), open_=True) + "\n"
 
     vin = specs.get("VIN")
+    # the history report, under the rows: the CARFAX mark and one link, only
+    # where the listing carries a VIN. WIRING: the report address is the
+    # public VIN form; AAN puts Geneva's own CARFAX partner code in `partner`.
+    carfax = (
+        '      <a class="vdp-carfax" href="https://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&amp;vin=' + e(vin) + '" target="_blank" rel="noopener">\n'
+        '        <img src="../assets/logos/carfax.svg" alt="CARFAX" width="253" height="60">\n'
+        '        <span>See report ' + ARROW + '</span>\n'
+        '      </a>'
+    ) if vin else ""
     message = f"I'm interested in the {name}" + (f" (VIN {vin})" if vin else "") + "."
     ask_body = f"""          <form class="vdp-form vdp-ask" novalidate>
             <input type="hidden" name="vehicle" value="{e(name)}">{f'<input type="hidden" name="vin" value="{e(vin)}">' if vin else ''}
@@ -273,7 +270,7 @@ def page(v):
 <link rel="stylesheet" href="../assets/css/v3.css?v=3">
 <link rel="stylesheet" href="../assets/css/geneva-final-v2.css?v=21">
 <link rel="stylesheet" href="../assets/css/srp-v2.css?v=9">
-<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=8">
+<link rel="stylesheet" href="../assets/css/vdp-v2.css?v=7">
 </head>
 <body class="v2 is-v3 is-gmh is-srp is-vdp">
 
@@ -309,6 +306,7 @@ def page(v):
       <dl class="vdp-panel__specs">
 {rows_html}
       </dl>
+{carfax}
       <div class="vdp-panel__act">
         <a class="btn btn--accent vdp-plate__cta" href="#ask">Ask about this car {ARROW}</a>
       </div>

@@ -184,8 +184,7 @@
   border-radius: 12px;
   background: var(--bg-raised);
 }
-.is-vdp .vdp-sum { --vdp-pad: 20px; }   /* the panel's section padding; the CARFAX row under the gallery reads it to stay on the CTA's line */
-.is-vdp .vdp-panel > * { padding: var(--vdp-pad) 24px; }
+.is-vdp .vdp-panel > * { padding: 20px 24px; }
 .is-vdp .vdp-panel > * + * { border-block-start: 1px solid var(--rule); }
 .is-vdp .vdp-plate__title { display: flex; align-items: flex-end; gap: 16px; margin: 14px 0 0; font-weight: inherit; }
 .is-vdp .vdp-plate__year {
@@ -211,35 +210,15 @@
 .is-vdp .vdp-spec + .vdp-spec { margin-block-start: 8px; }
 .is-vdp .vdp-spec dt { flex: none; color: var(--ink-3); font: 400 var(--t-micro)/1.6 var(--font-label); }
 .is-vdp .vdp-spec dd { margin: 0; min-inline-size: 0; color: var(--ink); font: 400 var(--t-micro)/1.6 var(--font-body); text-align: end; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+/* the history report: the CARFAX mark at the left, the one link at the right, on a row of the panel's own rules */
+.is-vdp .vdp-carfax { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-block-start: 2px; padding-block: 12px; border-block-end: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+.is-vdp .vdp-carfax img { block-size: 32px; inline-size: auto; flex: none; }
+.is-vdp .vdp-carfax span { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-2); font: 500 var(--t-micro)/1.4 var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; transition: color var(--dur-1) var(--ease-out); }
+.is-vdp .vdp-carfax span .btn__arrow { transition: translate var(--dur-2) var(--ease-out); }
+.is-vdp .vdp-carfax:hover span { color: var(--ink); }
+.is-vdp .vdp-carfax:hover span .btn__arrow { translate: 3px 0; }
+.is-vdp .vdp-carfax:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .is-vdp .vdp-panel__act { margin-block-start: auto; }
-
-/* CARFAX, the last thing in the gallery column (Alex, 2026-09-16): the CTA's
-   height and the CTA's line. Its bottom margin is the panel's bottom border
-   plus the CTA row's padding (--vdp-pad), so the badge and "Ask about this car" share a
-   top and a bottom; the photograph gives up the height. The badge is artwork
-   for a dark ground, so it sits on the raised ground, never on white. */
-.is-vdp .vdp-cfx {
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-4);
-  block-size: 54px;
-  margin-block: var(--sp-4) calc(var(--vdp-pad) + 1px);
-  padding-inline: var(--sp-5);
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-  background: var(--bg-raised);
-  color: var(--ink);
-  text-decoration: none;
-  transition: border-color var(--dur-1) var(--ease-out);
-}
-.is-vdp .vdp-cfx:hover { border-color: var(--ink); }
-.is-vdp .vdp-cfx:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-.is-vdp .vdp-cfx__logo { display: block; inline-size: auto; block-size: 34px; }
-.is-vdp .vdp-cfx__t { display: inline-flex; align-items: center; gap: var(--sp-2); font: 500 var(--t-micro)/1.6 var(--font-label); text-transform: uppercase; white-space: nowrap; }
-.is-vdp .vdp-cfx__t svg { transition: translate var(--dur-2) var(--ease-out); }
-.is-vdp .vdp-cfx:hover .vdp-cfx__t svg { translate: 2px -2px; }
 .is-vdp .vdp-plate__cta { inline-size: 100%; justify-content: center; }
 
 /* ---- the ways in: the summary's own columns, 24 above, 24 inside ------- */
@@ -444,7 +423,6 @@
   .is-vdp .vdp-sum,
   .is-vdp .vdp-act { grid-template-columns: minmax(0, 1fr); }
   .is-vdp .vdp-gal__stage { flex: none; min-block-size: 0; aspect-ratio: 3 / 2; }   /* CMC collapses here; this does not */
-  .is-vdp .vdp-cfx { margin-block-end: 0; }   /* stacked: no CTA beside it to line up with */
   .is-vdp .vdp-gal--none .vdp-gal__stage { aspect-ratio: 16 / 9; }
   .is-vdp .vdp-gal__strip { gap: 8px; grid-auto-columns: calc((100% - 5 * 8px) / 6); }
   .is-vdp .vdp-act__contact { padding-inline: 0; }
@@ -457,7 +435,6 @@
   .is-vdp .vdp-act__pill { margin-inline-start: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .is-vdp .vdp-cfx__t svg { transition: none; translate: none !important; }
   .is-vdp :is(.vdp-gal__frame, .vdp-gal__thumb img, .vdp-gal__thumb::after, .vdp-gal__arrow, .vdp-tool, .vdp-pill,
               .vdp-acc__mark, .vdp-acc__mark::after, .vdp-shots img, .vdp-rel__dot::before, .vdp-when span) { transition: none; }
   .is-vdp .vdp-shots a:hover img { transform: none; }
