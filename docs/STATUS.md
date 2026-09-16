@@ -23,8 +23,6 @@ Last updated 2026-09-14. Preview: https://sigovs.github.io/GENEVA-MOTOR-HAUS/ (r
   `geneva-final.js` — and 21 images only they used. All of it is in git history (last commit carrying them: `df27fb6`).
   Two originals (`HERO FINALE.jpg`, `passion.png`) moved to the ignored `assets/img/source/web-originals/`.
   The sections below are history and name some of those files.
-- **Security note for the client.** The live genevamotorhaus.com contact page reads its SMTP username and password
-  from Firestore in the browser (found 2026-09-14). Tell AAN / Devritech.
 - **Waiting for Alex.** The step-plate hover (`_preview-sell-motion.html`) and whether the homepage's step plates
   link to `sell.html`; the proposed ink `#EFEEEA` / bone `#E7E5E0`; image weight (car pages ≈56MB, sold ≈16MB).
 - **Known debt.** Radii 8/10/12/16px are values in the page layers, not tokens. `main.css` still points at a missing
